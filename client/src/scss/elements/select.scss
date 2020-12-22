@@ -2,7 +2,7 @@ select {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	font-size: 1.5rem;
 	padding: .75em 2em 0.55em 1em;
-	background: #4d5061;
+	background: #756a57;
 	color: white;
 	border: 0;
 	position: relative;
@@ -20,7 +20,7 @@ select {
 }
 
 select:hover {
-	background-color: #393e55;
+	background-color: #544b43;
 }
 
 .custom-arrow {
@@ -28,7 +28,7 @@ select:hover {
 	top: 0;
 	right: 0;
 	display: block;
-	background: #3b3c47;
+	background: #544b43;
 	height: 100%;
 	width: 3rem;
 	pointer-events: none;

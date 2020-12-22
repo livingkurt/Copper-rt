@@ -99,7 +99,7 @@ const Header = (props) => {
 							</div>
 						</Link>
 					</div>
-					<div className="jc-b nav_bar">
+					<div className="jc-b nav_bar w-432px m-auto">
 						<Link to="/collections/all/products">
 							<button className="button nav" onClick={() => dispatch(listProducts(''))}>
 								Products
@@ -107,159 +107,53 @@ const Header = (props) => {
 						</Link>
 						<div className="dropdown-nav">
 							<Link to="/pages/menu/gloving">
-								<button className="button nav">Gloving</button>
-							</Link>
-							<div className="dropdown-nav-content hover_fade_in w-300px">
-								<Link to="/collections/all/products/category/glowskins">
-									<button className="button nav w-100per ta-l">Glowskins (New)</button>
-								</Link>
-								<Link to="/collections/all/products/category/frosted_diffusers">
-									<button className="button nav w-100per ta-l">Frosted Diffusers</button>
-								</Link>
-								<div className="dropdown-nav-subcategory">
-									<Link to="/collections/all/products/category/diffuser_caps">
-										<button className="button nav w-100per ta-l">Diffuser Caps</button>
-										<i
-											style={{ '-webkitTransform': 'rotate(-180deg)' }}
-											className=" pos-abs right-10px top-8px fas fa-sort-up"
-										/>
-									</Link>
-									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px">
-										<Link to="/collections/all/products/category/diffuser_caps/subcategory/geometric">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Geomotric</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/diffuser_caps/subcategory/shapes">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Shapes</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/diffuser_caps/subcategory/abstract">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Abstract</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/diffuser_caps/subcategory/patterns">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Patterns</button>
-											</div>
-										</Link>
-									</div>
-								</div>
-
-								<div className="dropdown-nav-subcategory">
-									<Link to="/collections/all/products/category/mega_diffuser_caps">
-										<button className="button nav w-100per ta-l">Mega Diffuser Caps</button>
-										<i
-											style={{ '-webkitTransform': 'rotate(-180deg)' }}
-											className=" pos-abs right-10px top-8px fas fa-sort-up"
-										/>
-									</Link>
-									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px">
-										<Link to="/collections/all/products/category/mega_diffuser_caps/subcategory/geometric">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Geomotric</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/mega_diffuser_caps/subcategory/shapes">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Shapes</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/mega_diffuser_caps/subcategory/abstract">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Abstract</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/mega_diffuser_caps/subcategory/patterns">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Patterns</button>
-											</div>
-										</Link>
-										<Link to="/collections/all/products/category/mega_diffuser_caps/subcategory/emoji">
-											<div className="row">
-												<i
-													style={{ '-webkitTransform': 'rotate(90deg)' }}
-													className="mr-30px fas fa-sort-up"
-												/>{' '}
-												<button className="button nav w-100per ta-l">Emojis</button>
-											</div>
-										</Link>
-									</div>
-								</div>
-								<Link to="/collections/all/products/category/accessories">
-									<button className="button nav w-100per ta-l">Accessories</button>
-								</Link>
-							</div>
-						</div>
-
-						<div className="dropdown-nav">
-							{/* <Link to="/pages/menu/decor">
-								<button className="button nav">Decor</button>
-							</Link> */}
-							{/* <div className="dropdown-nav-content hover_fade_in w-200px"> */}
-							<Link to="/collections/all/products/category/glow_strings">
-								<button className="button nav w-100per ta-l">Glow Strings</button>
-							</Link>
-							{/* <Link to="/collections/all/products/category/infinity_mirrors">
-									<button className="button nav w-100per ta-l"> Infinity Mirrors</button>
-								</Link> */}
-							{/* </div> */}
-						</div>
-						<div className="dropdown-nav">
-							<Link to="/pages/menu/community">
-								<button className="button nav">Community</button>
+								<button className="button nav">Barns</button>
 							</Link>
 							<div className="dropdown-nav-content hover_fade_in w-200px">
 								<Link to="/pages/announcements">
-									<button className="button nav w-100per ta-l">Announcements</button>
-								</Link>
-								<Link to="/pages/menu/featured">
-									<button className="button nav w-100per ta-l">Featured</button>
+									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
 								<Link to="/pages/music">
-									<button className="button nav w-100per ta-l">Music</button>
+									<button className="button nav w-100per ta-l">On Driftwood</button>
+								</Link>
+								<Link to="/pages/menu/featured">
+									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
 							</div>
 						</div>
-						{/* <div className="dropdown-nav">
-							<Link to="/pages/glowcontrol">
-								<button className="button nav">Glow Control</button>
+
+						<div className="dropdown-nav">
+							<Link to="/collections/all/products/category/glow_strings">
+								<button className="button nav w-100per ta-l">Flowers</button>
 							</Link>
-						</div> */}
+							<div className="dropdown-nav-content hover_fade_in w-200px">
+								<Link to="/pages/announcements">
+									<button className="button nav w-100per ta-l">On Slate</button>
+								</Link>
+								<Link to="/pages/music">
+									<button className="button nav w-100per ta-l">On Driftwood</button>
+								</Link>
+								<Link to="/pages/menu/featured">
+									<button className="button nav w-100per ta-l">Wall Mounted</button>
+								</Link>
+							</div>
+						</div>
+						<div className="dropdown-nav">
+							<Link to="/pages/menu/community">
+								<button className="button nav">Trees</button>
+							</Link>
+							<div className="dropdown-nav-content hover_fade_in w-200px">
+								<Link to="/pages/announcements">
+									<button className="button nav w-100per ta-l">On Slate</button>
+								</Link>
+								<Link to="/pages/music">
+									<button className="button nav w-100per ta-l">On Driftwood</button>
+								</Link>
+								<Link to="/pages/menu/featured">
+									<button className="button nav w-100per ta-l">Wall Mounted</button>
+								</Link>
+							</div>
+						</div>
 						<div className="dropdown-nav">
 							<Link to="/pages/menu/support">
 								<button className="button nav">Support</button>

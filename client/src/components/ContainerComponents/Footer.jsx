@@ -56,27 +56,17 @@ const Footer = () => {
 							</h2>
 							<ul className="lst-none">
 								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/glowskins">Glowskins</Link>
+									<Link to="/collections/all/products/category/glowskins">Barns</Link>
 								</li>
 								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/frosted_diffusers">
-										Frosted Diffusers
-									</Link>
+									<Link to="/collections/all/products/category/frosted_diffusers">Flowers</Link>
 								</li>
 								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/diffuser_caps">Diffuser Caps</Link>
-								</li>
-								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/mega_diffuser_caps">
-										Mega Diffusers Caps
-									</Link>
-								</li>
-								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/accessories">Accessories</Link>
+									<Link to="/collections/all/products/category/diffuser_caps">Trees</Link>
 								</li>
 							</ul>
 						</div>
-						<div>
+						{/* <div>
 							<h2 className="ta-l">
 								<Link to="/pages/menu/community">Community</Link>
 							</h2>
@@ -91,17 +81,17 @@ const Footer = () => {
 									<Link to="/pages/music">Music</Link>
 								</li>
 							</ul>
-						</div>
+						</div> */}
 						<div>
 							<h2 className="ta-l">
 								<Link to="/collections/all/products">Services</Link>
 							</h2>
 							<ul className="lst-none">
 								<li className="ta-l mv-2rem">
-									<Link to="/secure/account/profile">MY ACCOUNT</Link>
+									<Link to="/secure/account/profile">My Account</Link>
 								</li>
 								<li className="ta-l mv-2rem">
-									<Link to="/account/login">LOGIN</Link>
+									<Link to="/account/login">Login</Link>
 								</li>
 								<li className="ta-l mv-2rem">
 									<Link to="/pages/terms">Terms</Link>
