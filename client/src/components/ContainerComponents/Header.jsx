@@ -271,7 +271,7 @@ const Header = (props) => {
 				</div>
 				<div className="nav_bar right_side w-233px jc-fe">
 					<Link to="/checkout/cart">
-						<button className=" button nav cart_text w-105px">
+						<button className=" button nav cart_text w-85px">
 							Cart <i className="fas fa-shopping-cart" />{' '}
 							{cartItems.reduce((a, c) => parseInt(a) + parseInt(c.qty), 0)}{' '}
 						</button>

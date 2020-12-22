@@ -125,15 +125,11 @@ const HomePage = (props) => {
 				<h2 style={{ textAlign: 'center' }}>From a Glover that just wants the world to stay lit</h2>
 			</div>
 			<p className="p_descriptions" style={{ textAlign: 'center' }}>
-				Here at Copper-rt.com we strive to bring as much light in to as many lives as possible. All items are
-				handmade at my home in Austin, TX and all ideas came from my own brain. Our items were dreamt up with
-				the intention of turning your home into a glowing rainbow dreamland with infinite hours of
-				entertainment. You don’t need a party to enjoy our products (although parties are definitely
-				encouraged). The beautiful colors have the ability to turn your home into the next best festival or into
-				a relaxing retreat, you decide.
+				I specialize in making unique copper art sculptures. I enjoy making old buildings from pictures,
+				flowers, and other wildlife scenes. Modern art too!
 			</p>
 
-			<div className="home_page_divs">
+			{/* <div className="home_page_divs">
 				<div className="jc-c">
 					<h2 style={{ textAlign: 'center' }}>Glowskins</h2>
 				</div>
@@ -263,38 +259,6 @@ const HomePage = (props) => {
 					</Link>
 				</div>
 			</div>
-			{/* <div className="home_page_divs">
-				<div className="jc-c">
-					<h2 style={{ textAlign: 'center' }}>Glowskins</h2>
-				</div>
-				<div className="jc-c pos-rel">
-					<div className="iframe-container">
-						<iframe
-							title="Glowskins Promo Video"
-							width="996"
-							height="560"
-							style={{ borderRadius: '20px' }}
-							src="https://www.youtube.com/embed/K8hSD_VaYG4?mute=1&showinfo=0&rel=0&autoplay=1&loop=1"
-							frameborder="0"
-							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen="1"
-						/>
-					</div>
-				</div>
-				<p className="p_descriptions" style={{ textAlign: 'center' }}>
-					Wanting to invoke a sense of wonder and amazement in your guests (and yourself)? Infinity mirrors
-					are the perfect addition to any chill space. Look into another dimension as vibrant LEDs go on for
-					miles of rainbow bliss. Order a custom infinity mirror to add that personal touch that will only be
-					found in your space.
-				</p>
-				<div className="jc-c">
-					<Link to="/collections/all/products/category/infinity_mirrors">
-						<button className="button primary" style={{ background: 'transparent' }}>
-							<h2>Shop Glowskins</h2>
-						</button>
-					</Link>
-				</div>
-			</div> */}
 			<div className="home_page_divs">
 				<div className="jc-c">
 					<h2>Glow Strings</h2>
@@ -326,7 +290,7 @@ const HomePage = (props) => {
 						</button>
 					</Link>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
