@@ -61,7 +61,7 @@ const TermsPage = () => {
 			{/* <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Featured Content</h2> */}
 			<ul style={{ padding: '0 18px' }}>
 				<li style={{ lineHeight: '30px' }}>
-					Any media, incuding videos or pictures, submitted to Copper-rt.com may be used on Glow-LEDS.com or
+					Any media, incuding videos or pictures, submitted to Copper-rt.com may be used on Copper-rt.com or
 					Gibson Lake Copper Art social media to either entertain or promote.
 				</li>
 				<li style={{ lineHeight: '30px' }}>

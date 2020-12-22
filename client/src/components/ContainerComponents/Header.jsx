@@ -107,17 +107,138 @@ const Header = (props) => {
 							</div>
 						</Link>
 					</div>
-					<div className="jc-b nav_bar w-432px m-auto">
+					<div className="jc-b nav_bar w-450px m-auto">
 						<Link to="/collections/all/products">
 							<button className="button nav" onClick={() => dispatch(listProducts(''))}>
 								Products
 							</button>
 						</Link>
 						<div className="dropdown-nav">
+							{/* <Link to="/pages/menu/natural_scenes"> */}
+							<button className="button nav">Natural Scenes</button>
+							{/* </Link> */}
+							<div className="dropdown-nav-content hover_fade_in w-200px">
+								<div className="dropdown-nav-subcategory">
+									<Link to="/collections/all/products/category/flowers">
+										<button className="button nav w-100per ta-l">Trees</button>
+										<i
+											style={{ '-webkitTransform': 'rotate(-180deg)' }}
+											className=" pos-abs right-10px top-8px fas fa-sort-up"
+										/>
+									</Link>
+									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px w-200px">
+										<Link to="/collections/all/products/category/flowers/subcategory/on_slate">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Slate</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/flowers/subcategory/on_driftwood">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Driftwood</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/flowers/subcategory/wall_mounted">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">Wall Mounted</button>
+											</div>
+										</Link>
+									</div>
+								</div>
+								<div className="dropdown-nav-subcategory">
+									<Link to="/collections/all/products/category/flowers">
+										<button className="button nav w-100per ta-l">Flowers</button>
+										<i
+											style={{ '-webkitTransform': 'rotate(-180deg)' }}
+											className=" pos-abs right-10px top-8px fas fa-sort-up"
+										/>
+									</Link>
+									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px w-200px">
+										<Link to="/collections/all/products/category/flowers/subcategory/on_slate">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Slate</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/flowers/subcategory/on_driftwood">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Driftwood</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/flowers/subcategory/wall_mounted">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">Wall Mounted</button>
+											</div>
+										</Link>
+									</div>
+								</div>
+								<div className="dropdown-nav-subcategory">
+									<Link to="/collections/all/products/category/leaves">
+										<button className="button nav w-100per ta-l">Leaves</button>
+										<i
+											style={{ '-webkitTransform': 'rotate(-180deg)' }}
+											className=" pos-abs right-10px top-8px fas fa-sort-up"
+										/>
+									</Link>
+									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px w-200px">
+										<Link to="/collections/all/products/category/leaves/subcategory/on_slate">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Slate</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/leaves/subcategory/on_driftwood">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">On Driftwood</button>
+											</div>
+										</Link>
+										<Link to="/collections/all/products/category/leaves/subcategory/wall_mounted">
+											<div className="row">
+												<i
+													style={{ '-webkitTransform': 'rotate(90deg)' }}
+													className="mr-30px fas fa-sort-up"
+												/>{' '}
+												<button className="button nav w-100per ta-l">Wall Mounted</button>
+											</div>
+										</Link>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className="dropdown-nav">
 							<Link to="/collections/all/products/category/barns">
 								<button className="button nav">Barns</button>
 							</Link>
-							<div className="dropdown-nav-content hover_fade_in w-200px">
+							{/* <div className="dropdown-nav-content hover_fade_in w-200px">
 								<Link to="/collections/all/products/category/barns/subcategory/on_slate">
 									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
@@ -127,10 +248,10 @@ const Header = (props) => {
 								<Link to="/collections/all/products/category/barns/subcategory/wall_mounted">
 									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
-							</div>
+							</div> */}
 						</div>
 
-						<div className="dropdown-nav">
+						{/* <div className="dropdown-nav">
 							<Link to="/collections/all/products/category/flowers">
 								<button className="button nav w-100per ta-l">Flowers</button>
 							</Link>
@@ -163,9 +284,41 @@ const Header = (props) => {
 							</div>
 						</div>
 						<div className="dropdown-nav">
-							<Link to="/pages/menu/support">
-								<button className="button nav">Support</button>
+							<Link to="/collections/all/products/category/leaves">
+								<button className="button nav">Leaves</button>
 							</Link>
+							<div className="dropdown-nav-content hover_fade_in w-200px">
+								<Link to="/collections/all/products/category/leaves/subcategory/on_slate">
+									<button className="button nav w-100per ta-l">On Slate</button>
+								</Link>
+								<Link to="/collections/all/products/category/leaves/subcategory/on_driftwood">
+									<button className="button nav w-100per ta-l">On Driftwood</button>
+								</Link>
+								<Link to="/collections/all/products/category/leaves/subcategory/wall_mounted">
+									<button className="button nav w-100per ta-l">Wall Mounted</button>
+								</Link>
+							</div>
+						</div> */}
+						<div className="dropdown-nav">
+							<Link to="/collections/all/products/category/modern">
+								<button className="button nav">Modern</button>
+							</Link>
+							{/* <div className="dropdown-nav-content hover_fade_in w-200px">
+								<Link to="/collections/all/products/category/modern/subcategory/on_slate">
+									<button className="button nav w-100per ta-l">On Slate</button>
+								</Link>
+								<Link to="/collections/all/products/category/modern/subcategory/on_driftwood">
+									<button className="button nav w-100per ta-l">On Driftwood</button>
+								</Link>
+								<Link to="/collections/all/products/category/modern/subcategory/wall_mounted">
+									<button className="button nav w-100per ta-l">Wall Mounted</button>
+								</Link>
+							</div> */}
+						</div>
+						<div className="dropdown-nav">
+							{/* <Link to="/pages/menu/support"> */}
+							<button className="button nav">Support</button>
+							{/* </Link> */}
 							<div className="dropdown-nav-content hover_fade_in w-230px">
 								<Link to="/pages/track_your_order">
 									<button className="button nav w-100per ta-l">Track Your Order</button>
@@ -177,12 +330,12 @@ const Header = (props) => {
 								<div className="dropdown-nav-subcategory">
 									<Link to="/pages/faq">
 										<button className="button nav w-100per ta-l w-100per ta-l">FAQ</button>
-										<i
+										{/* <i
 											style={{ '-webkitTransform': 'rotate(-180deg)' }}
 											className=" pos-abs right-10px top-8px fas fa-sort-up"
-										/>
+										/> */}
 									</Link>
-									<div className="dropdown-nav-subcategory-content hover_fade_in w-325px left-n325px top-n5px">
+									{/* <div className="dropdown-nav-subcategory-content hover_fade_in w-325px left-n325px top-n5px">
 										<HashLink to="/pages/faq#glowskins">
 											<div className="row">
 												<i
@@ -257,7 +410,7 @@ const Header = (props) => {
 												</button>
 											</div>
 										</HashLink>
-									</div>
+									</div> */}
 								</div>
 								<Link to="/pages/contact">
 									<button className="button nav w-100per ta-l">Contact</button>

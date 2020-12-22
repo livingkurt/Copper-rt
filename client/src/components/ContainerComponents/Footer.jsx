@@ -16,7 +16,7 @@ const Footer = () => {
 					</div>
 				</Link>
 				<div className="mt-2rem wrap jc-c ">
-					<div className="ml-10px fs-30px jc-b w-100per max-w-500px">
+					<div className="ml-10px fs-30px jc-b w-100per max-w-100px">
 						<div className="ml-10px fs-40px">
 							<a
 								href="https://www.facebook.com/gibsonlakecopperart"

@@ -55,22 +55,22 @@ const ControlPanelPage = (props) => {
 		get_monthly_income();
 	}, []);
 
-	useEffect(
-		() => {
-			get_occurrences();
-			return () => {};
-		},
-		[ orders ]
-	);
-	useEffect(
-		() => {
-			setTimeout(() => {
-				initialize_monthly_income_chart(monthly_income);
-			}, 3000);
-			return () => {};
-		},
-		[ monthly_income ]
-	);
+	// useEffect(
+	// 	() => {
+	// 		get_occurrences();
+	// 		return () => {};
+	// 	},
+	// 	[ orders ]
+	// );
+	// useEffect(
+	// 	() => {
+	// 		setTimeout(() => {
+	// 			initialize_monthly_income_chart(monthly_income);
+	// 		}, 3000);
+	// 		return () => {};
+	// 	},
+	// 	[ monthly_income ]
+	// );
 
 	const duration_of_opening = () => {
 		const current_date = new Date();
@@ -259,7 +259,7 @@ const ControlPanelPage = (props) => {
 			// return unformatted_date;
 		});
 		console.log({ income_each_month });
-		set_monthly_income(income_each_month);
+		// set_monthly_income(income_each_month);
 		// initialize_monthly_income_chart(income_each_month);
 	};
 	console.log({ monthly_income });
@@ -659,7 +659,7 @@ const ControlPanelPage = (props) => {
 						</table>
 					</div>
 				)}
-				{orders &&
+				{/* {orders &&
 				promos &&
 				affiliates && (
 					<div className="order-list responsive_table">
@@ -732,10 +732,10 @@ const ControlPanelPage = (props) => {
 							</tbody>
 						</table>
 					</div>
-				)}
+				)} */}
 			</div>
-			<h2 className="ta-c w-100per jc-c">Occurrences</h2>
-			<canvas id="occurrence_chart" ref={occurrence_chart_ref} />
+			{/* <h2 className="ta-c w-100per jc-c">Occurrences</h2> */}
+			{/* <canvas id="occurrence_chart" ref={occurrence_chart_ref} /> */}
 			{/* {product_occurrences && (
 				<div className="order-list responsive_table">
 					<table className="table">
@@ -766,7 +766,7 @@ const ControlPanelPage = (props) => {
 					</table>
 				</div>
 			)} */}
-			<h2 className="ta-c w-100per jc-c">Monthly Income</h2>
+			{/* <h2 className="ta-c w-100per jc-c">Monthly Income</h2>
 			<canvas id="monthly_income_chart" ref={monthly_income_chart_ref} />
 			{monthly_income.length > 1 && (
 				<div className="order-list responsive_table">
@@ -828,7 +828,7 @@ const ControlPanelPage = (props) => {
 						</tbody>
 					</table>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 };

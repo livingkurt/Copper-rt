@@ -7,37 +7,29 @@ const MenuPage = (props) => {
 	const pathname = props.match.params.pathname;
 
 	const determine_menu_items = () => {
-		if (pathname === 'gloving') {
+		if (pathname === 'natural_scenes') {
 			return [
-				{ category: 'frosted_diffusers', image: 'https://thumbs2.imgbox.com/1f/c9/qXeP6Rtb_t.jpg' },
-				{ category: 'mega_diffuser_caps', image: 'https://thumbs2.imgbox.com/34/a1/fH5sSzCD_t.jpg' },
-				{ category: 'diffuser_caps', image: 'https://thumbs2.imgbox.com/77/69/NeANPFC2_t.jpg' },
-				{ category: 'accessories', image: 'https://thumbs2.imgbox.com/68/f6/GBGPpTs0_t.jpg' }
+				{ category: 'trees', image: 'https://thumbs2.imgbox.com/1f/c9/qXeP6Rtb_t.jpg' },
+				{ category: 'flowers', image: 'https://thumbs2.imgbox.com/34/a1/fH5sSzCD_t.jpg' },
+				{ category: 'leaves', image: 'https://thumbs2.imgbox.com/77/69/NeANPFC2_t.jpg' }
 			];
-		} else if (pathname === 'mega_diffuser_caps') {
+		} else if (pathname === 'trees') {
 			return [
-				{ category: 'geometric', image: '' },
-				{ category: 'shapes', image: '' },
-				{ category: 'abstract', image: '' },
-				{ category: 'patterns', image: '' }
+				{ category: 'on_slate', image: '' },
+				{ category: 'on_driftwood', image: '' },
+				{ category: 'wall_mounted', image: '' }
 			];
-		} else if (pathname === 'diffuser_caps') {
+		} else if (pathname === 'flowers') {
 			return [
-				{ category: 'geometric', image: '' },
-				{ category: 'shapes', image: '' },
-				{ category: 'abstract', image: '' },
-				{ category: 'patterns', image: '' },
-				{ category: 'emojis', image: '' }
+				{ category: 'on_slate', image: '' },
+				{ category: 'on_driftwood', image: '' },
+				{ category: 'wall_mounted', image: '' }
 			];
-		} else if (pathname === 'decor') {
+		} else if (pathname === 'leaves') {
 			return [
-				{ category: 'glow_strings', image: 'https://thumbs2.imgbox.com/68/f6/GBGPpTs0_t.jpg' }
-				// { category: 'infinity_mirrors', image: 'https://thumbs2.imgbox.com/77/94/3IXh3RtO_t.jpg' }
-			];
-		} else if (pathname === 'community') {
-			return [
-				{ category: 'featured', image: 'https://thumbs2.imgbox.com/a0/9b/65wgCsF2_t.png' },
-				{ category: 'music', image: 'https://thumbs2.imgbox.com/ea/82/nqDcxRmr_t.jpg' }
+				{ category: 'on_slate', image: '' },
+				{ category: 'on_driftwood', image: '' },
+				{ category: 'wall_mounted', image: '' }
 			];
 		} else if (pathname === 'support') {
 			return [
@@ -45,12 +37,6 @@ const MenuPage = (props) => {
 				{ category: 'faq', image: 'https://thumbs2.imgbox.com/9c/ed/jGyCTlQB_t.png' },
 				{ category: 'contact', image: 'https://thumbs2.imgbox.com/6b/a4/JLxNKDWE_t.png' },
 				{ category: 'terms', image: 'https://thumbs2.imgbox.com/a0/11/BlKmYy5J_t.png' }
-			];
-		} else if (pathname === 'featured') {
-			return [
-				{ category: 'glovers', image: 'https://thumbs2.imgbox.com/1f/c9/qXeP6Rtb_t.jpg' },
-				{ category: 'artists', image: 'https://thumbs2.imgbox.com/34/a1/fH5sSzCD_t.jpg' },
-				{ category: 'producers', image: 'https://thumbs2.imgbox.com/77/69/NeANPFC2_t.jpg' }
 			];
 		}
 	};
