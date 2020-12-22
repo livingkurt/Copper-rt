@@ -824,9 +824,9 @@ router.post('/checkemail', async (req, res) => {
 router.get('/createadmin', async (req, res) => {
 	try {
 		const admin: any = new User({
-			first_name: 'Kurt',
+			first_name: 'Gregg',
 			last_name: 'LaVacque',
-			email: 'lavacquek@icloud.com',
+			email: 'info.copperart@yahoo.com',
 			password: 'admin',
 			isVerified: true,
 			isAdmin: true
