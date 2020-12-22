@@ -55,7 +55,7 @@ const MaintenancePage = (props) => {
 						/>
 					</div>
 					<h1
-						class="glow_leds_text"
+						class="gibson_lake_copper_art_text"
 						styles={{
 							fontSize: '67px',
 							margin: 0,

@@ -57,19 +57,19 @@ const Header = (props) => {
 		<div className="column">
 			<Banner />
 			<header id="overlay">
-				<div className="menu_button w-233px">
-					{/* <Link to="/">
+				<div className="menu_button left_side w-233px">
+					<Link to="/">
 						<div className="row">
 							<div className="logo h-125px w-125px">
 								<img
 									className="zoom logo_s"
-									src="/images/optimized_images/logo_images/glow_logo_optimized.png"
+									src="/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 									alt="Gibson Lake Copper Art Logo"
 									title="Big Logo"
 								/>
 							</div>
 						</div>
-					</Link> */}
+					</Link>
 					<button
 						className="button mobile nav none fs-30px h-50px w-50px p-10px"
 						onClick={openMenu}
@@ -84,7 +84,7 @@ const Header = (props) => {
 							<div className="logo_2 h-80px w-80px none">
 								<img
 									className="zoom logo_s"
-									src="/images/optimized_images/logo_images/glow_logo_optimized.png"
+									src="/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 									alt="Gibson Lake Copper Art Logo"
 									title="Small Logo"
 								/>
@@ -92,8 +92,16 @@ const Header = (props) => {
 						</Link>
 						<Link to="/">
 							<div className="row">
-								<label className="glow_leds_text">Gibson Lake Copper Art</label>
-								<label className="tm" style={{ color: '#9a9898' }}>
+								<label className="gibson_lake_copper_art_text">Gibson Lake Copper Art</label>
+								<label className="tm big" style={{ color: '#9a9898' }}>
+									™
+								</label>
+							</div>
+						</Link>
+						<Link to="/">
+							<div className="row">
+								<label className="gibson_lake_copper_art_text small none">GL Copper Art</label>
+								<label className="tm small none" style={{ color: '#9a9898' }}>
 									™
 								</label>
 							</div>
@@ -261,7 +269,7 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="nav_bar w-233px jc-fe">
+				<div className="nav_bar right_side w-233px jc-fe">
 					<Link to="/checkout/cart">
 						<button className=" button nav cart_text w-105px">
 							Cart <i className="fas fa-shopping-cart" />{' '}

@@ -81,7 +81,7 @@
   .nav_bar {
     display: none;
   }
-  .glow_leds_text {
+  .gibson_lake_copper_art_text {
     font-size: 50px !important;
   }
   .content {
@@ -133,7 +133,7 @@
     width: 100% !important;
     min-height: 81vh !important;
   }
-  .glow_leds_text {
+  .gibson_lake_copper_art_text {
     font-size: 40px !important;
   }
   .welcome_text {
@@ -178,7 +178,7 @@
     max-height: 250px !important;
     margin: 0px;
   }
-  .glow_leds_text {
+  .gibson_lake_copper_art_text {
     font-size: 35px !important;
   }
   .welcome_text {
@@ -260,7 +260,7 @@
     margin: auto;
     margin-bottom: 20px;
   }
-  .glow_leds_text {
+  .gibson_lake_copper_art_text {
     font-size: 30px !important;
   }
   .welcome_text {
@@ -269,7 +269,7 @@
 }
 
 @media only screen and (max-width: 355px) {
-  .glow_leds_text {
+  .gibson_lake_copper_art_text {
     display: none !important;
   }
   .sidebar {

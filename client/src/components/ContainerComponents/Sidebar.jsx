@@ -75,7 +75,7 @@ const Sidebar = (props) => {
 					<div className="h-50px w-50px">
 						<img
 							className="zoom logo_s"
-							src="/images/optimized_images/logo_images/glow_logo_optimized.png"
+							src="/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 							alt="Gibson Lake Copper Art Logo"
 							title="Small Logo"
 						/>

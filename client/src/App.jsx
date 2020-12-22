@@ -145,11 +145,11 @@ const App = () => {
 					<meta property="og:locale" content="en_US" />
 					<meta
 						property="og:image"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
 					<meta
 						property="og:image:secure_url"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
 					<meta property="og:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
 					<meta
@@ -167,7 +167,7 @@ const App = () => {
 					<meta name="twitter:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
 					<meta
 						name="twitter:image"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
 					<meta name="twitter:creator" content="@glow_leds" />
 				</Helmet>
