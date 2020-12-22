@@ -43,7 +43,7 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
 };
 
 mongoose
-	.connect(config.RESTORED_MONGODB_URI, {
+	.connect(config.MONGODB_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true
