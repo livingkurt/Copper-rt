@@ -57,8 +57,8 @@ const ProfilePage = (props) => {
 				<title>Profile | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Profile" />
 				<meta name="twitter:title" content="Profile" />
-				<link rel="canonical" href="https://www.glow-leds.com/secure/account/profile" />
-				<meta property="og:url" content="https://www.glow-leds.com/secure/account/profile" />
+				<link rel="canonical" href="https://www.copper-rt.com/secure/account/profile" />
+				<meta property="og:url" content="https://www.copper-rt.com/secure/account/profile" />
 			</Helmet>
 			<div>
 				<h1 style={{ textAlign: 'center', width: '100%' }}>User Profile</h1>

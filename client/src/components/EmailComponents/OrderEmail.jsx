@@ -157,7 +157,7 @@ const OrderEmail = (props) => {
 									>
 										<a
 											href={
-												'https://www.glow-leds.com/account/login?redirect=/secure/account/order/' +
+												'https://www.copper-rt.com/account/login?redirect=/secure/account/order/' +
 												order._id
 											}
 											style={{
@@ -187,7 +187,7 @@ const OrderEmail = (props) => {
 										}}
 									>
 										<a
-											href="https://www.glow-leds.com/collections/all/products"
+											href="https://www.copper-rt.com/collections/all/products"
 											style={{
 												color: 'white',
 												border: 0,
@@ -716,7 +716,7 @@ const OrderEmail = (props) => {
 									<br />We want to feature you!
 								</p>
 								<a
-									href="https://www.glow-leds.com/pages/contact/submit_content_to_be_featured"
+									href="https://www.copper-rt.com/pages/contact/submit_content_to_be_featured"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -725,7 +725,7 @@ const OrderEmail = (props) => {
 									<div style={{ display: 'flex', justifyContent: 'center' }}>
 										<a
 											href={
-												'https://www.glow-leds.com/pages/contact/submit_content_to_be_featured'
+												'https://www.copper-rt.com/pages/contact/submit_content_to_be_featured'
 											}
 											style={{
 												backgroundColor: '#4c4f60',
@@ -879,7 +879,7 @@ const OrderEmail = (props) => {
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
 								Want to change how you receive these emails? <br /> You can{' '}
 								<a
-									href="https://www.glow-leds.com/account/login?redirect=/secure/account/editprofile"
+									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{
@@ -891,7 +891,7 @@ const OrderEmail = (props) => {
 								</a>{' '}
 								or{' '}
 								<a
-									href="https://www.glow-leds.com/account/login?redirect=/secure/account/editprofile"
+									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{

@@ -26,8 +26,8 @@ const VerifiedPage = (props) => {
 				<title>Verified | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Verified" />
 				<meta name="twitter:title" content="Verified" />
-				<link rel="canonical" href="https://www.glow-leds.com/account/verified" />
-				<meta property="og:url" content="https://www.glow-leds.com/account/verified" />
+				<link rel="canonical" href="https://www.copper-rt.com/account/verified" />
+				<meta property="og:url" content="https://www.copper-rt.com/account/verified" />
 			</Helmet>
 			<h1 style={{ textAlign: 'center' }}>Thank You for Verifing your Account.</h1>
 			<h2 style={{ textAlign: 'center' }}>You will be redirected to the login screen shortly.</h2>

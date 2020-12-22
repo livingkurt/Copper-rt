@@ -25,8 +25,8 @@ const GuestCheckoutPage = (props) => {
 				<title>Guest Decision | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Guest Decision" />
 				<meta name="twitter:title" content="Guest Decision" />
-				<link rel="canonical" href="https://www.glow-leds.com/account/decision" />
-				<meta property="og:url" content="https://www.glow-leds.com/account/decision" />
+				<link rel="canonical" href="https://www.copper-rt.com/account/decision" />
+				<meta property="og:url" content="https://www.copper-rt.com/account/decision" />
 			</Helmet>
 			<form onSubmit={submitHandler}>
 				<ul className="form-container">

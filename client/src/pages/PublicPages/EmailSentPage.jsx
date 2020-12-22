@@ -9,8 +9,8 @@ const EmailSentPage = (props) => {
 				<title>Email Sent | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Check Email" />
 				<meta name="twitter:title" content="Check Email" />
-				<link rel="canonical" href="https://www.glow-leds.com/account/checkemail" />
-				<meta property="og:url" content="https://www.glow-leds.com/account/checkemail" />
+				<link rel="canonical" href="https://www.copper-rt.com/account/checkemail" />
+				<meta property="og:url" content="https://www.copper-rt.com/account/checkemail" />
 			</Helmet>
 			<h1 style={{ textAlign: 'center' }}>Email Sent Successfully!</h1>
 			<h2 style={{ textAlign: 'center' }}>Thank You for Contacting Gibson Lake Copper Art</h2>

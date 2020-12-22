@@ -24,8 +24,8 @@ const PasswordResetPublicPage = (props) => {
 				<title>Password Reset | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Password Reset" />
 				<meta name="twitter:title" content="Password Reset" />
-				<link rel="canonical" href="https://www.glow-leds.com/account/passwordreset" />
-				<meta property="og:url" content="https://www.glow-leds.com/account/passwordreset" />
+				<link rel="canonical" href="https://www.copper-rt.com/account/passwordreset" />
+				<meta property="og:url" content="https://www.copper-rt.com/account/passwordreset" />
 			</Helmet>
 			<form onSubmit={submitHandler}>
 				<ul className="form-container">

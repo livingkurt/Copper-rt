@@ -258,11 +258,11 @@ const OrderPage = (props) => {
 				<meta name="twitter:title" content="Your Order" />
 				<link
 					rel="canonical"
-					href={'https://www.glow-leds.com/secure/account/order/' + props.match.params.id}
+					href={'https://www.copper-rt.com/secure/account/order/' + props.match.params.id}
 				/>
 				<meta
 					property="og:url"
-					content={'https://www.glow-leds.com/secure/account/order/' + props.match.params.id}
+					content={'https://www.copper-rt.com/secure/account/order/' + props.match.params.id}
 				/>
 			</Helmet>
 			{order.isPaid ? <CheckoutSteps step1 step2 step3 step4 /> : <CheckoutSteps step1 step2 step3 />}

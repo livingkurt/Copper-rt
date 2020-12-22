@@ -68,8 +68,8 @@ const CartPage = (props) => {
 				<title>Cart | Gibson Lake Copper Art </title>
 				<meta property="og:title" content="Cart" />
 				<meta name="twitter:title" content="Cart" />
-				<link rel="canonical" href="https://www.glow-leds.com/checkout/cart " />
-				<meta property="og:url" content="https://www.glow-leds.com/checkout/cart" />
+				<link rel="canonical" href="https://www.copper-rt.com/checkout/cart " />
+				<meta property="og:url" content="https://www.copper-rt.com/checkout/cart" />
 			</Helmet>
 			<div className="cart">
 				<div className="cart-list">

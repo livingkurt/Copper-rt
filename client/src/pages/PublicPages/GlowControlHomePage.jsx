@@ -77,36 +77,42 @@ const GlowControlHomePage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps</title>
-				<meta property="og:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
-				<meta name="twitter:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
-				<link rel="canonical" href="https://www.glow-leds.com/" />
+				<title>Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes</title>
+				<meta
+					property="og:title"
+					content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+				/>
+				<meta
+					name="twitter:title"
+					content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+				/>
+				<link rel="canonical" href="https://www.copper-rt.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 				<meta
 					name="description"
-					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 
 				<meta
 					property="og:description"
-					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 				<meta
 					name="twitter:description"
-					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 				<meta
 					property="og:image"
-					content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 				<meta
 					property="og:image:secure_url"
-					content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 
 				<meta
 					name="twitter:image"
-					content="https://www.glow-leds.com/images/optimized_images/logo_images/glow_leds_link_logo_optimized.png"
+					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 			</Helmet>
 

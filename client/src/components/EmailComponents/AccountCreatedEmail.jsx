@@ -240,7 +240,7 @@ const AccountCreatedEmail = () => {
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
 								If you have any questions or concerns <br /> You can visit our {' '}
 								<a
-									href="https://www.glow-leds.com/pages/faq"
+									href="https://www.copper-rt.com/pages/faq"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{
@@ -252,7 +252,7 @@ const AccountCreatedEmail = () => {
 								</a>{' '}
 								page or contact us{' '}
 								<a
-									href="https://www.glow-leds.com/pages/contact"
+									href="https://www.copper-rt.com/pages/contact"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{

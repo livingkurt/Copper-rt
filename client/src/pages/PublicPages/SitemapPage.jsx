@@ -9,8 +9,8 @@ const SitemapPage = () => {
 				<title>Sitemap | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Sitemap" />
 				<meta name="twitter:title" content="Sitemap" />
-				<link rel="canonical" href="https://www.glow-leds.com/pages/sitemap" />
-				<meta property="og:url" content="https://www.glow-leds.com/pages/sitemap" />
+				<link rel="canonical" href="https://www.copper-rt.com/pages/sitemap" />
+				<meta property="og:url" content="https://www.copper-rt.com/pages/sitemap" />
 				<meta
 					name="description"
 					content="Gibson Lake Copper Art Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."

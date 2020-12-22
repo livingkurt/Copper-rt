@@ -76,8 +76,8 @@ const UserOrderPage = (props) => {
 				<title>My Orders | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="My Orders" />
 				<meta name="twitter:title" content="My Orders" />
-				<link rel="canonical" href="https://www.glow-leds.com/secure/account/orders" />
-				<meta property="og:url" content="https://www.glow-leds.com/secure/account/orders" />
+				<link rel="canonical" href="https://www.copper-rt.com/secure/account/orders" />
+				<meta property="og:url" content="https://www.copper-rt.com/secure/account/orders" />
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/account/profile">

@@ -128,14 +128,16 @@ const App = () => {
 		<Router>
 			<Container>
 				<Helmet>
-					<title>Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps</title>
+					<title>
+						Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes
+					</title>
 					<meta
 						name="description"
-						content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
 					<link rel="canonical" href="https://www.glow-leds.com" />
 					<meta charset="utf-8" />
-					<link rel="shortcut icon" type="image/x-icon" href="https://www.glow-leds.com/favicon.ico" />
+					<link rel="shortcut icon" type="image/x-icon" href="https://www.copper-rt.com/favicon.ico" />
 					<meta name="viewport" content="width=device-width, initial-scale=1" />
 					<meta name="theme-color" content="#D7D2AC" />
 					<meta name="referrer" content="always" />
@@ -145,16 +147,19 @@ const App = () => {
 					<meta property="og:locale" content="en_US" />
 					<meta
 						property="og:image"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+						content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
 					<meta
 						property="og:image:secure_url"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+						content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
-					<meta property="og:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
+					<meta
+						property="og:title"
+						content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+					/>
 					<meta
 						property="og:description"
-						content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
 					<meta property="og:url" content="https://www.glow-leds.com" />
 
@@ -162,12 +167,15 @@ const App = () => {
 					<meta name="twitter:card" content="summary" />
 					<meta
 						name="twitter:description"
-						content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
-					<meta name="twitter:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
+					<meta
+						name="twitter:title"
+						content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+					/>
 					<meta
 						name="twitter:image"
-						content="https://www.glow-leds.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+						content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 					/>
 					<meta name="twitter:creator" content="@glow_leds" />
 				</Helmet>

@@ -145,26 +145,26 @@ const ProductPage = (props) => {
 							<meta name="twitter:title" content={product.meta_title} />
 							<link
 								rel="canonical"
-								href={'https://www.glow-leds.com/collections/all/products/' + product.pathname}
+								href={'https://www.copper-rt.com/collections/all/products/' + product.pathname}
 							/>
 							<meta
 								property="og:url"
-								content={'https://www.glow-leds.com/collections/all/products/' + product.pathname}
+								content={'https://www.copper-rt.com/collections/all/products/' + product.pathname}
 							/>
 							{product.images && (
 								<div>
 									<meta
 										property="og:image"
-										content={'https://www.glow-leds.com/' + product.images[0]}
+										content={'https://www.copper-rt.com/' + product.images[0]}
 									/>
 
 									<meta
 										property="og:image:secure_url"
-										content={'https://www.glow-leds.com/' + product.images[0]}
+										content={'https://www.copper-rt.com/' + product.images[0]}
 									/>
 									<meta
 										name="twitter:image"
-										content={'https://www.glow-leds.com/' + product.images[0]}
+										content={'https://www.copper-rt.com/' + product.images[0]}
 									/>
 								</div>
 							)}
@@ -174,7 +174,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>
@@ -185,7 +185,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>
@@ -196,7 +196,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>

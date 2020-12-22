@@ -58,8 +58,8 @@ const RegisterPage = (props) => {
 				<title>Register | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Register" />
 				<meta name="twitter:title" content="Register" />
-				<link rel="canonical" href="https://www.glow-leds.com/account/register" />
-				<meta property="og:url" content="https://www.glow-leds.com/account/register" />
+				<link rel="canonical" href="https://www.copper-rt.com/account/register" />
+				<meta property="og:url" content="https://www.copper-rt.com/account/register" />
 				<meta
 					name="description"
 					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Copper-rt.com you must first create a uesr account."

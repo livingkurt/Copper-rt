@@ -145,8 +145,8 @@ const ContactPage = (props) => {
 				<title>Contact | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Contact" />
 				<meta name="twitter:title" content="Contact" />
-				<link rel="canonical" href="https://www.glow-leds.com/pages/contact" />
-				<meta property="og:url" content="https://www.glow-leds.com/pages/contact" />
+				<link rel="canonical" href="https://www.copper-rt.com/pages/contact" />
+				<meta property="og:url" content="https://www.copper-rt.com/pages/contact" />
 				<meta
 					name="description"
 					content="If you have any questions, do not hesitate to use our contact page for support."

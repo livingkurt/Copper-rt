@@ -84,8 +84,8 @@ const EditProfilePage = (props) => {
 				<title>Edit Profile | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Edit Profile" />
 				<meta name="twitter:title" content="Edit Profile" />
-				<link rel="canonical" href="https://www.glow-leds.com/secure/account/editprofile" />
-				<meta property="og:url" content="https://www.glow-leds.com/secure/account/editprofile" />
+				<link rel="canonical" href="https://www.copper-rt.com/secure/account/editprofile" />
+				<meta property="og:url" content="https://www.copper-rt.com/secure/account/editprofile" />
 			</Helmet>
 			<div className="mb-10px">
 				<button className="button primary" onClick={() => history.goBack()}>

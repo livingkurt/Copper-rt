@@ -47,7 +47,7 @@ const google_catalog_upload = async () => {
 			'sale_price',
 			'sale_price_effective_date'
 		]);
-		const { data } = await axios.get('https://www.glow-leds.com/api/products/shown');
+		const { data } = await axios.get('https://www.copper-rt.com/api/products/shown');
 
 		const new_rows = data.map((product: any, i: number) => {
 			const id = product._id;
@@ -56,7 +56,7 @@ const google_catalog_upload = async () => {
 			const availability = 'In Stock';
 			const condition = 'New';
 			const price = product.price + ' USD';
-			const link = 'https://www.glow-leds.com/collections/all/products/' + product.pathname;
+			const link = 'https://www.copper-rt.com/collections/all/products/' + product.pathname;
 			const image_link = product.images[0];
 			const brand = 'Gibson Lake Copper Art';
 			const mpn = product.pathname;

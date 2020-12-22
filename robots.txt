@@ -6,4 +6,4 @@ Disallow: /secure/*
 User-agent: *
 Allow: /
 
-Sitemap: https://www.glow-leds.com/sitemap.xml
+Sitemap: https://www.copper-rt.com/sitemap.xml

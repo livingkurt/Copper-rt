@@ -34,8 +34,8 @@ const AboutPage = () => {
 				<title>About | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="About" />
 				<meta name="twitter:title" content="About" />
-				<link rel="canonical" href="https://www.glow-leds.com/pages/about" />
-				<meta property="og:url" content="https://www.glow-leds.com/pages/about" />
+				<link rel="canonical" href="https://www.copper-rt.com/pages/about" />
+				<meta property="og:url" content="https://www.copper-rt.com/pages/about" />
 				<meta
 					name="description"
 					content="Learn how Gibson Lake Copper Art got started and more in our About Page"
