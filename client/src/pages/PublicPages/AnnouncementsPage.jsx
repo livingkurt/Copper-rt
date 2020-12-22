@@ -51,22 +51,22 @@ const AnnouncementPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Announcements | Glow LEDs</title>
+				<title>Announcements | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Featured" />
 				<meta name="twitter:title" content="Featured" />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/featured" />
 				<meta property="og:url" content="https://www.glow-leds.com/pages/featured" />
 				<meta
 					name="description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 				<meta
 					property="og:description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 				<meta
 					name="twitter:description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 			</Helmet>
 			<div className="jc-c">
@@ -77,7 +77,7 @@ const AnnouncementPage = (props) => {
 				emails.slice(0).reverse().map((email) => {
 					return (
 						<div className="home_page_divs">
-							<div style={{ backgroundColor: '#333333', padding: '20px' }} className="br-10px">
+							<div style={{ backgroundColor: '#5a4d41', padding: '20px' }} className="br-10px">
 								<h4
 									style={{
 										textAlign: 'center',

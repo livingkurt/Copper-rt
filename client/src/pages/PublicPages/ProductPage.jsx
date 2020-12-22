@@ -140,7 +140,7 @@ const ProductPage = (props) => {
 				{product && (
 					<div className="column">
 						<Helmet>
-							<title>{product.meta_title + ' | Glow LEDs'}</title>
+							<title>{product.meta_title + ' | Gibson Lake Copper Art'}</title>
 							<meta property="og:title" content={product.meta_title} />
 							<meta name="twitter:title" content={product.meta_title} />
 							<link
@@ -174,7 +174,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
 									)
 								}
 							/>
@@ -185,7 +185,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
 									)
 								}
 							/>
@@ -196,7 +196,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
+										'Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings.'
 									)
 								}
 							/>

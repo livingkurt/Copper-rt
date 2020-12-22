@@ -42,6 +42,8 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
 	}
 };
 
+console.log(config.MONGODB_URI)
+
 mongoose
 	.connect(config.MONGODB_URI, {
 		useNewUrlParser: true,

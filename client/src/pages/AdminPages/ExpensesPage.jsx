@@ -139,7 +139,7 @@ const ExpensesPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Expenses | Glow LEDs</title>
+				<title>Admin Expenses | Gibson Lake Copper Art</title>
 			</Helmet>
 
 			<div className="wrap jc-b">

@@ -6,26 +6,26 @@ const SitemapPage = () => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Sitemap | Glow LEDs</title>
+				<title>Sitemap | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Sitemap" />
 				<meta name="twitter:title" content="Sitemap" />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/sitemap" />
 				<meta property="og:url" content="https://www.glow-leds.com/pages/sitemap" />
 				<meta
 					name="description"
-					content="Glow LEDs Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
+					content="Gibson Lake Copper Art Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
 				/>
 				<meta
 					property="og:description"
-					content="Glow LEDs Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
+					content="Gibson Lake Copper Art Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
 				/>
 				<meta
 					name="twitter:description"
-					content="Glow LEDs Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
+					content="Gibson Lake Copper Art Sitemap of all the places you can be on our website. Explore and you may find a place you've never been before."
 				/>
 			</Helmet>
 			<div class="inner_content">
-				<h1 style={{ textAlign: 'center' }}>Glow LEDs Sitemap</h1>
+				<h1 style={{ textAlign: 'center' }}>Gibson Lake Copper Art Sitemap</h1>
 				<div className="wrap jc-b">
 					<div style={{ width: '50%' }}>
 						<h2 style={{ textAlign: 'left' }}>Home</h2>

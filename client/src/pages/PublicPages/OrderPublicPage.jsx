@@ -128,7 +128,7 @@ const OrderPublicPage = (props) => {
 		{ name: 'Manufactured', color: '#4b7188' },
 		{ name: 'Packaged', color: '#6f5f7d' },
 		{ name: 'Shipped', color: '#636363' },
-		{ name: 'Delivered', color: '#333333' },
+		{ name: 'Delivered', color: '#5a4d41' },
 		{ name: 'Refunded', color: '#a9a9a9' }
 	];
 
@@ -216,7 +216,7 @@ const OrderPublicPage = (props) => {
 	) : (
 		<div>
 			<Helmet>
-				<title>Your Order | Glow LEDs</title>
+				<title>Your Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Your Order" />
 				<meta name="twitter:title" content="Your Order" />
 				<link
@@ -486,7 +486,7 @@ const OrderPublicPage = (props) => {
 						{!order.isPaid && (
 							<div>
 								<StripeCheckout
-									name="Glow LEDs"
+									name="Gibson Lake Copper Art"
 									description={`Pay for Order`}
 									amount={(order.totalPrice ? order.totalPrice.toFixed(2) : order.totalPrice) * 100}
 									token={(token) => pay_order(token)}

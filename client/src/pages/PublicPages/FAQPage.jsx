@@ -8,22 +8,22 @@ const FAQPage = () => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Frequently Asked Questions | Glow LEDs</title>
+				<title>Frequently Asked Questions | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Frequently Asked Questions" />
 				<meta name="twitter:title" content="Frequently Asked Questions" />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/faq" />
 				<meta property="og:url" content="https://www.glow-leds.com/pages/faq" />
 				<meta
 					name="description"
-					content="Learn how the Glow LEDs process works, and how to get your products to you and working as fast as possible."
+					content="Learn how the Gibson Lake Copper Art process works, and how to get your products to you and working as fast as possible."
 				/>
 				<meta
 					property="og:description"
-					content="Learn how the Glow LEDs process works, and how to get your products to you and working as fast as possible."
+					content="Learn how the Gibson Lake Copper Art process works, and how to get your products to you and working as fast as possible."
 				/>
 				<meta
 					name="twitter:description"
-					content="Learn how the Glow LEDs process works, and how to get your products to you and working as fast as possible."
+					content="Learn how the Gibson Lake Copper Art process works, and how to get your products to you and working as fast as possible."
 				/>
 			</Helmet>
 			<div class="inner_content">
@@ -505,7 +505,7 @@ const FAQPage = () => {
 
 						<ul style={{ padding: '18px', marginBottom: 0 }}>
 							<li style={{ lineHeight: '25px' }}>
-								Glow-LEDs.com is headquartered in Austin, Texas{' '}
+								Copper-rt.com is headquartered in Austin, Texas{' '}
 								<span aria-label="emoji" role="img" style={{ marginRight: '3px' }}>
 									🇨🇱
 								</span>️ and orders are processed as they are received{' '}

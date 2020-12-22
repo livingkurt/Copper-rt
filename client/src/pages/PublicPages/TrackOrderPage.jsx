@@ -7,7 +7,7 @@ const ViewOrder = (props) => {
 	return (
 		<div className="form">
 			<Helmet>
-				<title>Track Order | Glow LEDs</title>
+				<title>Track Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Guest Decision" />
 				<meta name="twitter:title" content="Guest Decision" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/decision" />

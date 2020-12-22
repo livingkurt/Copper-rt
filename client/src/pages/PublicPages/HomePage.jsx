@@ -33,23 +33,23 @@ const HomePage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Glow LEDs | Home of the LED Glove Diffuser Caps</title>
-				<meta property="og:title" content="Glow LEDs | Home of the LED Glove Diffuser Caps" />
-				<meta name="twitter:title" content="Glow LEDs | Home of the LED Glove Diffuser Caps" />
+				<title>Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps</title>
+				<meta property="og:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
+				<meta name="twitter:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
 				<link rel="canonical" href="https://www.glow-leds.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 				<meta
 					name="description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 
 				<meta
 					property="og:description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 				<meta
 					name="twitter:description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 				<meta
 					property="og:image"
@@ -68,7 +68,7 @@ const HomePage = (props) => {
 
 			<div className="jc-c">
 				<h1 className="welcome_text mb-3rem" style={{ fontSize: '6rem' }}>
-					Welcome to Glow-LEDs
+					Welcome to Gibson Lake Copper Art
 				</h1>
 			</div>
 			{content &&
@@ -125,7 +125,7 @@ const HomePage = (props) => {
 				<h2 style={{ textAlign: 'center' }}>From a Glover that just wants the world to stay lit</h2>
 			</div>
 			<p className="p_descriptions" style={{ textAlign: 'center' }}>
-				Here at Glow-LEDs.com we strive to bring as much light in to as many lives as possible. All items are
+				Here at Copper-rt.com we strive to bring as much light in to as many lives as possible. All items are
 				handmade at my home in Austin, TX and all ideas came from my own brain. Our items were dreamt up with
 				the intention of turning your home into a glowing rainbow dreamland with infinite hours of
 				entertainment. You don’t need a party to enjoy our products (although parties are definitely

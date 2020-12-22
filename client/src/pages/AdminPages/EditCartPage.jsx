@@ -118,7 +118,7 @@ const EditCartPage = (props) => {
 						{cart && (
 							<div>
 								<Helmet>
-									<title>Edit Cart | Glow LEDs</title>
+									<title>Edit Cart | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '30rem', marginBottom: '20px' }}>

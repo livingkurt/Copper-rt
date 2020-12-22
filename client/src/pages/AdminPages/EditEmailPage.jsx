@@ -144,7 +144,7 @@ const EditEmailPage = (props) => {
 						{email && (
 							<div>
 								<Helmet>
-									<title>Edit Email | Glow LEDs</title>
+									<title>Edit Email | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '50rem', marginBottom: '20px' }}>

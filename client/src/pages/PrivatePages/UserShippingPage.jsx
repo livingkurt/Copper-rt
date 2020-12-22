@@ -95,7 +95,7 @@ const ShippingPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>Shipping | Glow LEDs</title>
+				<title>Shipping | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Shipping" />
 				<meta name="twitter:title" content="Shipping" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/shipping" />

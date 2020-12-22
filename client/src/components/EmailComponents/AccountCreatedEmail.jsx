@@ -49,15 +49,15 @@ const AccountCreatedEmail = () => {
 							borderRadius: '20px'
 						}}
 					>
-						<div style={{ backgroundColor: '#333333', padding: '20px' }}>
+						<div style={{ backgroundColor: '#5a4d41', padding: '20px' }}>
 							<div style={{ display: 'flex', justifyContent: 'center' }}>
 								<table width="100%" style={{ maxWidth: '500px' }}>
 									<tr>
 										<td>
 											<img
 												src="https://images2.imgbox.com/63/e7/BPGMUlpc_o.png"
-												alt="Glow LEDs Logo"
-												title="Glow LEDs Logo"
+												alt="Gibson Lake Copper Art Logo"
+												title="Gibson Lake Copper Art Logo"
 												style={{
 													textAlign: 'center',
 													width: '100%',
@@ -156,7 +156,7 @@ const AccountCreatedEmail = () => {
 								</a>
 							</div>
 						</div>
-						<div style={{ backgroundColor: '#333333', padding: '20px' }}>
+						<div style={{ backgroundColor: '#5a4d41', padding: '20px' }}>
 							<div
 								style={{
 									marginLeft: '10px',

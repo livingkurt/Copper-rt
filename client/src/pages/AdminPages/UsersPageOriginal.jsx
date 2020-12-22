@@ -51,7 +51,7 @@ const UsersPage = (props) => {
 	);
 
 	const colors = [
-		{ name: 'Not Verified', color: '#333333' },
+		{ name: 'Not Verified', color: '#5a4d41' },
 		{ name: 'Verified', color: '#626262' },
 		{ name: 'Admin', color: '#8e8e8e' }
 	];
@@ -76,7 +76,7 @@ const UsersPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Users | Glow LEDs</title>
+				<title>Admin Users | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				{colors.map((color) => {

@@ -255,7 +255,7 @@ const EditOrderPage = (props) => {
 						{order && (
 							<div>
 								<Helmet>
-									<title>Edit Order | Glow LEDs</title>
+									<title>Edit Order | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul

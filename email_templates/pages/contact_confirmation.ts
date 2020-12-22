@@ -23,7 +23,7 @@ export default (props: {
       We'll answer your questions/requests as soon as possible. Thank you for your patience and support!
     </p>
     <h3>
-      Message to Glow LEDs from you,
+      Message to Gibson Lake Copper Art from you,
     </h3>
     <p>
       ${props.message}

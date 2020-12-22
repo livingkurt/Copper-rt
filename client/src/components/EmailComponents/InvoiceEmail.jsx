@@ -115,7 +115,7 @@ const InvoiceEmail = (props) => {
 								>
 									<tr>
 										<td valign="top">
-											Glow LEDs<br />
+											Gibson Lake Copper Art<br />
 											404 Kenniston Dr<br />
 											Austin, TX 78752<br />
 											info.glowleds@gmail.com
@@ -613,7 +613,9 @@ const InvoiceEmail = (props) => {
 						</div>
 					</div>
 					<div>
-						<h3 style={{ fontSize: '8px', textAlign: 'center' }}>Welcome to the Glow LEDs family!</h3>
+						<h3 style={{ fontSize: '8px', textAlign: 'center' }}>
+							Welcome to the Gibson Lake Copper Art family!
+						</h3>
 						<div style={{ fontSize: '8px', textAlign: 'center' }}>
 							We are so happy to share our art with you.
 						</div>

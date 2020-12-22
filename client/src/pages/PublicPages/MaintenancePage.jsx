@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 const MaintenancePage = (props) => {
 	const header_styles = {
 		gridArea: 'header',
-		backgroundColor: '#333333',
+		backgroundColor: '#5a4d41',
 		color: '#ffffff',
 		display: 'flex',
 		alignItems: 'center',
@@ -28,7 +28,7 @@ const MaintenancePage = (props) => {
 	return (
 		<div style={{ padding: 0 }}>
 			<Helmet>
-				<title>Maintenance | Glow LEDs</title>
+				<title>Maintenance | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Maintenance" />
 				<meta name="twitter:title" content="Maintenance" />
 				<link rel="canonical" href="https://www.glow-leds.com/" />
@@ -41,8 +41,8 @@ const MaintenancePage = (props) => {
 							className="zoom logo"
 							height="125px"
 							src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-							alt="Glow LEDs Logo"
-							title="Glow LEDs"
+							alt="Gibson Lake Copper Art Logo"
+							title="Gibson Lake Copper Art"
 						/>
 					</div>
 					<div className="jc-c ai-c logo_text">
@@ -50,8 +50,8 @@ const MaintenancePage = (props) => {
 							className="logo_2"
 							style={{ display: 'none', height: '80px' }}
 							src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-							alt="Glow LEDs Logo"
-							title="Glow LEDs"
+							alt="Gibson Lake Copper Art Logo"
+							title="Gibson Lake Copper Art"
 						/>
 					</div>
 					<h1
@@ -66,21 +66,21 @@ const MaintenancePage = (props) => {
 							marginTop: '17px'
 						}}
 					>
-						Glow LEDs
+						Gibson Lake Copper Art
 					</h1>
 				</div>
 			</div>
 			<div style={content_styles}>
 				<div className="jc-c">
 					<h2 className="welcome_text" style={{ fontSize: '6rem', marginBottom: '3vh' }}>
-						Glow LEDs Coming Soon!
+						Gibson Lake Copper Art Coming Soon!
 					</h2>
 				</div>
 				<div className="jc-c">
 					<h2>From a Glover that just wants the world to stay lit</h2>
 				</div>
 				<p className="p_descriptions" style={{ textAlign: 'center' }}>
-					Here at Glow-LEDs.com we strive to bring as much light in to as many lives as possible. All items
+					Here at Copper-rt.com we strive to bring as much light in to as many lives as possible. All items
 					are handmade at my home in Austin, TX and all ideas came from my own brain. Our items were dreamt up
 					with the intention of turning your home into a glowing rainbow dreamland with infinite hours of
 					entertainment. You don’t need a party to enjoy our products (although parties are definitely

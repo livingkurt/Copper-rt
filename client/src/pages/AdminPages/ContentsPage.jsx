@@ -42,7 +42,7 @@ const ContentsPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Contents | Glow LEDs</title>
+				<title>Admin Contents | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-fe">
 				<Link to="/secure/glow/editcontent">

@@ -99,7 +99,7 @@ const EditUserPage = (props) => {
 	return (
 		<div className="profile_container column p-20px">
 			<Helmet>
-				<title>Edit {first_name}'s Profile | Glow LEDs</title>
+				<title>Edit {first_name}'s Profile | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="m-10px">
 				<Link to={'/secure/glow/userprofile/' + user._id}>

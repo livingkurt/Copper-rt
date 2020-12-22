@@ -76,14 +76,14 @@ const Sidebar = (props) => {
 						<img
 							className="zoom logo_s"
 							src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-							alt="Glow LEDs Logo"
+							alt="Gibson Lake Copper Art Logo"
 							title="Small Logo"
 						/>
 					</div>
 				</Link>
 				<Link to="/">
 					<div className="row">
-						<label className="ml-5px fs-30px mv-0px ff-h">Glow LEDs</label>
+						<label className="ml-5px fs-30px mv-0px ff-h">Gibson Lake Copper Art</label>
 						{/* <label className="tm" style={{ color: '#9a9898' }}>
 							™
 						</label> */}

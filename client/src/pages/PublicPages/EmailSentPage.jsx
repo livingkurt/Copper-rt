@@ -6,14 +6,14 @@ const EmailSentPage = (props) => {
 	return (
 		<div className="column jc-c">
 			<Helmet>
-				<title>Email Sent | Glow LEDs</title>
+				<title>Email Sent | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Check Email" />
 				<meta name="twitter:title" content="Check Email" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/checkemail" />
 				<meta property="og:url" content="https://www.glow-leds.com/account/checkemail" />
 			</Helmet>
 			<h1 style={{ textAlign: 'center' }}>Email Sent Successfully!</h1>
-			<h2 style={{ textAlign: 'center' }}>Thank You for Contacting Glow LEDs</h2>
+			<h2 style={{ textAlign: 'center' }}>Thank You for Contacting Gibson Lake Copper Art</h2>
 			<p style={{ textAlign: 'center' }}>We'll answer your questions/requests as soon as possible.</p>
 			<p style={{ textAlign: 'center' }}>Thank you for your patience and support!</p>
 			<p style={{ textAlign: 'center' }}>

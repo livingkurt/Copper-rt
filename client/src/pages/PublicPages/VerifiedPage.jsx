@@ -23,7 +23,7 @@ const VerifiedPage = (props) => {
 	return (
 		<div className="column jc-c">
 			<Helmet>
-				<title>Verified | Glow LEDs</title>
+				<title>Verified | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Verified" />
 				<meta name="twitter:title" content="Verified" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/verified" />

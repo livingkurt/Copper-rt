@@ -67,7 +67,7 @@ const ChangePasswordPage = (props) => {
 	return (
 		<div className="profile_container column p-20px">
 			<Helmet>
-				<title>Change Password | Glow LEDs</title>
+				<title>Change Password | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Change Password" />
 				<meta name="twitter:title" content="Change Password" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/account/changepassword" />

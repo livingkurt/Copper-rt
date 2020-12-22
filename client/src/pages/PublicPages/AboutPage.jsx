@@ -31,14 +31,23 @@ const AboutPage = () => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>About | Glow LEDs</title>
+				<title>About | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="About" />
 				<meta name="twitter:title" content="About" />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/about" />
 				<meta property="og:url" content="https://www.glow-leds.com/pages/about" />
-				<meta name="description" content="Learn how Glow LEDs got started and more in our About Page" />
-				<meta property="og:description" content="Learn how Glow LEDs got started and more in our About Page" />
-				<meta name="twitter:description" content="Learn how Glow LEDs got started and more in our About Page" />
+				<meta
+					name="description"
+					content="Learn how Gibson Lake Copper Art got started and more in our About Page"
+				/>
+				<meta
+					property="og:description"
+					content="Learn how Gibson Lake Copper Art got started and more in our About Page"
+				/>
+				<meta
+					name="twitter:description"
+					content="Learn how Gibson Lake Copper Art got started and more in our About Page"
+				/>
 			</Helmet>
 			<MessengerCustomerChat
 				pageId="100365571740684"
@@ -46,7 +55,7 @@ const AboutPage = () => {
 				htmlRef={window.location.pathname}
 			/>
 			<div class="inner_content">
-				<h1 style={{ fontSize: 40, textAlign: 'center' }}>About Glow-LEDs</h1>
+				<h1 style={{ fontSize: 40, textAlign: 'center' }}>About Gibson Lake Copper Art</h1>
 				<div>
 					<div
 						style={{

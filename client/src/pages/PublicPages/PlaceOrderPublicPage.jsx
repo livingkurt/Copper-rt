@@ -383,7 +383,7 @@ const PlaceOrderPublicPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>Place Order | Glow LEDs</title>
+				<title>Place Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />
@@ -605,7 +605,7 @@ const PlaceOrderPublicPage = (props) => {
 						!account_create && (
 							<div>
 								<StripeCheckout
-									name="Glow LEDs"
+									name="Gibson Lake Copper Art"
 									description={`Pay for Order`}
 									amount={totalPrice.toFixed(2) * 100}
 									token={(token) => placeOrderHandler(token, false)}
@@ -674,7 +674,7 @@ const PlaceOrderPublicPage = (props) => {
 						passwords_check && (
 							<div>
 								<StripeCheckout
-									name="Glow LEDs"
+									name="Gibson Lake Copper Art"
 									description={`Pay for Order`}
 									amount={totalPrice.toFixed(2) * 100}
 									token={(token) => placeOrderHandler(token, true)}

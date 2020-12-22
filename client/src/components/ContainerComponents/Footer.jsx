@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<footer className="ta-c w-100per mt-5rem h-400px" style={{ backgroundColor: '#333333' }}>
+		<footer className="ta-c w-100per mt-5rem h-400px" style={{ backgroundColor: '#5a4d41' }}>
 			<div className="footer-image">
-				<Link to="/">
+				{/* <Link to="/">
 					<div className="">
 						<img
 							className=""
 							src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-							alt="Glow LEDs Logo"
+							alt="Gibson Lake Copper Art Logo"
 							title="Big Logo"
 						/>
 					</div>
-				</Link>
+				</Link> */}
 				<div className="mt-2rem wrap jc-c ">
 					<div className="ml-10px fs-30px jc-b w-100per max-w-500px">
 						<div className="ml-10px fs-40px">

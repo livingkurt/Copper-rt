@@ -38,7 +38,7 @@ I have been facinated with LEDs ever since I saw my first light show back in ear
 First clone this repo
 
 ```shell
-git clone git@github.com:livingkurt/Glow-LEDs.git
+git clone git@github.com:livingkurt/Gibson Lake Copper Art.git
 ```
 
 Install Dependancies

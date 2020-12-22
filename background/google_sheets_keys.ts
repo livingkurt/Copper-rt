@@ -60,7 +60,7 @@ const facebook_catalog_upload = async () => {
 			const price = product.price + ' USD';
 			const link = 'https://www.glow-leds.com/collections/all/products/' + product.pathname;
 			const image_link = product.images[0];
-			const brand = 'Glow LEDs';
+			const brand = 'Gibson Lake Copper Art';
 			const inventory = product.countInStock;
 			const fb_product_category = 'toys & games > electronic toys';
 			const google_product_category = 'Toys & Games > Toys > Visual Toys';

@@ -54,7 +54,7 @@ const ProfilePage = (props) => {
 	return (
 		<div className="column p-20px inner_content">
 			<Helmet>
-				<title>Profile | Glow LEDs</title>
+				<title>Profile | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Profile" />
 				<meta name="twitter:title" content="Profile" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/account/profile" />

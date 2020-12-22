@@ -58,18 +58,18 @@ const Header = (props) => {
 			<Banner />
 			<header id="overlay">
 				<div className="menu_button w-233px">
-					<Link to="/">
+					{/* <Link to="/">
 						<div className="row">
 							<div className="logo h-125px w-125px">
 								<img
 									className="zoom logo_s"
 									src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-									alt="Glow LEDs Logo"
+									alt="Gibson Lake Copper Art Logo"
 									title="Big Logo"
 								/>
 							</div>
 						</div>
-					</Link>
+					</Link> */}
 					<button
 						className="button mobile nav none fs-30px h-50px w-50px p-10px"
 						onClick={openMenu}
@@ -85,14 +85,14 @@ const Header = (props) => {
 								<img
 									className="zoom logo_s"
 									src="/images/optimized_images/logo_images/glow_logo_optimized.png"
-									alt="Glow LEDs Logo"
+									alt="Gibson Lake Copper Art Logo"
 									title="Small Logo"
 								/>
 							</div>
 						</Link>
 						<Link to="/">
 							<div className="row">
-								<label className="glow_leds_text">Glow LEDs</label>
+								<label className="glow_leds_text">Gibson Lake Copper Art</label>
 								<label className="tm" style={{ color: '#9a9898' }}>
 									™
 								</label>

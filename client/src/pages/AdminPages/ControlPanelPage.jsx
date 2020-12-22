@@ -109,7 +109,7 @@ const ControlPanelPage = (props) => {
 						data: occurrences.map((product) => product.occurrence),
 						fill: true,
 						borderColor: '#3e4c6d',
-						// backgroundColor: '#333333',
+						// backgroundColor: '#5a4d41',
 						// backgroundColor: [ 'red', 'blue', 'green', 'blue', 'red', 'blue' ],
 						backgroundColor: occurrences.map((item) => {
 							num += multiplier;
@@ -377,7 +377,7 @@ const ControlPanelPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Control Panel | Glow LEDs</title>8
+				<title>Admin Control Panel | Gibson Lake Copper Art</title>8
 			</Helmet>
 			<div className="jc-c">
 				<h1 style={{ textAlign: 'center' }}>Control Panel</h1>

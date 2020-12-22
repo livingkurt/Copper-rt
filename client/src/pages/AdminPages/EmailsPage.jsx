@@ -69,7 +69,7 @@ const EmailsPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Emails | Glow LEDs</title>
+				<title>Admin Emails | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/glow/emails/announcement">

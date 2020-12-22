@@ -65,7 +65,7 @@ const FeaturesPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Features | Glow LEDs</title>
+				<title>Admin Features | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/glow/editfeature">

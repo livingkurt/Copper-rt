@@ -128,7 +128,7 @@ const EditAffiliatePage = (props) => {
 						{affiliate && (
 							<div>
 								<Helmet>
-									<title>Edit Affiliate| Glow LEDs</title>
+									<title>Edit Affiliate| Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '30rem', marginBottom: '20px' }}>

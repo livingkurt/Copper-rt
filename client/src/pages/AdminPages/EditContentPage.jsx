@@ -113,7 +113,7 @@ const EditContentPage = (props) => {
 						{content && (
 							<div>
 								<Helmet>
-									<title>Edit Content | Glow LEDs</title>
+									<title>Edit Content | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul

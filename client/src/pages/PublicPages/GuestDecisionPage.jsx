@@ -22,7 +22,7 @@ const GuestCheckoutPage = (props) => {
 	return (
 		<div className="form">
 			<Helmet>
-				<title>Guest Decision | Glow LEDs</title>
+				<title>Guest Decision | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Guest Decision" />
 				<meta name="twitter:title" content="Guest Decision" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/decision" />

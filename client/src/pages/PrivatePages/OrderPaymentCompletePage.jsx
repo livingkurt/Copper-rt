@@ -6,7 +6,7 @@ const OrderPaymentCompletePage = (props) => {
 	return (
 		<div className="column jc-c">
 			<Helmet>
-				<title>Payment Complete | Glow LEDs</title>
+				<title>Payment Complete | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Payment Complete" />
 				<meta name="twitter:title" content="Payment Complete" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/paymentcomplete/" />

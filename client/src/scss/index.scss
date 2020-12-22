@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "main_font";
-	src: url("/fonts/Neou-Bold.otf");
+	src: url("/fonts/UniNeue-Light.otf");
 }
 
 @font-face {
 	font-family: "heading_font";
-	src: url("/fonts/beyond_the_mountains.otf");
+	src: url("/fonts/a_love_of_thunder.ttf");
 }
 
 @import './size/width.scss';
@@ -25,8 +25,8 @@
 @import './alignment/flex.scss';
 @import './alignment/position.scss';
 
-$background_color: #272727;
-$content_bg_color: #272727;
+$background_color: #D7D2AC;
+$content_bg_color: #D7D2AC;
 $font_color: white;
 $font_size: 1.6rem;
 $validation_color: #ff4a4a;
@@ -67,7 +67,7 @@ body {
 }
 
 footer {
-  background: linear-gradient(0deg, #4d5060 0%, #272727 100%);
+  background: linear-gradient(0deg, #5a4d41 0%, #D7D2AC 100%);
 }
 
 .footer-image {
@@ -105,9 +105,10 @@ button {
 .content {
 	background-color: $content_bg_color;
 	box-shadow: $bs_deep;
-	background: linear-gradient(180deg, rgba(138, 138, 138, 1) 0%, rgba(39, 39, 39, 1) 100%);
+	// background: linear-gradient(180deg, #6b5b4d 0%, #5a4d41 100%);
+	background: linear-gradient(180deg, #A0977A 0%, #5a4d41 100%);
 	border-radius: 20px;
-	margin: 205px auto 20px;
+	margin: 230px auto 20px;
 	padding: 2rem;
 	min-height: 65vh;
 	max-width: 1500px;
@@ -133,7 +134,7 @@ h3 {
 }
 
 header {
-	background-color: #333333;
+	background-color: #5a4d41;
 	color: $font_color;
 	display: flex;
 	align-items: center;
@@ -150,7 +151,7 @@ header {
 }
 
 .banner {
-	background-color: #4d5061;
+	background-color: #2F2216;
 	z-index: 101;
 	height: 22px;
 	width: 100%;
@@ -684,11 +685,13 @@ th {
 	padding: 1rem;
 	list-style-type: none;
 	z-index: 1;
-	background-color: #333333;
+	background-color: #5a4d41;
 	margin: 0;
 	border-radius: $br_small_containers;
 	box-shadow: $bs_deep;
 }
+
+
 
 .dropdown:hover .dropdown-content {
 	display: flex;
@@ -707,7 +710,7 @@ th {
 	padding: 1rem;
 	list-style-type: none;
 	z-index: 1;
-	background-color: #333333;
+	background-color: #5a4d41;
 	margin: 0;
 	border-radius: $br_small_containers;
 	/* margin-top: 0.4rem; */
@@ -727,7 +730,7 @@ th {
 	padding: 1rem;
 	list-style-type: none;
 	z-index: 1;
-	background-color: #333333;
+	background-color: #5a4d41;
 	margin: 0;
 	border-radius: $br_small_containers;
 	/* margin-top: 0.4rem; */
@@ -1190,7 +1193,7 @@ video {
 
 .payment_message {
 	z-index: 2;
-	background: #333333;
+	background: #5a4d41;
 	padding: 15px;
 	border-radius: 20px;
 	// font-size: 20px;

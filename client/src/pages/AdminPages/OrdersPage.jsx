@@ -54,7 +54,7 @@ const OrdersPage = (props) => {
 		{ name: 'Manufactured', color: '#4b7188' },
 		{ name: 'Packaged', color: '#6f5f7d' },
 		{ name: 'Shipped', color: '#636363' },
-		{ name: 'Delivered', color: '#333333' }
+		{ name: 'Delivered', color: '#5a4d41' }
 		// { name: 'Refunded', color: '#a9a9a9' }
 	];
 
@@ -125,7 +125,7 @@ const OrdersPage = (props) => {
 	return (
 		<div className="profile_container wrap column p-20px">
 			<Helmet>
-				<title>Admin Orders | Glow LEDs</title>
+				<title>Admin Orders | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/glow/controlpanel">

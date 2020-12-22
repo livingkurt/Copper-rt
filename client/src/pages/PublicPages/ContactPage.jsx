@@ -142,7 +142,7 @@ const ContactPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Contact | Glow LEDs</title>
+				<title>Contact | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Contact" />
 				<meta name="twitter:title" content="Contact" />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/contact" />
@@ -451,9 +451,12 @@ const ContactPage = (props) => {
 						<div>
 							<h2>Content includes: </h2>
 							<ul style={{ lineHeight: '25px', paddingLeft: '20px' }}>
-								<li>Pictures or Video of your Lightshow with Glow LEDs Diffusers or Diffuser Caps. </li>
-								<li>Pictures or Video of your Glow LEDs Infintiy Mirror.</li>
-								<li>Pictures or Video of your Glow LEDs Glow Strings.</li>
+								<li>
+									Pictures or Video of your Lightshow with Gibson Lake Copper Art Diffusers or
+									Diffuser Caps.{' '}
+								</li>
+								<li>Pictures or Video of your Gibson Lake Copper Art Infintiy Mirror.</li>
+								<li>Pictures or Video of your Gibson Lake Copper Art Glow Strings.</li>
 							</ul>
 						</div>
 					)}

@@ -69,7 +69,7 @@ const AffiliatesPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Affiliates | Glow LEDs</title>
+				<title>Admin Affiliates | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<div className="wrap jc-b">

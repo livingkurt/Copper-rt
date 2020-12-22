@@ -448,7 +448,7 @@ router.post('/contactconfirmation', async (req, res) => {
 	let mailOptions = {
 		from: process.env.DISPLAY_EMAIL,
 		to: req.body.email,
-		subject: `Thank you for Contacting Glow LEDs Support`,
+		subject: `Thank you for Contacting Gibson Lake Copper Art Support`,
 		html: contact_confirmation(req.body)
 	};
 
@@ -475,8 +475,8 @@ router.post('/password_reset', async (req, res) => {
 	let mailOptions = {
 		from: process.env.DISPLAY_EMAIL,
 		to: req.body.data.email,
-		subject: 'Glow LEDs Password Reset',
-		html: App({ body: password_reset(req.body), title: 'Glow LEDs Password Reset' })
+		subject: 'Gibson Lake Copper Art Password Reset',
+		html: App({ body: password_reset(req.body), title: 'Gibson Lake Copper Art Password Reset' })
 	};
 
 	transporter.sendMail(mailOptions, (err, data) => {
@@ -495,8 +495,8 @@ router.post('/reset_password', async (req, res) => {
 	let mailOptions = {
 		from: process.env.DISPLAY_EMAIL,
 		to: req.body.email,
-		subject: 'Glow LEDs Reset Password',
-		html: App({ body: reset_password(req.body), title: 'Glow LEDs Reset Password' })
+		subject: 'Gibson Lake Copper Art Reset Password',
+		html: App({ body: reset_password(req.body), title: 'Gibson Lake Copper Art Reset Password' })
 	};
 
 	transporter.sendMail(mailOptions, (err, data) => {
@@ -516,8 +516,8 @@ router.post('/verified', async (req, res) => {
 	let mailOptions = {
 		from: process.env.DISPLAY_EMAIL,
 		to: req.body.email,
-		subject: 'Glow LEDs Account Created',
-		html: App({ body: account_created(req.body), title: 'Glow LEDs Account Created' })
+		subject: 'Gibson Lake Copper Art Account Created',
+		html: App({ body: account_created(req.body), title: 'Gibson Lake Copper Art Account Created' })
 	};
 
 	transporter.sendMail(mailOptions, (err, data) => {
@@ -537,7 +537,7 @@ router.post('/verified', async (req, res) => {
 // 	let mailOptions = {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.email,
-// 		subject: 'Glow LEDs Account Verification',
+// 		subject: 'Gibson Lake Copper Art Account Verification',
 // 		html: main_layout(verify_account_view(req.body), styles())
 // 	};
 
@@ -564,7 +564,7 @@ router.post('/verified', async (req, res) => {
 // 	let mailOptions = {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.shipping.email,
-// 		subject: 'Glow LEDs Order Confirmation',
+// 		subject: 'Gibson Lake Copper Art Order Confirmation',
 // 		html: main_layout(order_view({ ...req.body, title: 'Your Order Has Been Placed', paid, shipped }), styles())
 // 	};
 
@@ -590,7 +590,7 @@ router.post('/verified', async (req, res) => {
 // 	let mailOptions = {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.shipping.email,
-// 		subject: 'Glow LEDs Order Refund',
+// 		subject: 'Gibson Lake Copper Art Order Refund',
 // 		bcc: process.env.EMAIL,
 // 		html: main_layout(
 // 			refund_view({ ...req.body, title: 'You have been refunded for your order', paid, shipped, refunded }),
@@ -619,7 +619,7 @@ router.post('/verified', async (req, res) => {
 // 	let mailOptions = {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.shipping.email,
-// 		subject: 'Glow LEDs Order Confirmation',
+// 		subject: 'Gibson Lake Copper Art Order Confirmation',
 // 		html: main_layout(order_view({ ...req.body, title: 'Your Order Has Been Placed', paid, shipped }), styles())
 // 	};
 
@@ -696,7 +696,7 @@ router.post('/verified', async (req, res) => {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.shipping.email,
 // 		bcc: process.env.EMAIL,
-// 		subject: 'Glow LEDs Order Not Complete',
+// 		subject: 'Gibson Lake Copper Art Order Not Complete',
 // 		html: main_layout(order_view({ ...req.body, title: 'Order Not Complete', paid, shipped }), styles())
 // 	};
 
@@ -718,7 +718,7 @@ router.post('/verified', async (req, res) => {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.email,
 // 		bcc: process.env.EMAIL,
-// 		subject: 'Having Trouble Verifying your Glow LEDs Account',
+// 		subject: 'Having Trouble Verifying your Gibson Lake Copper Art Account',
 // 		html: main_layout(not_verified_view(req.body), styles())
 // 	};
 
@@ -741,9 +741,9 @@ router.post('/verified', async (req, res) => {
 // // 	let mailOptions = {
 // // 		from: process.env.DISPLAY_EMAIL,
 // // 		to: req.body.shipping.email,
-// // 		subject: 'Here is your receipt from Glow LEDs',
+// // 		subject: 'Here is your receipt from Gibson Lake Copper Art',
 // // 		html: main_layout(
-// // 			order_view({ ...req.body, title: 'Order Complete! \nHere is your receipt from Glow LEDs', paid, shipped }),
+// // 			order_view({ ...req.body, title: 'Order Complete! \nHere is your receipt from Gibson Lake Copper Art', paid, shipped }),
 // // 			styles()
 // // 		)
 // // 	};
@@ -774,7 +774,7 @@ router.post('/verified', async (req, res) => {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		// from: 'Kurt LaVacque <lavacquek@gmail.com>',
 // 		to: req.body.email,
-// 		subject: 'Glow LEDs Shipping Confirmation',
+// 		subject: 'Gibson Lake Copper Art Shipping Confirmation',
 // 		html: main_layout(order_view({ ...req.body, title: 'Your Item has Shipped!', paid, shipped }), styles())
 // 	};
 // 	console.log(req.body);
@@ -802,7 +802,7 @@ router.post('/verified', async (req, res) => {
 // 	let mailOptions = {
 // 		from: process.env.DISPLAY_EMAIL,
 // 		to: req.body.email,
-// 		subject: 'Glow LEDs Delivery Confirmation',
+// 		subject: 'Gibson Lake Copper Art Delivery Confirmation',
 // 		html: main_layout(order_view({ ...req.body, title: 'Your Item has Been Delivered!' }), styles())
 // 	};
 

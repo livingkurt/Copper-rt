@@ -61,14 +61,14 @@ const AnnouncementEmail = () => {
 							borderRadius: '20px'
 						}}
 					>
-						<div style={{ backgroundColor: '#333333', padding: '20px' }}>
+						<div style={{ backgroundColor: '#5a4d41', padding: '20px' }}>
 							<div style={{ display: 'flex', justifyContent: 'center' }}>
 								<table width="100%" style={{ maxWidth: '500px' }}>
 									<tr>
 										<td>
 											<img
 												src="https://images2.imgbox.com/63/e7/BPGMUlpc_o.png"
-												alt="Glow LEDs"
+												alt="Gibson Lake Copper Art"
 												title="Email Logo"
 												style={{
 													textAlign: 'center',
@@ -102,7 +102,7 @@ const AnnouncementEmail = () => {
 											<td>
 												<img
 													src={email.image}
-													alt="Glow LEDs"
+													alt="Gibson Lake Copper Art"
 													title="Email Image"
 													style={{
 														textAlign: 'center',
@@ -169,7 +169,7 @@ const AnnouncementEmail = () => {
 								</a>
 							</div>
 						</div>
-						<div style={{ backgroundColor: '#333333', padding: '20px', paddingTop: 10 }}>
+						<div style={{ backgroundColor: '#5a4d41', padding: '20px', paddingTop: 10 }}>
 							<div
 								style={{
 									marginLeft: '10px',

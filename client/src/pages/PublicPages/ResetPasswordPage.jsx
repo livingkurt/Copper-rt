@@ -21,7 +21,7 @@ const ResetPasswordPage = (props) => {
 	return (
 		<div className="form">
 			<Helmet>
-				<title>Reset Password | Glow LEDs</title>
+				<title>Reset Password | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Reset Password" />
 				<meta name="twitter:title" content="Reset Password" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/resetpassword" />

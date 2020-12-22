@@ -112,7 +112,7 @@ const EditExpensePage = (props) => {
 						{expense && (
 							<div>
 								<Helmet>
-									<title>Edit Expense| Glow LEDs</title>
+									<title>Edit Expense| Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '30rem', marginBottom: '20px' }}>

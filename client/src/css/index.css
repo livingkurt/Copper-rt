@@ -8,8 +8,8 @@
   src: url("/fonts/beyond_the_mountains.otf");
 }
 
-$background_color: #272727;
-$content_bg_color: #272727;
+$background_color: #D7D2AC;
+$content_bg_color: #D7D2AC;
 $font_color: white;
 $font_size: 1.6rem;
 $validation_color: #ff4a4a;
@@ -76,7 +76,7 @@ h1, h2, h3 {
 }
 
 header {
-  background-color: #333333;
+  background-color: #5a4d41;
   color: $font_color;
   display: flex;
   align-items: center;
@@ -505,7 +505,7 @@ tbody>tr:nth-child(odd) {
   padding: 1rem;
   list-style-type: none;
   z-index: 1;
-  background-color: #333333;
+  background-color: #5a4d41;
   margin: 0;
   border-radius: $br_small_containers;
   box-shadow: $bs_deep;
@@ -528,7 +528,7 @@ tbody>tr:nth-child(odd) {
   padding: 1rem;
   list-style-type: none;
   z-index: 1;
-  background-color: #333333;
+  background-color: #5a4d41;
   margin: 0;
   border-radius: $br_small_containers;
   /* margin-top: 0.4rem; */

@@ -55,22 +55,22 @@ const RegisterPage = (props) => {
 	return (
 		<div className="form">
 			<Helmet>
-				<title>Register | Glow LEDs</title>
+				<title>Register | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Register" />
 				<meta name="twitter:title" content="Register" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/register" />
 				<meta property="og:url" content="https://www.glow-leds.com/account/register" />
 				<meta
 					name="description"
-					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Glow-LEDs.com you must first create a uesr account."
+					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Copper-rt.com you must first create a uesr account."
 				/>
 				<meta
 					property="og:description"
-					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Glow-LEDs.com you must first create a uesr account."
+					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Copper-rt.com you must first create a uesr account."
 				/>
 				<meta
 					name="twitter:description"
-					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Glow-LEDs.com you must first create a uesr account."
+					content="In order to reap all of the benefits of the Diffuser Caps and other LED accessories at Copper-rt.com you must first create a uesr account."
 				/>
 			</Helmet>
 			<form onSubmit={submitHandler}>

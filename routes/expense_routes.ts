@@ -294,7 +294,7 @@ router.post('/post_expense', isAuth, isAdmin, async (req: any, res: any) => {
 			} else if (place_of_purchase.includes('THE HOME DEPOT')) {
 				return 'The Home Depot';
 			} else if (place_of_purchase.includes('GLOW-LEDS')) {
-				return 'Glow LEDs';
+				return 'Gibson Lake Copper Art';
 			} else if (place_of_purchase.includes('THROWLIGHTS') || place_of_purchase.includes('Throwlights')) {
 				return 'Throwlights';
 			} else if (place_of_purchase.includes('PRUSA') || place_of_purchase.includes('Prusa')) {

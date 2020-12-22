@@ -55,7 +55,7 @@ const ProductsPage = (props) => {
 	const sort_options = [ 'Category', 'Newest', 'Lowest', 'Highest', 'Hidden' ];
 
 	const colors = [
-		{ name: 'Not Category', color: '#333333' },
+		{ name: 'Not Category', color: '#5a4d41' },
 		{ name: 'Infinity Mirrors', color: '#557b68' },
 		{ name: 'Glow Strings', color: '#4b7188' },
 		{ name: 'Glowskins', color: '#736084' },
@@ -97,7 +97,7 @@ const ProductsPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Products | Glow LEDs</title>
+				<title>Admin Products | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				{colors.map((color) => {
@@ -154,7 +154,7 @@ const ProductsPage = (props) => {
 									<tr
 										key={product._id}
 										style={{
-											backgroundColor: product.hidden ? '#333333' : determine_color(product)
+											backgroundColor: product.hidden ? '#5a4d41' : determine_color(product)
 										}}
 									>
 										<td className="p-10px">

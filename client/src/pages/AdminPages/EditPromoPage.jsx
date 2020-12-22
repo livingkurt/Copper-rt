@@ -235,7 +235,7 @@ const EditPromoPage = (props) => {
 						{promo && (
 							<div>
 								<Helmet>
-									<title>Edit Promo | Glow LEDs</title>
+									<title>Edit Promo | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '48rem', marginBottom: '20px' }}>

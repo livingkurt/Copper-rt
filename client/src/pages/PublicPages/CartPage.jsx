@@ -33,7 +33,7 @@ const CartPage = (props) => {
 	const decide_warning = () => {
 		if (new Date() > new Date('2020-12-17') && new Date() < new Date('2021-01-02')) {
 			const confirm = window.confirm(
-				'Glow LEDs will be out of office from 12/18/20 - 1/2/21. Orders will not be shipped until after January 2nd 2021'
+				'Gibson Lake Copper Art will be out of office from 12/18/20 - 1/2/21. Orders will not be shipped until after January 2nd 2021'
 			);
 			if (confirm) {
 				checkoutHandler();
@@ -65,7 +65,7 @@ const CartPage = (props) => {
 	return (
 		<div className="column">
 			<Helmet>
-				<title>Cart | Glow LEDs </title>
+				<title>Cart | Gibson Lake Copper Art </title>
 				<meta property="og:title" content="Cart" />
 				<meta name="twitter:title" content="Cart" />
 				<link rel="canonical" href="https://www.glow-leds.com/checkout/cart " />

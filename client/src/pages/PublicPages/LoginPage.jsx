@@ -47,7 +47,7 @@ const LoginPage = (props) => {
 	return (
 		<div className="form">
 			<Helmet>
-				<title>Login | Glow LEDs</title>
+				<title>Login | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Login" />
 				<meta name="twitter:title" content="Login" />
 				<link rel="canonical" href="https://www.glow-leds.com/account/login" />
@@ -102,7 +102,7 @@ const LoginPage = (props) => {
 							<button className="button secondary full-width">Forgot Password?</button>
 						</Link>
 					</li>
-					<li>New to Glow LEDs?</li>
+					<li>New to Gibson Lake Copper Art?</li>
 					<li>
 						<Link
 							to={redirect === '/' ? 'register' : 'register?redirect=' + redirect}

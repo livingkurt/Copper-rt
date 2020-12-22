@@ -401,7 +401,7 @@ const PlaceOrderPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>Place Order | Glow LEDs</title>
+				<title>Place Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />
@@ -623,7 +623,7 @@ const PlaceOrderPage = (props) => {
 						shipping.hasOwnProperty('first_name') && (
 							<div>
 								<StripeCheckout
-									name="Glow LEDs"
+									name="Gibson Lake Copper Art"
 									description={`Pay for Order`}
 									amount={totalPrice.toFixed(2) * 100}
 									token={(token) => placeOrderHandler(token)}

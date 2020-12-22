@@ -72,7 +72,7 @@ const UserProfilePage = (props) => {
 	return (
 		<div className="column p-20px inner_content">
 			<Helmet>
-				<title>Admin User Profile | Glow LEDs</title>
+				<title>Admin User Profile | Gibson Lake Copper Art</title>
 			</Helmet>
 			<button className="button secondary" onClick={() => history.goBack()}>
 				Back to Users

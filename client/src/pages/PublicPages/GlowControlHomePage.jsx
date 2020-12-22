@@ -77,23 +77,23 @@ const GlowControlHomePage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Glow LEDs | Home of the LED Glove Diffuser Caps</title>
-				<meta property="og:title" content="Glow LEDs | Home of the LED Glove Diffuser Caps" />
-				<meta name="twitter:title" content="Glow LEDs | Home of the LED Glove Diffuser Caps" />
+				<title>Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps</title>
+				<meta property="og:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
+				<meta name="twitter:title" content="Gibson Lake Copper Art | Home of the LED Glove Diffuser Caps" />
 				<link rel="canonical" href="https://www.glow-leds.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 				<meta
 					name="description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 
 				<meta
 					property="og:description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 				<meta
 					name="twitter:description"
-					content="Shop Glow LEDs for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
+					content="Shop Gibson Lake Copper Art for Gloving, Rave and Trippy Music Festival Accessories including Diffusers, Diffuser Caps, as well as Glowskins, and Glow Strings."
 				/>
 				<meta
 					property="og:image"
@@ -120,7 +120,7 @@ const GlowControlHomePage = (props) => {
 				<h2 style={{ textAlign: 'center' }}>From a Glover that just wants the world to stay lit</h2>
 			</div>
 			<p className="p_descriptions" style={{ textAlign: 'center' }}>
-				Control your Glow LEDs Glowskins and Glow Strings with ease!
+				Control your Gibson Lake Copper Art Glowskins and Glow Strings with ease!
 			</p>
 
 			<div className="home_page_divs">

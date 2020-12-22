@@ -36,7 +36,7 @@ const LoadingPayment = (props) => {
 				<div className="error_message_payment jc-c column">
 					<h2 className="ta-c mv-5px">Error: {props.error}</h2>
 					<p className="ta-c mv-5px fs">
-						Please Try a Different Card if Error Persists and Contact Glow LEDs for Support
+						Please Try a Different Card if Error Persists and Contact Gibson Lake Copper Art for Support
 					</p>
 				</div>
 			) : (

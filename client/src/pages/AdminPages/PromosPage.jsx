@@ -93,7 +93,7 @@ const PromosPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Promos | Glow LEDs</title>
+				<title>Admin Promos | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<div className="wrap jc-b">

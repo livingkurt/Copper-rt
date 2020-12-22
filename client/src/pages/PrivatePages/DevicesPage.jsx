@@ -42,7 +42,7 @@ const DevicesPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Devices | Glow LEDs</title>
+				<title>Admin Devices | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<div className="wrap jc-b">

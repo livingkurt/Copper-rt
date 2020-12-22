@@ -443,7 +443,7 @@ const EditProductPage = (props) => {
 						{product && (
 							<div>
 								<Helmet>
-									<title>Edit Product | Glow LEDs</title>
+									<title>Edit Product | Gibson Lake Copper Art</title>
 								</Helmet>
 								{/* <Prompt
 									when={shouldBlockNavigation}

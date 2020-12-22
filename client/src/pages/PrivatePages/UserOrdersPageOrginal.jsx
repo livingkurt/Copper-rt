@@ -24,7 +24,7 @@ const UserOrderPage = (props) => {
 	);
 
 	// const colors = [
-	// 	{ name: 'Not Paid', color: '#333333' },
+	// 	{ name: 'Not Paid', color: '#5a4d41' },
 	// 	{ name: 'Paid', color: '#626262' },
 	// 	{ name: 'Shipped', color: '#8e8e8e' },
 	// 	{ name: 'Delivered', color: '#ababab' }
@@ -52,7 +52,7 @@ const UserOrderPage = (props) => {
 		{ name: 'Not Paid', color: '#6d3e3e' },
 		{ name: 'Paid', color: '#3e4c6d' },
 		{ name: 'Shipped', color: '#636363' },
-		{ name: 'Delivered', color: '#333333' },
+		{ name: 'Delivered', color: '#5a4d41' },
 		{ name: 'Refunded', color: '#a9a9a9' }
 	];
 
@@ -80,7 +80,7 @@ const UserOrderPage = (props) => {
 	return (
 		<div className="profile_container wrap column p-20px">
 			<Helmet>
-				<title>My Orders | Glow LEDs</title>
+				<title>My Orders | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="My Orders" />
 				<meta name="twitter:title" content="My Orders" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/account/orders" />

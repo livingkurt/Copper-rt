@@ -109,7 +109,7 @@ const EditUserPage = (props) => {
 						{user && (
 							<div>
 								<Helmet>
-									<title>Edit User | Glow LEDs</title>
+									<title>Edit User | Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '30rem', marginBottom: '20px' }}>

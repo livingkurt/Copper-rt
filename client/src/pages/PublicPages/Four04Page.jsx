@@ -5,7 +5,7 @@ const Four04Page = (props) => {
 	return (
 		<div className="jc-c column ta-c">
 			<Helmet>
-				<title>404 Not Found | Glow LEDs</title>
+				<title>404 Not Found | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="404 Not Found" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 

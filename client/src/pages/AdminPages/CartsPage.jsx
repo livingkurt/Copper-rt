@@ -89,7 +89,7 @@ const CartsPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Carts | Glow LEDs</title>
+				<title>Admin Carts | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-c">
 				<div className="wrap jc-c">

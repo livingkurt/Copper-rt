@@ -68,22 +68,22 @@ const MenuPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>{humanize(pathname)} | Glow LEDs</title>
-				<meta property="og:title" content={`${humanize(pathname)}| Glow LEDs`} />
-				<meta name="twitter:title" content={`${humanize(pathname)}| Glow LEDs`} />
+				<title>{humanize(pathname)} | Gibson Lake Copper Art</title>
+				<meta property="og:title" content={`${humanize(pathname)}| Gibson Lake Copper Art`} />
+				<meta name="twitter:title" content={`${humanize(pathname)}| Gibson Lake Copper Art`} />
 				<link rel="canonical" href="https://www.glow-leds.com/pages/featured" />
 				<meta property="og:url" content="https://www.glow-leds.com/pages/featured" />
 				<meta
 					name="description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 				<meta
 					property="og:description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 				<meta
 					name="twitter:description"
-					content="Here at Glow LEDs we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
+					content="Here at Gibson Lake Copper Art we want all you glovers, ravers, festival goers, and even home decor peeps to be apart of our community."
 				/>
 			</Helmet>
 			<div className="jc-c">

@@ -273,7 +273,7 @@ export const print_invoice = (order: any) => {
             <table style="width: 100%; line-height: inherit; text-align: left;" width="100%" align="left">
               <tr>
                 <td style="vertical-align: top;" valign="top">
-                  Glow LEDs<br>
+                  Gibson Lake Copper Art<br>
                   404 Kenniston Dr<br>
                   Austin, TX 78752<br>
                   info.glowleds@gmail.com
@@ -378,7 +378,7 @@ export const print_invoice = (order: any) => {
       </div>
     </div>
     <div>
-      <h3 style="text-align: center;">Welcome to the Glow LEDs family!</h3>
+      <h3 style="text-align: center;">Welcome to the Gibson Lake Copper Art family!</h3>
       <div style="text-align: center; ">We are so happy to share our art with you.</div>
       <div style="text-align: center; ">The code below will take you to our <strong>FAQ page</strong> for all kinds of helpful information.</div>
       <div style="display: flex; justify-content: space-between; align-items: center;">

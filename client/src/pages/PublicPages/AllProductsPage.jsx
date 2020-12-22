@@ -113,19 +113,19 @@ const AllProductsPage = (props) => {
 
 	const descriptions = {
 		all_products:
-			'Take your rave and festival experience to the next level with our LED Accessories at Glow LEDs. Shop Diffuser Caps, Glowskins, and Glow Strings. Click to Shop.',
+			'Take your rave and festival experience to the next level with our LED Accessories at Gibson Lake Copper Art. Shop Diffuser Caps, Glowskins, and Glow Strings. Click to Shop.',
 		frosted_diffusers:
-			'Take your gloving light shows to the next level with our Frosted Dome Diffusers at Glow LEDs. Shop Dome Diffusers, Large Dome Diffusers, and Frosted Diffusers. Click to Shop.',
+			'Take your gloving light shows to the next level with our Frosted Dome Diffusers at Gibson Lake Copper Art. Shop Dome Diffusers, Large Dome Diffusers, and Frosted Diffusers. Click to Shop.',
 		diffuser_caps:
-			'Take your gloving light shows to the next level with our Diffuser Caps at Glow LEDs. Shop Screw on LED Caps, Cap over Diffusers, and Diffuser filters. Click to Shop.',
+			'Take your gloving light shows to the next level with our Diffuser Caps at Gibson Lake Copper Art. Shop Screw on LED Caps, Cap over Diffusers, and Diffuser filters. Click to Shop.',
 		diffuser_adapters:
-			'Take your gloving light shows to the next level with our Diffuser Adapters at Glow LEDs. Shop Screw On Diffusers, LED Adapters, and Diffuser Cap Adapters. Click to Shop.',
+			'Take your gloving light shows to the next level with our Diffuser Adapters at Gibson Lake Copper Art. Shop Screw On Diffusers, LED Adapters, and Diffuser Cap Adapters. Click to Shop.',
 		glow_strings:
-			'Decorate your home and festival with these stunning glow strings at Glow LEDs. Shop String Lights, LED Strips, and Addressable LEDs. Click to Shop.',
+			'Decorate your home and festival with these stunning glow strings at Gibson Lake Copper Art. Shop String Lights, LED Strips, and Addressable LEDs. Click to Shop.',
 		glowskins:
-			'Take your gloving light shows to the next level with our Glowskins at Glow LEDs. Shop Diffuser Skins, LED Skins, and Diffuser Casing Combo. Click to Shop.'
+			'Take your gloving light shows to the next level with our Glowskins at Gibson Lake Copper Art. Shop Diffuser Skins, LED Skins, and Diffuser Casing Combo. Click to Shop.'
 		// infinity_mirrors:
-		// 	'Decorate your home and festival with these stunning Glowskins at Glow LEDs. Shop Addressable LED Mirrors, LED Mirrors, and Custom Glowskins. Click to Shop.'
+		// 	'Decorate your home and festival with these stunning Glowskins at Gibson Lake Copper Art. Shop Addressable LED Mirrors, LED Mirrors, and Custom Glowskins. Click to Shop.'
 	};
 
 	const description_determination = () => {
@@ -157,7 +157,7 @@ const AllProductsPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>{category ? humanize(category) : 'Products'} | Glow LEDs</title>
+				<title>{category ? humanize(category) : 'Products'} | Gibson Lake Copper Art</title>
 				<meta property="og:title" content={category ? humanize(category) : 'Products'} />
 				<meta name="twitter:title" content={category ? humanize(category) : 'Products'} />
 				<link rel="canonical" href="https://www.glow-leds.com/collections/all/products" />

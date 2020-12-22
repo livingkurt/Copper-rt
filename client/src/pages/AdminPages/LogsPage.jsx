@@ -80,7 +80,7 @@ const LogsPage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Admin Logs | Glow LEDs</title>
+				<title>Admin Logs | Gibson Lake Copper Art</title>
 			</Helmet>
 
 			<div className="wrap jc-b">

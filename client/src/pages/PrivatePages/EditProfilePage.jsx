@@ -81,7 +81,7 @@ const EditProfilePage = (props) => {
 	return (
 		<div className="profile_container column p-20px">
 			<Helmet>
-				<title>Edit Profile | Glow LEDs</title>
+				<title>Edit Profile | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Edit Profile" />
 				<meta name="twitter:title" content="Edit Profile" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/account/editprofile" />

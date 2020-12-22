@@ -124,7 +124,7 @@ const EditFeaturePage = (props) => {
 						{feature && (
 							<div>
 								<Helmet>
-									<title>Edit Feature| Glow LEDs</title>
+									<title>Edit Feature| Gibson Lake Copper Art</title>
 								</Helmet>
 
 								<ul className="edit-form-container" style={{ maxWidth: '48rem', marginBottom: '20px' }}>
