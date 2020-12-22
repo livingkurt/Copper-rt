@@ -20,12 +20,12 @@ const LoadingPayment = (props) => {
 						alt="Loading Circle"
 						title="Loading Circle"
 					/>
-					<img
+					{/* <img
 						src={process.env.PUBLIC_URL + '/loading_overlay.png'}
 						className="loading_png"
 						alt="Loading Overlay"
 						title="Loading Overlay"
-					/>
+					/> */}
 					<div className="payment_message">
 						<h2 className="ta-c">Wait a moment while we process your Payment</h2>
 						<p className="ta-c">Please Do not Refresh Page</p>

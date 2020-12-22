@@ -20,12 +20,12 @@ const Loading = (props) => {
 						alt="Loading Circle"
 						title="Loading Circle"
 					/>
-					<img
+					{/* <img
 						src={process.env.PUBLIC_URL + '/loading_overlay.png'}
 						className="loading_png"
 						alt="Loading Overlay"
 						title="Loading Overlay"
-					/>
+					/> */}
 					{loading_message()}
 				</div>
 			) : props.error ? (
