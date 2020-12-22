@@ -19,7 +19,7 @@ const Footer = () => {
 					<div className="ml-10px fs-30px jc-b w-100per max-w-500px">
 						<div className="ml-10px fs-40px">
 							<a
-								href="https://www.facebook.com/Glow-LEDscom-100365571740684"
+								href="https://www.facebook.com/gibsonlakecopperart"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -29,20 +29,6 @@ const Footer = () => {
 						<div className="ml-10px fs-40px">
 							<a href="https://www.instagram.com/glow_leds/" target="_blank" rel="noopener noreferrer">
 								<i className="fab fa-instagram zoom" />
-							</a>
-						</div>
-						<div className="mh-10px fs-40px">
-							<a
-								href="https://www.youtube.com/channel/UCm_gDyTIy7d0oR9LeowPkYw"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fab fa-youtube zoom" />
-							</a>
-						</div>
-						<div className="mr-10px fs-40px">
-							<a href="https://soundcloud.com/ntre/tracks" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-soundcloud" />
 							</a>
 						</div>
 					</div>

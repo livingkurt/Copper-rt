@@ -114,50 +114,50 @@ const Header = (props) => {
 							</button>
 						</Link>
 						<div className="dropdown-nav">
-							<Link to="/pages/menu/gloving">
+							<Link to="/collections/all/products/category/barns">
 								<button className="button nav">Barns</button>
 							</Link>
 							<div className="dropdown-nav-content hover_fade_in w-200px">
-								<Link to="/pages/announcements">
+								<Link to="/collections/all/products/category/barns/subcategory/on_slate">
 									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
-								<Link to="/pages/music">
+								<Link to="/collections/all/products/category/barns/subcategory/on_driftwood">
 									<button className="button nav w-100per ta-l">On Driftwood</button>
 								</Link>
-								<Link to="/pages/menu/featured">
+								<Link to="/collections/all/products/category/barns/subcategory/wall_mounted">
 									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
 							</div>
 						</div>
 
 						<div className="dropdown-nav">
-							<Link to="/collections/all/products/category/glow_strings">
+							<Link to="/collections/all/products/category/flowers">
 								<button className="button nav w-100per ta-l">Flowers</button>
 							</Link>
 							<div className="dropdown-nav-content hover_fade_in w-200px">
-								<Link to="/pages/announcements">
+								<Link to="/collections/all/products/category/flowers/subcategory/on_slate">
 									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
-								<Link to="/pages/music">
+								<Link to="/collections/all/products/category/flowers/subcategory/on_driftwood">
 									<button className="button nav w-100per ta-l">On Driftwood</button>
 								</Link>
-								<Link to="/pages/menu/featured">
+								<Link to="/collections/all/products/category/flowers/subcategory/wall_mounted">
 									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
 							</div>
 						</div>
 						<div className="dropdown-nav">
-							<Link to="/pages/menu/community">
+							<Link to="/collections/all/products/category/trees">
 								<button className="button nav">Trees</button>
 							</Link>
 							<div className="dropdown-nav-content hover_fade_in w-200px">
-								<Link to="/pages/announcements">
+								<Link to="/collections/all/products/category/trees/subcategory/on_slate">
 									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
-								<Link to="/pages/music">
+								<Link to="/collections/all/products/category/trees/subcategory/on_driftwood">
 									<button className="button nav w-100per ta-l">On Driftwood</button>
 								</Link>
-								<Link to="/pages/menu/featured">
+								<Link to="/collections/all/products/category/trees/subcategory/wall_mounted">
 									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
 							</div>
@@ -314,7 +314,7 @@ const Header = (props) => {
 							<button className="button nav">Admin</button>
 							<ul className="dropdown-content hover_fade_in">
 								<Link to="/secure/glow/controlpanel">
-									<button className="button nav w-152px">Control Panel</button>
+									<button className="button nav ta-l w-152px">Control Panel</button>
 								</Link>
 								<Link to="/secure/glow/orders">
 									<button className="button nav">Orders</button>

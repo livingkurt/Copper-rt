@@ -39,7 +39,7 @@ const Banner = () => {
 					<div className="ml-10px">
 						<a
 							rel="noreferrer"
-							href="https://www.facebook.com/Glow-LEDscom-100365571740684"
+							href="https://www.facebook.com/gibsonlakecopperart"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -54,26 +54,6 @@ const Banner = () => {
 							rel="noopener noreferrer"
 						>
 							<i className="fab fa-instagram zoom" />
-						</a>
-					</div>
-					<div className="mh-10px">
-						<a
-							rel="noreferrer"
-							href="https://www.youtube.com/channel/UCm_gDyTIy7d0oR9LeowPkYw"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<i className="fab fa-youtube zoom" />
-						</a>
-					</div>
-					<div className="mr-10px">
-						<a
-							rel="noreferrer"
-							href="https://soundcloud.com/ntre/tracks"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<i className="fab fa-soundcloud" />
 						</a>
 					</div>
 				</div>

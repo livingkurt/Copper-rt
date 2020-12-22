@@ -56,13 +56,9 @@ const ProductsPage = (props) => {
 
 	const colors = [
 		{ name: 'Not Category', color: '#5a4d41' },
-		{ name: 'Infinity Mirrors', color: '#557b68' },
-		{ name: 'Glow Strings', color: '#4b7188' },
-		{ name: 'Glowskins', color: '#736084' },
-		{ name: 'Mega Diffuser Caps', color: '#4b8882' },
-		{ name: 'Frosted Diffusers', color: '#ca9160' },
-		{ name: 'Diffuser Caps', color: '#6c7ea9' },
-		{ name: 'Accessories', color: '#925757' }
+		{ name: 'Barns', color: '#557b68' },
+		{ name: 'Flowers', color: '#4b7188' },
+		{ name: 'Trees', color: '#736084' }
 	];
 
 	const determine_color = (product) => {
@@ -70,26 +66,14 @@ const ProductsPage = (props) => {
 		if (!product.category) {
 			result = colors[0].color;
 		}
-		// if (product.category === 'infinity_mirrors') {
-		// 	result = colors[1].color;
-		// }
-		if (product.category === 'glow_strings') {
+		if (product.category === 'barns') {
 			result = colors[2].color;
 		}
-		if (product.category === 'glowskins') {
+		if (product.category === 'flowers') {
 			result = colors[3].color;
 		}
-		if (product.category === 'mega_diffuser_caps') {
+		if (product.category === 'trees') {
 			result = colors[4].color;
-		}
-		if (product.category === 'frosted_diffusers') {
-			result = colors[5].color;
-		}
-		if (product.category === 'diffuser_caps') {
-			result = colors[6].color;
-		}
-		if (product.category === 'accessories') {
-			result = colors[7].color;
 		}
 		return result;
 	};
