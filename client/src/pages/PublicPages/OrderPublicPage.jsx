@@ -6,6 +6,8 @@ import { detailsOrderPublic, payOrder, payOrderGuest } from '../../actions/order
 import { format_date } from '../../utils/helper_functions';
 import { CheckoutSteps } from '../../components/SpecialtyComponents';
 import StripeCheckout from 'react-stripe-checkout';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Helmet } from 'react-helmet';
 import { LoadingPayments } from '../../components/UtilityComponents';
 import { API_Products } from '../../utils';
@@ -88,8 +90,8 @@ const OrderPublicPage = (props) => {
 		}
 	};
 
-	const pay_order = (token) => {
-		dispatch(payOrderGuest(order, token));
+	const pay_order = (paymentMethod) => {
+		dispatch(payOrderGuest(order, paymentMethod));
 		set_payment_loading(true);
 	};
 
@@ -205,6 +207,54 @@ const OrderPublicPage = (props) => {
 		handleWindowResize(getWidth());
 		return () => {};
 	}, []);
+
+	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
+	// console.log(process.env.REACT_APP_STRIPE_KEY);
+
+	const Form = () => {
+		const stripe = useStripe();
+		const elements = useElements();
+
+		const handleSubmit = async (event) => {
+			event.preventDefault();
+			const { error, paymentMethod } = await stripe.createPaymentMethod({
+				type: 'card',
+				card: elements.getElement(CardElement)
+			});
+
+			// console.log({ error });
+			if (error) {
+				console.log({ error });
+				return;
+			}
+			console.log({ paymentMethod });
+			pay_order(paymentMethod);
+		};
+
+		return (
+			<form onSubmit={handleSubmit}>
+				<CardElement
+					options={{
+						style: {
+							base: {
+								fontSize: '20px',
+								color: 'white',
+								'::placeholder': {
+									color: 'white'
+								}
+							},
+							invalid: {
+								color: '#9e2146'
+							}
+						}
+					}}
+				/>
+				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+					Pay for Order
+				</button>
+			</form>
+		);
+	};
 
 	return loading ? (
 		<div className="column jc-c">
@@ -482,18 +532,9 @@ const OrderPublicPage = (props) => {
 						/>
 						{!order.isPaid && (
 							<div>
-								<StripeCheckout
-									name="Gibson Lake Copper Art"
-									description={`Pay for Order`}
-									amount={(order.totalPrice ? order.totalPrice.toFixed(2) : order.totalPrice) * 100}
-									token={(token) => pay_order(token)}
-									stripeKey={process.env.REACT_APP_STRIPE_KEY}
-									onChange={handleChangeFor('cardNumber')}
-								>
-									<button className="button primary full-width" style={{ marginBottom: '12px' }}>
-										Pay for Order
-									</button>
-								</StripeCheckout>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 

@@ -16,8 +16,6 @@ import { validate_promo_code } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
 import { listUsers } from '../../actions/userActions';
 import { API_External, API_Products } from '../../utils';
-// require('dotenv');
-// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const PlaceOrderPage = (props) => {
 	const user_data = props.userInfo;
@@ -674,20 +672,6 @@ const PlaceOrderPage = (props) => {
 						shipping &&
 						shipping.hasOwnProperty('first_name') && (
 							<div>
-								{/* <StripeCheckout
-									name="Gibson Lake Copper Art"
-									description={`Pay for Order`}
-									amount={totalPrice.toFixed(2) * 100}
-									token={(token) => placeOrderHandler(token)}
-									stripeKey={process.env.REACT_APP_STRIPE_KEY}
-									onChange={handleChangeFor('cardNumber')}
-								>
-									<button className="button primary full-width mb-12px">Pay for Order</button>
-								</StripeCheckout> */}
-								{/* <Elements stripe={stripePromise}> */}
-								{/* <CheckoutForm placeOrderHanlder={placeOrderHandler} />
-                 */}
-								{/* </Elements> */}
 								<Elements stripe={stripePromise}>
 									<Form />
 								</Elements>

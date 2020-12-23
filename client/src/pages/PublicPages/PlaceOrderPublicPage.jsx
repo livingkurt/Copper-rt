@@ -12,6 +12,8 @@ import { LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code, validate_passwords } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
 import { API_External } from '../../utils';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const PlaceOrderPublicPage = (props) => {
 	const dispatch = useDispatch();
@@ -380,14 +382,62 @@ const PlaceOrderPublicPage = (props) => {
 		console.log({ error });
 	};
 
+	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
+	// console.log(process.env.REACT_APP_STRIPE_KEY);
+
+	const Form = () => {
+		const stripe = useStripe();
+		const elements = useElements();
+
+		const handleSubmit = async (event) => {
+			event.preventDefault();
+			const { error, paymentMethod } = await stripe.createPaymentMethod({
+				type: 'card',
+				card: elements.getElement(CardElement)
+			});
+
+			// console.log({ error });
+			if (error) {
+				console.log({ error });
+				return;
+			}
+			console.log({ paymentMethod });
+			placeOrderHandler(paymentMethod);
+		};
+
+		return (
+			<form onSubmit={handleSubmit}>
+				<CardElement
+					options={{
+						style: {
+							base: {
+								fontSize: '20px',
+								color: 'white',
+								'::placeholder': {
+									color: 'white'
+								}
+							},
+							invalid: {
+								color: '#9e2146'
+							}
+						}
+					}}
+				/>
+				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+					Pay for Order
+				</button>
+			</form>
+		);
+	};
+
 	return (
 		<div>
 			<Helmet>
 				<title>Place Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
-				<link rel="canonical" href="http://www.copper-rt.com/secure/checkout/placeorder" />
-				<meta property="og:url" content="http://www.copper-rt.com/secure/checkout/placeorder" />
+				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />
+				<meta property="og:url" content="https://www.glow-leds.com/secure/checkout/placeorder" />
 			</Helmet>
 			{successPay ? (
 				<GuestCheckoutSteps step1 step2 step3 step4 />
@@ -604,16 +654,9 @@ const PlaceOrderPublicPage = (props) => {
 						shipping.hasOwnProperty('first_name') &&
 						!account_create && (
 							<div>
-								<StripeCheckout
-									name="Gibson Lake Copper Art"
-									description={`Pay for Order`}
-									amount={totalPrice.toFixed(2) * 100}
-									token={(token) => placeOrderHandler(token, false)}
-									stripeKey={process.env.REACT_APP_STRIPE_KEY}
-									onChange={handleChangeFor('cardNumber')}
-								>
-									<button className="button secondary full-width mb-12px">Pay for Order</button>
-								</StripeCheckout>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 						{loading_checkboxes ? (
@@ -673,18 +716,9 @@ const PlaceOrderPublicPage = (props) => {
 						shipping.hasOwnProperty('first_name') &&
 						passwords_check && (
 							<div>
-								<StripeCheckout
-									name="Gibson Lake Copper Art"
-									description={`Pay for Order`}
-									amount={totalPrice.toFixed(2) * 100}
-									token={(token) => placeOrderHandler(token, true)}
-									stripeKey={process.env.REACT_APP_STRIPE_KEY}
-									onChange={handleChangeFor('cardNumber')}
-								>
-									<button className="button primary full-width mb-12px">
-										Pay for Order/Create Account
-									</button>
-								</StripeCheckout>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 						<div className="mv-10px">
@@ -735,7 +769,7 @@ const PlaceOrderPublicPage = (props) => {
 					</ul>
 				</div>
 			</div>
-			<Carousel />
+			{/* <Carousel /> */}
 		</div>
 	);
 };

@@ -551,32 +551,11 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 	try {
 		const order = await Order.findById(req.params.id).populate('user');
 		console.log({ order });
-
-		// setTimeout(() => {
-		// 	console.log({ message: 'Error Paying for Order' });
-		// 	// return res.status(500).send({ message: 'Error Paying for Order' });
-    // }, 5000);
-    // const intent = await stripe.paymentIntents.create({
-    //   amount: (order.totalPrice * 100).toFixed(0),
-    //   currency: 'usd',
-    //   payment_method_types: ['card'],
-    // })
-
-    // const charge = await stripe.paymentIntents.confirm(intent.id, { payment_method: "pm_card_" + req.body.payment_method.paymentMethod.card.brand })
-    
-		// const charge = await stripe.charges.create(
-		// 	{
-		// 		amount: (order.totalPrice * 100).toFixed(0),
-		// 		currency: 'usd',
-		// 		description: `Order Paid`,
-		// 		source: req.body.token.id
-    // 	}
     const intent = await stripe.paymentIntents.create({
       amount: (order.totalPrice * 100).toFixed(0),
       currency: 'usd',
       payment_method_types: ['card'],
-    }
-    ,
+    },
 			async (err: any, result: any) => {
 				if (err) {
 					console.log({ err });
@@ -629,9 +608,6 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 				}
 			}
     );
-    // console.log({intent})
-    // const charge = await stripe.paymentIntents.confirm(intent.id, { payment_method: "pm_card_visa" })
-		// 4000000000000002
 	} catch (error) {
 		log_error({
 			method: 'PUT',
@@ -692,13 +668,18 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 		const order = await Order.findById(req.params.id);
 		console.log({ '/guestcheckout/:id/pay': req.body });
 		// console.log({ order });
-		const charge = await stripe.charges.create(
-			{
-				amount: (order.totalPrice * 100).toFixed(0),
-				currency: 'usd',
-				description: `Order Paid`,
-				source: req.body.token.id
-			},
+		// const charge = await stripe.charges.create(
+		// 	{
+		// 		amount: (order.totalPrice * 100).toFixed(0),
+		// 		currency: 'usd',
+		// 		description: `Order Paid`,
+		// 		source: req.body.token.id
+    //   },
+      const intent = await stripe.paymentIntents.create({
+        amount: (order.totalPrice * 100).toFixed(0),
+        currency: 'usd',
+        payment_method_types: ['card'],
+      },
 			async (err: any, result: any) => {
 				if (err) {
 					console.log({ err });
@@ -724,12 +705,16 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 						success: true,
 						ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
 					});
-					order.isPaid = true;
+          order.isPaid = true;
 					order.paidAt = Date.now();
 					order.payment = {
 						paymentMethod: 'stripe',
-						charge: result
-					};
+            charge: result,
+            payment: req.body.paymentMethod
+            // payment_intent: result
+          };
+          console.log(req.body.paymentMethod.card.brand)
+          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.paymentMethod.card.brand })
 					const updatedOrder = await order.save();
 					if (updatedOrder) {
 						log_request({
