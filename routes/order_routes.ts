@@ -544,29 +544,8 @@ router.post('/', isAuth, async (req: any, res: any) => {
 	}
 });
 
-// router.put('/charges', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
-// 	const order = await Order.findById('5f88c4c6d82e0e002acae9bf').populate('user');
-// 	// const charges = await stripe.charges.list({});
-// 	const charge = await stripe.charges.retrieve('ch_1HceYpJUIKBwBp0w69pyljh3');
-// 	order.payment = {
-// 		paymentMethod: 'stripe',
-// 		charge: charge
-// 	};
-// 	const updatedOrder = await order.save();
-// 	res.send(updatedOrder);
-// });
 
-// router.put('/update_charge_email', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
-// 	const charge = await stripe.charges.update('ch_1HhimVJUIKBwBp0wgil79u96', {
-// 		metadata: { receipt_email: 'ssdaly1590@gmail.com' }
-// 	});
 
-// 	res.send(charge);
-// });
-// router.get('/refunds', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
-// 	const refunds = await stripe.refunds.list({});
-// 	res.send(refunds);
-// });
 
 router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 	try {
@@ -576,14 +555,28 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 		// setTimeout(() => {
 		// 	console.log({ message: 'Error Paying for Order' });
 		// 	// return res.status(500).send({ message: 'Error Paying for Order' });
-		// }, 5000);
-		const charge = await stripe.charges.create(
-			{
-				amount: (order.totalPrice * 100).toFixed(0),
-				currency: 'usd',
-				description: `Order Paid`,
-				source: req.body.token.id
-			},
+    // }, 5000);
+    // const intent = await stripe.paymentIntents.create({
+    //   amount: (order.totalPrice * 100).toFixed(0),
+    //   currency: 'usd',
+    //   payment_method_types: ['card'],
+    // })
+
+    // const charge = await stripe.paymentIntents.confirm(intent.id, { payment_method: "pm_card_" + req.body.payment_method.paymentMethod.card.brand })
+    
+		// const charge = await stripe.charges.create(
+		// 	{
+		// 		amount: (order.totalPrice * 100).toFixed(0),
+		// 		currency: 'usd',
+		// 		description: `Order Paid`,
+		// 		source: req.body.token.id
+    // 	}
+    const intent = await stripe.paymentIntents.create({
+      amount: (order.totalPrice * 100).toFixed(0),
+      currency: 'usd',
+      payment_method_types: ['card'],
+    }
+    ,
 			async (err: any, result: any) => {
 				if (err) {
 					console.log({ err });
@@ -614,8 +607,10 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 					order.paidAt = Date.now();
 					order.payment = {
 						paymentMethod: 'stripe',
-						charge: result
-					};
+            charge: result,
+            // payment_intent: result
+          };
+          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.payment_method.paymentMethod.card.brand })
 					const updatedOrder = await order.save();
 					if (updatedOrder) {
 						log_request({
@@ -632,7 +627,9 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 					// }
 				}
 			}
-		);
+    );
+    // console.log({intent})
+    // const charge = await stripe.paymentIntents.confirm(intent.id, { payment_method: "pm_card_visa" })
 		// 4000000000000002
 	} catch (error) {
 		log_error({
@@ -642,7 +639,8 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 			error,
 			status: 500,
 			success: false
-		});
+    });
+    console.log({error})
 		res.status(500).send({ error, message: 'Error Paying for Order' });
 	}
 });

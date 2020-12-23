@@ -8,11 +8,16 @@ import { addToCart, removeFromCart, saveShipping, savePayment } from '../../acti
 import { listPromos } from '../../actions/promoActions';
 import Cookie from 'js-cookie';
 import StripeCheckout from 'react-stripe-checkout';
-import { LoadingPayments } from '../../components/UtilityComponents';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
+
+import { CheckoutForm, LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
 import { listUsers } from '../../actions/userActions';
 import { API_External, API_Products } from '../../utils';
+// require('dotenv');
+// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const PlaceOrderPage = (props) => {
 	const user_data = props.userInfo;
@@ -192,7 +197,7 @@ const PlaceOrderPage = (props) => {
 		[ shippingPrice ]
 	);
 
-	const placeOrderHandler = async (token) => {
+	const placeOrderHandler = async (paymentMethod) => {
 		// create an order
 		console.log({ user_data });
 		console.log({ user });
@@ -210,7 +215,7 @@ const PlaceOrderPage = (props) => {
 					order_note,
 					promo_code
 				},
-				token
+				paymentMethod
 			)
 		);
 
@@ -397,6 +402,61 @@ const PlaceOrderPage = (props) => {
 		console.log({ type });
 		console.log({ error });
 	};
+	const [ stripePromise, setStripePromise ] = useState(() =>
+		loadStripe(
+			'pk_test_51I10qyEbh0KeSjPmJ1kmyHCvqYJ2BlJD3n2RklPQffxRhcX0tU6gK5YQQEJXohaCULLISsTWUkZ311uHRh3Kn81u00er2uJoB7'
+		)
+	);
+	console.log(process.env.REACT_APP_STRIPE_KEY);
+
+	const Form = () => {
+		const stripe = useStripe();
+		const elements = useElements();
+
+		const handleSubmit = async (event) => {
+			event.preventDefault();
+			const { error, paymentMethod } = await stripe.createPaymentMethod({
+				type: 'card',
+				card: elements.getElement(CardElement)
+			});
+
+			// console.log({ error });
+			if (error) {
+				console.log({ error });
+				return;
+			}
+			console.log({ paymentMethod });
+			placeOrderHandler(paymentMethod);
+		};
+
+		return (
+			<form onSubmit={handleSubmit}>
+				<CardElement
+					options={{
+						style: {
+							base: {
+								fontSize: '20px',
+								color: 'white',
+								'::placeholder': {
+									color: 'white'
+								}
+							},
+							invalid: {
+								color: '#9e2146'
+							}
+						}
+					}}
+				/>
+				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+					Pay for Order
+				</button>
+			</form>
+		);
+	};
+
+	// const stripePromise = loadStripe(
+	// 	'pk_test_51I10qyEbh0KeSjPmJ1kmyHCvqYJ2BlJD3n2RklPQffxRhcX0tU6gK5YQQEJXohaCULLISsTWUkZ311uHRh3Kn81u00er2uJoB7'
+	// );
 
 	return (
 		<div>
@@ -622,7 +682,7 @@ const PlaceOrderPage = (props) => {
 						shipping &&
 						shipping.hasOwnProperty('first_name') && (
 							<div>
-								<StripeCheckout
+								{/* <StripeCheckout
 									name="Gibson Lake Copper Art"
 									description={`Pay for Order`}
 									amount={totalPrice.toFixed(2) * 100}
@@ -631,7 +691,14 @@ const PlaceOrderPage = (props) => {
 									onChange={handleChangeFor('cardNumber')}
 								>
 									<button className="button primary full-width mb-12px">Pay for Order</button>
-								</StripeCheckout>
+								</StripeCheckout> */}
+								{/* <Elements stripe={stripePromise}> */}
+								{/* <CheckoutForm placeOrderHanlder={placeOrderHandler} />
+                 */}
+								{/* </Elements> */}
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 						{user_data && user_data.isAdmin && users && loading_checkboxes ? (
@@ -745,7 +812,7 @@ const PlaceOrderPage = (props) => {
 				</div>
 			</div>
 			{/* <SuggestedProducts /> */}
-			<Carousel />
+			{/* <Carousel /> */}
 		</div>
 	);
 };
