@@ -48,14 +48,16 @@ const OrderEmail = (props) => {
 
 	const determin_card_logo = (card_type) => {
 		switch (card_type) {
-			case 'American Express':
+			case 'amex':
 				return 'https://images2.imgbox.com/ea/c8/r82jUQW8_o.png';
-			case 'Visa':
+			case 'visa':
 				return 'https://images2.imgbox.com/18/a3/wHEnyn5x_o.png';
-			case 'MasterCard':
+			case 'mastercard':
 				return 'https://images2.imgbox.com/84/a2/oPcysx6p_o.png';
-			case 'Discover':
+			case 'discover':
 				return 'https://images2.imgbox.com/f3/4b/R1EL09Rw_o.png';
+			default:
+				return '';
 		}
 	};
 
@@ -69,7 +71,7 @@ const OrderEmail = (props) => {
 					fontSize: '16px',
 					fontFamily: '"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif',
 					color: 'white',
-					backgroundColor: '#5f5f5f'
+					backgroundColor: '#A0977A'
 				}}
 			>
 				<div style={{ backgroundColor: '#5a4d41', padding: '20px' }}>
@@ -161,7 +163,7 @@ const OrderEmail = (props) => {
 												order._id
 											}
 											style={{
-												backgroundColor: '#4c4f60',
+												backgroundColor: '#544b43',
 												color: 'white',
 												borderRadius: '10px',
 												border: 0,
@@ -672,10 +674,10 @@ const OrderEmail = (props) => {
 																			color: 'white'
 																		}}
 																	>
-																		{order.payment.charge ? (
+																		{order.payment.payment ? (
 																			<img
 																				src={determin_card_logo(
-																					order.payment.charge.source.brand
+																					order.payment.payment.card.brand
 																				)}
 																				style={{ height: '25px' }}
 																				alt="card_logo"
@@ -684,8 +686,9 @@ const OrderEmail = (props) => {
 																			''
 																		)}{' '}
 																	</div>
+																	{/* {console.log(order.payment.payment && order.payment.payment.card)} */}
 																	ending with{' '}
-																	{order.payment.charge ? order.payment.charge.source.last4 : ''}{' '}
+																	{order.payment.payment ? order.payment.payment.card.last4 : ''}{' '}
 																	<div style={{ margin: '0 10px', color: 'white' }}>-</div>
 																	<div
 																		style={{
@@ -711,45 +714,6 @@ const OrderEmail = (props) => {
 								</table>
 							</div>
 							<div style={{ marginBottom: '20px' }}>
-								<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
-									<strong>Tag us in your videos and pictures!</strong>
-									<br />We want to feature you!
-								</p>
-								<a
-									href="https://www.copper-rt.com/pages/contact/submit_content_to_be_featured"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									{/* <i className="fab fa-facebook zoom" style={{ color: 'white' }} /> */}
-									{/* <Facebook fill="white" /> */}
-									<div style={{ display: 'flex', justifyContent: 'center' }}>
-										<a
-											href={
-												'https://www.copper-rt.com/pages/contact/submit_content_to_be_featured'
-											}
-											style={{
-												backgroundColor: '#4c4f60',
-												color: 'white',
-												borderRadius: '10px',
-												border: 0,
-												padding: '15px',
-												fontFamily: 'helvetica',
-												margin: 0,
-												fontWeight: 800,
-												fontSize: '1em',
-												textAlign: 'center',
-												textDecoration: 'none !important',
-												lineHeight: 'inherit !important'
-											}}
-										>
-											Feature Content
-										</a>
-									</div>
-								</a>
-								<p style={{ textAlign: 'center', fontSize: '14px' }}>
-									We are figuring this out as we go so any feedback is welcome.<br />We appreciate you
-									more than you know.
-								</p>
 								<p style={{ textAlign: 'center', fontSize: '14px', marginBottom: '10px' }}>
 									<strong>Questions or concerns?:</strong>{' '}
 									<a
@@ -763,7 +727,7 @@ const OrderEmail = (props) => {
 											color: 'inherit !important;'
 										}}
 									>
-										info.glowleds@gmail.com
+										info.copperart@yahoo.com
 									</a>
 								</p>
 							</div>
@@ -775,7 +739,7 @@ const OrderEmail = (props) => {
 									marginLeft: '10px',
 									display: 'flex',
 									justifyContent: 'space-between',
-									maxWidth: '250px',
+									maxWidth: '75px',
 									width: '100%',
 									margin: '0 auto',
 									color: 'white',
@@ -823,46 +787,6 @@ const OrderEmail = (props) => {
 										/>
 									</a>
 								</div>
-								<div
-									style={{
-										fontSize: '30px',
-										color: 'white'
-									}}
-								>
-									<a
-										href="https://www.youtube.com/channel/UCm_gDyTIy7d0oR9LeowPkYw"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{/* <i className="fab fa-youtube zoom" style={{ color: 'white' }} /> */}
-										<img
-											src="https://images2.imgbox.com/c9/83/3Z0OwK1r_o.png"
-											style={{ height: '20px' }}
-											alt="Youtube"
-											title="Youtube Logo"
-										/>
-									</a>
-								</div>
-								<div
-									style={{
-										fontSize: '30px',
-										color: 'white'
-									}}
-								>
-									<a
-										href="https://soundcloud.com/ntre/tracks"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{/* <i className="fab fa-soundcloud" style={{ color: 'white' }} /> */}
-										<img
-											src="https://images2.imgbox.com/ed/d9/eyAcj7D2_o.png"
-											style={{ height: '20px' }}
-											alt="Soundcloud"
-											title="Soundcloud Logo"
-										/>
-									</a>
-								</div>
 							</div>
 							<div
 								style={{
@@ -874,7 +798,7 @@ const OrderEmail = (props) => {
 							/>
 							{/* <p style={{ textAlign: 'center' }}>Copyright © 2020 Throwlights, Inc., All rights reserved.</p> */}
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
-								Our mailing address is: <br />404 Kenniston Dr Apt D, Austin, TX 78752{' '}
+								Our mailing address is: <br />222 Gibson Lake Rd, Crystal Falls, MI 49920{' '}
 							</p>
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
 								Want to change how you receive these emails? <br /> You can{' '}

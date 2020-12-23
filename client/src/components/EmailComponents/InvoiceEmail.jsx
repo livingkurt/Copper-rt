@@ -45,13 +45,13 @@ const InvoiceEmail = (props) => {
 
 	const determin_card_logo = (card_type) => {
 		switch (card_type) {
-			case 'American Express':
+			case 'amex':
 				return 'https://thumbs2.imgbox.com/c9/a5/0AsOySyq_b.png';
-			case 'Visa':
+			case 'visa':
 				return 'https://images2.imgbox.com/73/a0/efpzYR25_o.png';
-			case 'MasterCard':
+			case 'mastercard':
 				return 'https://images2.imgbox.com/63/92/Z3KHgTl4_o.png';
-			case 'Discover':
+			case 'discover':
 				return 'https://images2.imgbox.com/96/cd/hXyv0MRB_o.png';
 		}
 	};
@@ -118,7 +118,7 @@ const InvoiceEmail = (props) => {
 											Gibson Lake Copper Art<br />
 											404 Kenniston Dr<br />
 											Austin, TX 78752<br />
-											info.glowleds@gmail.com
+											info.copperart@yahoo.com
 										</td>
 
 										<td style={{ fontSize: '8px', textAlign: 'right' }} valign="top" align="right">
@@ -168,7 +168,7 @@ const InvoiceEmail = (props) => {
 								</td>
 							</tr>
 						)}
-						{order.payment.charge && (
+						{order.payment.payment && (
 							<tr>
 								<td
 									style={{
@@ -183,14 +183,14 @@ const InvoiceEmail = (props) => {
 								>
 									<img
 										src={
-											order.payment.charge &&
-											determin_card_logo(order.payment.charge.source.brand)
+											order.payment.payment &&
+											determin_card_logo(order.payment.payment.card.brand)
 										}
-										alt={order.payment.charge && order.payment.charge.source.brand}
+										alt={order.payment.payment && order.payment.payment.card.brand}
 										title="Card Type Image"
 										style={{ fontSize: '8px', width: '15px', marginRight: '0.5rem' }}
 									/>{' '}
-									<div>{order.payment.charge && order.payment.charge.source.brand}</div>
+									<div>{order.payment.payment && order.payment.payment.card.brand}</div>
 								</td>
 
 								<td
@@ -204,7 +204,7 @@ const InvoiceEmail = (props) => {
 									valign="top"
 									align="right"
 								>
-									{order.payment.charge ? order.payment.charge.source.last4 : ''}
+									{order.payment.payment ? order.payment.payment.card.last4 : ''}
 								</td>
 							</tr>
 						)}
@@ -660,7 +660,7 @@ const InvoiceEmail = (props) => {
 							We appreciate you more than you know.
 						</div>
 						<div style={{ fontSize: '8px', textAlign: 'center' }}>
-							<strong>Questions or concerns?:</strong> info.glowleds@gmail.com
+							<strong>Questions or concerns?:</strong> info.copperart@yahoo.com
 						</div>
 					</div>
 				</div>

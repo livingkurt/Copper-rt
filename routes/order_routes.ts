@@ -608,9 +608,10 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 					order.payment = {
 						paymentMethod: 'stripe',
             charge: result,
+            payment: req.body.paymentMethod
             // payment_intent: result
           };
-          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.payment_method.paymentMethod.card.brand })
+          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.paymentMethod.card.brand })
 					const updatedOrder = await order.save();
 					if (updatedOrder) {
 						log_request({

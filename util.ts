@@ -97,7 +97,7 @@ export const log_error = async (logs: any) => {
 
 	let mailOptions = {
 		from: process.env.DISPLAY_EMAIL,
-		to: 'info.glowleds@gmail.com',
+		to: 'info.copperart@yahoo.com',
 		subject: data.outcome,
 		html: App({ body: error(data), title: `Log Error: ${data.outcome}` })
 	};

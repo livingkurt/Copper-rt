@@ -486,7 +486,7 @@ const OrderStatusEmail = (props) => {
 											color: 'inherit !important;'
 										}}
 									>
-										info.glowleds@gmail.com
+										info.copperart@yahoo.com
 									</a>
 								</p>
 							</div>
