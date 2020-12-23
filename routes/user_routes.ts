@@ -593,11 +593,12 @@ router.put('/verify/:id', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-	try {
+	// try {
 		const email = req.body.email;
 		const password = req.body.password;
 
-		const login_user: any = await User.findOne({ email });
+    const login_user: any = await User.findOne({ email });
+    console.log({login_user})
 		if (!login_user) {
 			log_request({
 				method: 'POST',
@@ -633,7 +634,8 @@ router.post('/login', async (req, res) => {
 				status: 200,
 				success: true,
 				ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
-			});
+      });
+      console.log({isMatch})
 			res.send({
 				_id: login_user.id,
 				first_name: login_user.first_name,
@@ -659,17 +661,17 @@ router.post('/login', async (req, res) => {
 			});
 			return res.status(400).send({ message: 'Password incorrect' });
 		}
-	} catch (error) {
-		log_error({
-			method: 'PUT',
-			path: req.originalUrl,
-			collection: 'User',
-			error,
-			status: 500,
-			success: false
-		});
-		res.status(500).send({ error, message: 'Error Logging User' });
-	}
+	// } catch (error) {
+	// 	log_error({
+	// 		method: 'PUT',
+	// 		path: req.originalUrl,
+	// 		collection: 'User',
+	// 		error,
+	// 		status: 500,
+	// 		success: false
+	// 	});
+	// 	res.status(500).send({ error, message: 'Error Logging User' });
+	// }
 });
 router.post('/register', async (req, res) => {
 	console.log({ register: req.body });
