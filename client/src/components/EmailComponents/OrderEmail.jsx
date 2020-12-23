@@ -76,11 +76,11 @@ const OrderEmail = (props) => {
 			>
 				<div style={{ backgroundColor: '#5a4d41', padding: '20px' }}>
 					<div style={{ display: 'flex', justifyContent: 'center' }}>
-						<table width="100%" style={{ maxWidth: '500px' }}>
+						<table width="100%" style={{ maxWidth: '565px' }}>
 							<tr>
 								<td>
 									<img
-										src="https://images2.imgbox.com/63/e7/BPGMUlpc_o.png"
+										src="https://images2.imgbox.com/18/4a/6LRIRXVa_o.png"
 										alt="Gibson Lake Copper Art Logo"
 										title="Gibson Lake Copper Art Logo"
 										style={{

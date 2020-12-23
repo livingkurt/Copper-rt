@@ -91,8 +91,8 @@ const InvoiceEmail = (props) => {
 									<tr>
 										<td style={{ fontSize: '8px', color: '#333' }} valign="top">
 											<img
-												src="https://images2.imgbox.com/cd/00/K5HGEKDJ_o.png"
-												style={{ fontSize: '8px', width: '100px', marginLeft: '-5px' }}
+												src="https://images2.imgbox.com/9c/e9/3hnLGazX_o.png"
+												style={{ fontSize: '8px', width: '130px', marginLeft: '-2px' }}
 											/>
 										</td>
 
