@@ -256,13 +256,10 @@ const OrderPage = (props) => {
 				<title>Your Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Your Order" />
 				<meta name="twitter:title" content="Your Order" />
-				<link
-					rel="canonical"
-					href={'https://www.copper-rt.com/secure/account/order/' + props.match.params.id}
-				/>
+				<link rel="canonical" href={'http://www.copper-rt.com/secure/account/order/' + props.match.params.id} />
 				<meta
 					property="og:url"
-					content={'https://www.copper-rt.com/secure/account/order/' + props.match.params.id}
+					content={'http://www.copper-rt.com/secure/account/order/' + props.match.params.id}
 				/>
 			</Helmet>
 			{order.isPaid ? <CheckoutSteps step1 step2 step3 step4 /> : <CheckoutSteps step1 step2 step3 />}

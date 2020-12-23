@@ -8,8 +8,8 @@ const TermsPage = () => {
 				<title>Terms and Conditions | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Terms and Conditions" />
 				<meta name="twitter:title" content="Terms and Conditions" />
-				<link rel="canonical" href="https://www.copper-rt.com/account/terms" />
-				<meta property="og:url" content="https://www.copper-rt.com/account/terms" />
+				<link rel="canonical" href="http://www.copper-rt.com/account/terms" />
+				<meta property="og:url" content="http://www.copper-rt.com/account/terms" />
 				<meta
 					name="description"
 					content="Gibson Lake Copper Art wants everyone to use our platform for what it was meant to be used for."

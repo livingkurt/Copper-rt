@@ -56,8 +56,8 @@ const ProfilePage = (props) => {
 				<title>Edit Shipping | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Edit Shipping" />
 				<meta name="twitter:title" content="Edit Shipping" />
-				<link rel="canonical" href="https://www.copper-rt.com/secure/account/editshipping" />
-				<meta property="og:url" content="https://www.copper-rt.com/secure/account/editshipping" />
+				<link rel="canonical" href="http://www.copper-rt.com/secure/account/editshipping" />
+				<meta property="og:url" content="http://www.copper-rt.com/secure/account/editshipping" />
 			</Helmet>
 			<div className="profile-info">
 				<div className="form">

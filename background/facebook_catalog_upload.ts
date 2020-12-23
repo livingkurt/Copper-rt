@@ -50,7 +50,7 @@ const facebook_catalog_upload = async () => {
 			'product_type'
 		]);
 
-		const { data } = await axios.get('https://www.copper-rt.com/api/products/shown');
+		const { data } = await axios.get('http://www.copper-rt.com/api/products/shown');
 
 		const new_rows = data.map((product: any, i: number) => {
 			const id = product._id;
@@ -59,7 +59,7 @@ const facebook_catalog_upload = async () => {
 			const availability = 'In Stock';
 			const condition = 'New';
 			const price = product.price + ' USD';
-			const link = 'https://www.copper-rt.com/collections/all/products/' + product.pathname;
+			const link = 'http://www.copper-rt.com/collections/all/products/' + product.pathname;
 			const image_link = product.images[0];
 			const brand = 'Gibson Lake Copper Art';
 			const inventory = product.countInStock;

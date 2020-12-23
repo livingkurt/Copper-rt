@@ -28,13 +28,13 @@ export default (props: any) => {
 			.first_name}, we&#x27;re getting your order ready to be shipped. We will notify you when it has been sent.</p>
         <div style="display:flex;flex-direction:row;align-items:center">
           <div style="display:flex;justify-content:center"><a
-              href="https://www.copper-rt.com/account/login?redirect=/secure/account/order/5f74a250290441002a36d078"
+              href="http://www.copper-rt.com/account/login?redirect=/secure/account/order/5f74a250290441002a36d078"
               alt="discount image"
               style="background-color:#4c4f60;color:white;border-radius:10px;border:0;padding:15px">
               <h4 style="font-family:helvetica;margin:0;font-size:1.2em;text-align:center">View your Order</h4>
             </a></div>
           <div style="margin:0px 10px">or</div>
-          <div style="display:flex;justify-content:center"><a href="https://www.copper-rt.com/collections/all/products"
+          <div style="display:flex;justify-content:center"><a href="http://www.copper-rt.com/collections/all/products"
               alt="discount image" style="color:white;border:0;font-size:13px;padding:10px">
               <h4 style="font-family:helvetica;margin:0;font-size:1.2em;text-align:center">Visit our Store</h4>
             </a></div>

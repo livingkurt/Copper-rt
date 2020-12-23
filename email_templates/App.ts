@@ -37,9 +37,9 @@ export default (props: any) => {
           Austin, TX 78752 </p>
         <p style="text-align:center;font-size:14px;color:white">Want to change how you receive these emails? <br /> You
           can <a rel="noopener noreferrer"
-            href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile" target="_blank"
+            href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile" target="_blank"
             style="text-decoration:underline;color:white">update your preferences</a> or <a rel="noopener noreferrer"
-            href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile" target="_blank"
+            href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile" target="_blank"
             style="text-decoration:underline;color:white">unsubscribe </a>from this list.</p>
   </div>
   </div>

@@ -11,8 +11,8 @@ const FAQPage = () => {
 				<title>Frequently Asked Questions | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Frequently Asked Questions" />
 				<meta name="twitter:title" content="Frequently Asked Questions" />
-				<link rel="canonical" href="https://www.copper-rt.com/pages/faq" />
-				<meta property="og:url" content="https://www.copper-rt.com/pages/faq" />
+				<link rel="canonical" href="http://www.copper-rt.com/pages/faq" />
+				<meta property="og:url" content="http://www.copper-rt.com/pages/faq" />
 				<meta
 					name="description"
 					content="Learn how the Gibson Lake Copper Art process works, and how to get your products to you and working as fast as possible."

@@ -6,4 +6,4 @@ Disallow: /secure/*
 User-agent: *
 Allow: /
 
-Sitemap: https://www.copper-rt.com/sitemap.xml
+Sitemap: http://www.copper-rt.com/sitemap.xml

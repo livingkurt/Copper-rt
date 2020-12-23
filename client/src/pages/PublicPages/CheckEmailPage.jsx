@@ -10,8 +10,8 @@ const CheckEmailPage = (props) => {
 				<title>Check Email | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Check Email" />
 				<meta name="twitter:title" content="Check Email" />
-				<link rel="canonical" href="https://www.copper-rt.com/account/checkemail" />
-				<meta property="og:url" content="https://www.copper-rt.com/account/checkemail" />
+				<link rel="canonical" href="http://www.copper-rt.com/account/checkemail" />
+				<meta property="og:url" content="http://www.copper-rt.com/account/checkemail" />
 			</Helmet>
 			<h1 style={{ textAlign: 'center' }}>Thank You for Registering your Account.</h1>
 			<h2 style={{ textAlign: 'center' }}>Check your Email for a Link to Verifiy your Account</h2>

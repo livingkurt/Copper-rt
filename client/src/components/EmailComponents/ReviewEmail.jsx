@@ -238,7 +238,7 @@ const ReviewEmail = () => {
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
 								Want to change how you receive these emails? <br /> You can{' '}
 								<a
-									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
+									href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{
@@ -250,7 +250,7 @@ const ReviewEmail = () => {
 								</a>{' '}
 								or{' '}
 								<a
-									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
+									href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{

@@ -9,8 +9,8 @@ const OrderPaymentAccountCompletePublicPage = (props) => {
 				<title>Payment Complete | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Payment Complete" />
 				<meta name="twitter:title" content="Payment Complete" />
-				<link rel="canonical" href="https://www.copper-rt.com/secure/checkout/paymentcomplete/" />
-				<meta property="og:url" content="https://www.copper-rt.com/secure/checkout/paymentcomplete/" />
+				<link rel="canonical" href="http://www.copper-rt.com/secure/checkout/paymentcomplete/" />
+				<meta property="og:url" content="http://www.copper-rt.com/secure/checkout/paymentcomplete/" />
 			</Helmet>
 			<div>
 				<h1 className="ta-c">Payment Successful</h1>

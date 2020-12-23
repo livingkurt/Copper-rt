@@ -31,7 +31,7 @@ const MaintenancePage = (props) => {
 				<title>Maintenance | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Maintenance" />
 				<meta name="twitter:title" content="Maintenance" />
-				<link rel="canonical" href="https://www.copper-rt.com/" />
+				<link rel="canonical" href="http://www.copper-rt.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 			</Helmet>
 			<div style={header_styles}>

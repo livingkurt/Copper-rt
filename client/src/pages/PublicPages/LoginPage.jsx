@@ -50,8 +50,8 @@ const LoginPage = (props) => {
 				<title>Login | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Login" />
 				<meta name="twitter:title" content="Login" />
-				<link rel="canonical" href="https://www.copper-rt.com/account/login" />
-				<meta property="og:url" content="https://www.copper-rt.com/account/login" />
+				<link rel="canonical" href="http://www.copper-rt.com/account/login" />
+				<meta property="og:url" content="http://www.copper-rt.com/account/login" />
 				<meta
 					name="description"
 					content="Come in the LEDs are fine. Come into our Glowing realm of wonderfulness. Where you just might find what you have been missing."

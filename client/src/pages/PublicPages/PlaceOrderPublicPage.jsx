@@ -386,8 +386,8 @@ const PlaceOrderPublicPage = (props) => {
 				<title>Place Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
-				<link rel="canonical" href="https://www.copper-rt.com/secure/checkout/placeorder" />
-				<meta property="og:url" content="https://www.copper-rt.com/secure/checkout/placeorder" />
+				<link rel="canonical" href="http://www.copper-rt.com/secure/checkout/placeorder" />
+				<meta property="og:url" content="http://www.copper-rt.com/secure/checkout/placeorder" />
 			</Helmet>
 			{successPay ? (
 				<GuestCheckoutSteps step1 step2 step3 step4 />

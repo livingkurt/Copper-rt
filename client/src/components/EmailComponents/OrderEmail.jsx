@@ -159,7 +159,7 @@ const OrderEmail = (props) => {
 									>
 										<a
 											href={
-												'https://www.copper-rt.com/account/login?redirect=/secure/account/order/' +
+												'http://www.copper-rt.com/account/login?redirect=/secure/account/order/' +
 												order._id
 											}
 											style={{
@@ -189,7 +189,7 @@ const OrderEmail = (props) => {
 										}}
 									>
 										<a
-											href="https://www.copper-rt.com/collections/all/products"
+											href="http://www.copper-rt.com/collections/all/products"
 											style={{
 												color: 'white',
 												border: 0,
@@ -803,7 +803,7 @@ const OrderEmail = (props) => {
 							<p style={{ textAlign: 'center', fontSize: '14px', color: 'white' }}>
 								Want to change how you receive these emails? <br /> You can{' '}
 								<a
-									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
+									href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{
@@ -815,7 +815,7 @@ const OrderEmail = (props) => {
 								</a>{' '}
 								or{' '}
 								<a
-									href="https://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
+									href="http://www.copper-rt.com/account/login?redirect=/secure/account/editprofile"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{

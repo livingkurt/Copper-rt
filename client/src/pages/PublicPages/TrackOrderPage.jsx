@@ -10,8 +10,8 @@ const ViewOrder = (props) => {
 				<title>Track Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Guest Decision" />
 				<meta name="twitter:title" content="Guest Decision" />
-				<link rel="canonical" href="https://www.copper-rt.com/account/decision" />
-				<meta property="og:url" content="https://www.copper-rt.com/account/decision" />
+				<link rel="canonical" href="http://www.copper-rt.com/account/decision" />
+				<meta property="og:url" content="http://www.copper-rt.com/account/decision" />
 			</Helmet>
 			<form>
 				<ul className="form-container">

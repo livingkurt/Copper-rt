@@ -70,8 +70,8 @@ const ChangePasswordPage = (props) => {
 				<title>Change Password | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Change Password" />
 				<meta name="twitter:title" content="Change Password" />
-				<link rel="canonical" href="https://www.copper-rt.com/secure/account/changepassword" />
-				<meta property="og:url" content="https://www.copper-rt.com/secure/account/changepassword" />
+				<link rel="canonical" href="http://www.copper-rt.com/secure/account/changepassword" />
+				<meta property="og:url" content="http://www.copper-rt.com/secure/account/changepassword" />
 			</Helmet>
 			<div className="mb-10px">
 				<button className="button secondary" onClick={() => history.goBack()}>

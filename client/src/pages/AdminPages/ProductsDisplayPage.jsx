@@ -155,8 +155,8 @@ const ProductsDisplayPage = (props) => {
 				<title>Products | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Products" />
 				<meta name="twitter:title" content="Products" />
-				<link rel="canonical" href="https://www.copper-rt.com/collections/all/products" />
-				<meta property="og:url" content="https://www.copper-rt.com/collections/all/products" />
+				<link rel="canonical" href="http://www.copper-rt.com/collections/all/products" />
+				<meta property="og:url" content="http://www.copper-rt.com/collections/all/products" />
 				<meta name="description" content={description_determination()} />
 				<meta property="og:description" content={description_determination()} />
 				<meta name="twitter:description" content={description_determination()} />

@@ -88,7 +88,7 @@ const GlowControlHomePage = (props) => {
 					name="twitter:title"
 					content="Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes"
 				/>
-				<link rel="canonical" href="https://www.copper-rt.com/" />
+				<link rel="canonical" href="http://www.copper-rt.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 				<meta
 					name="description"
@@ -105,16 +105,16 @@ const GlowControlHomePage = (props) => {
 				/>
 				<meta
 					property="og:image"
-					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+					content="http://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 				<meta
 					property="og:image:secure_url"
-					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+					content="http://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 
 				<meta
 					name="twitter:image"
-					content="https://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
+					content="http://www.copper-rt.com/images/optimized_images/logo_images/Gibson_Lake_Copper_Art_Logo.png"
 				/>
 			</Helmet>
 
