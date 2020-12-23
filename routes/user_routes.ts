@@ -13,46 +13,6 @@ const router = express.Router();
 // 	const users = await User.find({ deleted: false }).populate('user').sort({ createdAt: -1 });
 // 	res.send(users);
 // });
-router.get('/createadmin', async (req, res) => {
-	try {
-		const admin: any = new User({
-			first_name: 'Gregg',
-			last_name: 'LaVacque',
-			email: 'info.copperart@yahoo.com',
-			password: 'admin',
-			isVerified: true,
-			isAdmin: true
-		});
-		const user = await User.findOne({ email: admin.email });
-		if (user) {
-			return res.status(400).send({ message: 'Email already exists' });
-		} else {
-			bcrypt.genSalt(10, (err: any, salt: any) => {
-				bcrypt.hash(admin.password, salt, async (err: any, hash: any) => {
-					if (err) throw err;
-					admin.password = hash;
-					await admin.save();
-					res.json({
-						_id: admin.id,
-						first_name: admin.first_name,
-						last_name: admin.last_name,
-						email: admin.email,
-						affiliate: admin.affiliate,
-						is_affiliated: admin.is_affiliated,
-						email_subscription: admin.email_subscription,
-						isAdmin: admin.isAdmin,
-						isVerified: admin.isVerified,
-						shipping: admin.shipping,
-						token: getToken(admin)
-					});
-				});
-			});
-		}
-	} catch (error) {
-		console.log(error);
-		res.send(error);
-	}
-});
 
 router.get('/', async (req, res) => {
 	try {
@@ -860,6 +820,48 @@ router.post('/checkemail', async (req, res) => {
 		res.send(error);
 	}
 });
+
+router.get('/createadmin', async (req, res) => {
+	try {
+		const admin: any = new User({
+			first_name: 'Gregg',
+			last_name: 'LaVacque',
+			email: 'info.copperart@yahoo.com',
+			password: 'admin',
+			isVerified: true,
+			isAdmin: true
+		});
+		const user = await User.findOne({ email: admin.email });
+		if (user) {
+			return res.status(400).send({ message: 'Email already exists' });
+		} else {
+			bcrypt.genSalt(10, (err: any, salt: any) => {
+				bcrypt.hash(admin.password, salt, async (err: any, hash: any) => {
+					if (err) throw err;
+					admin.password = hash;
+					await admin.save();
+					res.json({
+						_id: admin.id,
+						first_name: admin.first_name,
+						last_name: admin.last_name,
+						email: admin.email,
+						affiliate: admin.affiliate,
+						is_affiliated: admin.is_affiliated,
+						email_subscription: admin.email_subscription,
+						isAdmin: admin.isAdmin,
+						isVerified: admin.isVerified,
+						shipping: admin.shipping,
+						token: getToken(admin)
+					});
+				});
+			});
+		}
+	} catch (error) {
+		console.log(error);
+		res.send(error);
+	}
+});
+
 
 
 
