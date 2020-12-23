@@ -402,12 +402,8 @@ const PlaceOrderPage = (props) => {
 		console.log({ type });
 		console.log({ error });
 	};
-	const [ stripePromise, setStripePromise ] = useState(() =>
-		loadStripe(
-			'pk_test_51I10qyEbh0KeSjPmJ1kmyHCvqYJ2BlJD3n2RklPQffxRhcX0tU6gK5YQQEJXohaCULLISsTWUkZ311uHRh3Kn81u00er2uJoB7'
-		)
-	);
-	console.log(process.env.REACT_APP_STRIPE_KEY);
+	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
+	// console.log(process.env.REACT_APP_STRIPE_KEY);
 
 	const Form = () => {
 		const stripe = useStripe();
@@ -453,10 +449,6 @@ const PlaceOrderPage = (props) => {
 			</form>
 		);
 	};
-
-	// const stripePromise = loadStripe(
-	// 	'pk_test_51I10qyEbh0KeSjPmJ1kmyHCvqYJ2BlJD3n2RklPQffxRhcX0tU6gK5YQQEJXohaCULLISsTWUkZ311uHRh3Kn81u00er2uJoB7'
-	// );
 
 	return (
 		<div>
