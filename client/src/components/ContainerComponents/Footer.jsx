@@ -42,7 +42,7 @@ const Footer = () => {
 							</h2>
 							<ul className="lst-none">
 								<li className="ta-l mv-2rem">
-									<Link to="/collections/all/products/category/glowskins">Barns</Link>
+									<Link to="/collections/all/products/category/glowskins">Buildings</Link>
 								</li>
 								<li className="ta-l mv-2rem">
 									<Link to="/collections/all/products/category/frosted_diffusers">Flowers</Link>

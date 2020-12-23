@@ -56,7 +56,7 @@ const ProductsPage = (props) => {
 
 	const colors = [
 		{ name: 'Not Category', color: '#5a4d41' },
-		{ name: 'Barns', color: '#557b68' },
+		{ name: 'Buildings', color: '#557b68' },
 		{ name: 'Flowers', color: '#4b7188' },
 		{ name: 'Trees', color: '#736084' }
 	];
@@ -66,7 +66,7 @@ const ProductsPage = (props) => {
 		if (!product.category) {
 			result = colors[0].color;
 		}
-		if (product.category === 'barns') {
+		if (product.category === 'buildings') {
 			result = colors[2].color;
 		}
 		if (product.category === 'flowers') {

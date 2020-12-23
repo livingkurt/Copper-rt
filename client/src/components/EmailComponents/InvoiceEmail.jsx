@@ -118,7 +118,7 @@ const InvoiceEmail = (props) => {
 											Gibson Lake Copper Art<br />
 											404 Kenniston Dr<br />
 											Austin, TX 78752<br />
-											info.copperart@yahoo.com
+											info.copper.rt@gmail.com
 										</td>
 
 										<td style={{ fontSize: '8px', textAlign: 'right' }} valign="top" align="right">
@@ -660,7 +660,7 @@ const InvoiceEmail = (props) => {
 							We appreciate you more than you know.
 						</div>
 						<div style={{ fontSize: '8px', textAlign: 'center' }}>
-							<strong>Questions or concerns?:</strong> info.copperart@yahoo.com
+							<strong>Questions or concerns?:</strong> info.copper.rt@gmail.com
 						</div>
 					</div>
 				</div>

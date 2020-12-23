@@ -235,17 +235,17 @@ const Header = (props) => {
 							</div>
 						</div>
 						<div className="dropdown-nav">
-							<Link to="/collections/all/products/category/barns">
-								<button className="button nav">Barns</button>
+							<Link to="/collections/all/products/category/buildings">
+								<button className="button nav">Buildings</button>
 							</Link>
 							{/* <div className="dropdown-nav-content hover_fade_in w-200px">
-								<Link to="/collections/all/products/category/barns/subcategory/on_slate">
+								<Link to="/collections/all/products/category/buildings/subcategory/on_slate">
 									<button className="button nav w-100per ta-l">On Slate</button>
 								</Link>
-								<Link to="/collections/all/products/category/barns/subcategory/on_driftwood">
+								<Link to="/collections/all/products/category/buildings/subcategory/on_driftwood">
 									<button className="button nav w-100per ta-l">On Driftwood</button>
 								</Link>
-								<Link to="/collections/all/products/category/barns/subcategory/wall_mounted">
+								<Link to="/collections/all/products/category/buildings/subcategory/wall_mounted">
 									<button className="button nav w-100per ta-l">Wall Mounted</button>
 								</Link>
 							</div> */}

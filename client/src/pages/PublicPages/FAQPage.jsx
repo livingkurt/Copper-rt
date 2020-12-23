@@ -145,7 +145,7 @@ const FAQPage = () => {
 							</li>
 							<li style={{ lineHeight: '25px' }}>
 								If the address on your order is incorrect, please contact us immediately at
-								info.copperart@yahoo.com or Facebook Chat at the Bottom Right of Your Screen.
+								info.copper.rt@gmail.com or Facebook Chat at the Bottom Right of Your Screen.
 							</li>
 						</ul>
 						<Link to="/pages/contact/order_issues">
@@ -194,7 +194,7 @@ const FAQPage = () => {
 								100% satisfaction guarantee . We accept returns within 14 days of delivery .
 							</li>
 							<li style={{ lineHeight: '25px' }}>
-								To initiate a return please contact info.copperart@yahoo.com or Facebook Chat at the
+								To initiate a return please contact info.copper.rt@gmail.com or Facebook Chat at the
 								Bottom Right of your Screen and You will be supplied with a prepaid shipping span to
 								send back your product.
 							</li>
@@ -214,7 +214,7 @@ const FAQPage = () => {
 							</li>
 							<li style={{ lineHeight: '25px' }}>
 								If item arrives damamged in any way please contact us immediately at
-								info.copperart@yahoo.com or through Facebook Chat at the Bottom right of your screeen.
+								info.copper.rt@gmail.com or through Facebook Chat at the Bottom right of your screeen.
 							</li>
 							<li style={{ lineHeight: '25px' }}>
 								Our online orders process immediately to ensure our clients receive their products as

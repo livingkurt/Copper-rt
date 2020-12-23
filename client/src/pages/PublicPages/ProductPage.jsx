@@ -174,7 +174,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>
@@ -185,7 +185,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>
@@ -196,7 +196,7 @@ const ProductPage = (props) => {
 									product.meta_description ? (
 										product.meta_description
 									) : (
-										'Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
+										'Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves.'
 									)
 								}
 							/>

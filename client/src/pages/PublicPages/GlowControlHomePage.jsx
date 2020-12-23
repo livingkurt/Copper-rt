@@ -77,29 +77,31 @@ const GlowControlHomePage = (props) => {
 	return (
 		<div className="main_container">
 			<Helmet>
-				<title>Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes</title>
+				<title>
+					Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes
+				</title>
 				<meta
 					property="og:title"
-					content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+					content="Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes"
 				/>
 				<meta
 					name="twitter:title"
-					content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+					content="Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes"
 				/>
 				<link rel="canonical" href="https://www.copper-rt.com/" />
 				<meta property="og:url" content="https://www.glow-leds.com" />
 				<meta
 					name="description"
-					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 
 				<meta
 					property="og:description"
-					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 				<meta
 					name="twitter:description"
-					content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+					content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 				/>
 				<meta
 					property="og:image"

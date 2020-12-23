@@ -272,7 +272,7 @@ router.post('/', isAuth, isAdmin, async (req: any, res: any) => {
 });
 
 let transporter = nodemailer.createTransport({
-	service: 'yahoo',
+	service: 'gmail',
 	pool: true,
 	auth: {
 		user: process.env.EMAIL,

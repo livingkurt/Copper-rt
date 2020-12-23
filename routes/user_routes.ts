@@ -826,7 +826,7 @@ router.get('/createadmin', async (req, res) => {
 		const admin: any = new User({
 			first_name: 'Gregg',
 			last_name: 'LaVacque',
-			email: 'info.copperart@yahoo.com',
+			email: 'info.copper.rt@gmail.com',
 			password: 'admin',
 			isVerified: true,
 			isAdmin: true

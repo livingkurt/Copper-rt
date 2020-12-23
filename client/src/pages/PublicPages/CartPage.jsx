@@ -31,7 +31,7 @@ const CartPage = (props) => {
 	};
 
 	const decide_warning = () => {
-		if (new Date() > new Date('2020-12-17') && new Date() < new Date('2021-01-02')) {
+		if (new Date() > new Date('2020-12-17') && new Date() < new Date('2020-12-17')) {
 			const confirm = window.confirm(
 				'Gibson Lake Copper Art will be out of office from 12/18/20 - 1/2/21. Orders will not be shipped until after January 2nd 2021'
 			);

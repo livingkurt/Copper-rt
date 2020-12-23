@@ -129,11 +129,11 @@ const App = () => {
 			<Container>
 				<Helmet>
 					<title>
-						Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes
+						Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes
 					</title>
 					<meta
 						name="description"
-						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
 					<link rel="canonical" href="https://www.glow-leds.com" />
 					<meta charset="utf-8" />
@@ -155,11 +155,11 @@ const App = () => {
 					/>
 					<meta
 						property="og:title"
-						content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+						content="Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes"
 					/>
 					<meta
 						property="og:description"
-						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
 					<meta property="og:url" content="https://www.glow-leds.com" />
 
@@ -167,11 +167,11 @@ const App = () => {
 					<meta name="twitter:card" content="summary" />
 					<meta
 						name="twitter:description"
-						content="Shop Gibson Lake Copper Art for Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
+						content="Shop Gibson Lake Copper Art for Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and Leaves."
 					/>
 					<meta
 						name="twitter:title"
-						content="Gibson Lake Copper Art | Rustic Copper Barns, Modern Abstract Decor, and Nature Scenes"
+						content="Gibson Lake Copper Art | Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes"
 					/>
 					<meta
 						name="twitter:image"
