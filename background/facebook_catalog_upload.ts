@@ -1,5 +1,5 @@
 import axios from 'axios';
-const google_sheets_json = require('./glow-leds-0e697a43198d.json');
+const google_sheets_json = require('./gibson-lake-copper-art-96025c7db741.json');
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -11,7 +11,7 @@ const facebook_catalog_upload = async () => {
 
 		// spreadsheet key is the long id in the sheets URL
 		// const doc = new GoogleSpreadsheet('1qf9xryR0EPOCD0YkFQXqYioAxJRfWg6QFpdFwFTpErg');
-		const doc = new GoogleSpreadsheet('1NqPY49Q-58oCVuslOw576zNyBUnyAAaOmGdzCrVT4g8');
+		const doc = new GoogleSpreadsheet('1V7WY26-Vq2IZPsc1kzemhWLP674h6mqv9wyM5IxyXFM');
 
 		// use service account creds
 		// await doc.useServiceAccountAuth({

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gibson-lake-copper-art",
+  "private_key_id": "96025c7db741683c9daaac56c3c06ab56e30e939",
+  "private_key": "",
+  "client_email": "gibson-lake-copper-art@gibson-lake-copper-art.iam.gserviceaccount.com",
+  "client_id": "110165984503292882084",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gibson-lake-copper-art%40gibson-lake-copper-art.iam.gserviceaccount.com"
+}
