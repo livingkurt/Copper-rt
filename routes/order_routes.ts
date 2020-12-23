@@ -748,11 +748,13 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 
 router.put('/:id/refund', async (req: any, res: any) => {
 	try {
-		const order = await Order.findById(req.params.id);
+    const order = await Order.findById(req.params.id);
+    console.log({order})
 		const refund = await stripe.refunds.create({
-			charge: order.payment.charge.id,
+			payment_intent: order.payment.charge.id,
 			amount: req.body.refund_amount * 100
-		});
+    });
+    console.log({refund})
 		if (refund) {
 			log_request({
 				method: 'PUT',
