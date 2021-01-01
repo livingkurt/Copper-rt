@@ -25,8 +25,8 @@
 @import './alignment/flex.scss';
 @import './alignment/position.scss';
 
-$background_color: #D7D2AC;
-$content_bg_color: #D7D2AC;
+$background_color: #d7d2ac;
+$content_bg_color: #d7d2ac;
 $font_color: white;
 $font_size: 1.6rem;
 $validation_color: #ff4a4a;
@@ -67,20 +67,20 @@ body {
 }
 
 footer {
-  background: linear-gradient(0deg, #5a4d41 0%, #D7D2AC 100%);
+	background: linear-gradient(0deg, #5a4d41 0%, #d7d2ac 100%);
 }
 
 .footer-image {
-  position: relative;
-  img {
-    width: 350px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -50px 0px 0px -50px;
-    transform: translate(-35%, -18%);
-    opacity: .2;
-  }
+	position: relative;
+	img {
+		width: 350px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0px 0px -50px;
+		transform: translate(-35%, -18%);
+		opacity: .2;
+	}
 }
 
 button {
@@ -106,7 +106,7 @@ button {
 	background-color: $content_bg_color;
 	box-shadow: $bs_deep;
 	// background: linear-gradient(180deg, #6b5b4d 0%, #5a4d41 100%);
-	background: linear-gradient(180deg, #A0977A 0%, #5a4d41 100%);
+	background: linear-gradient(180deg, #a0977a 0%, #5a4d41 100%);
 	border-radius: 20px;
 	margin: 230px auto 20px;
 	padding: 2rem;
@@ -151,7 +151,7 @@ header {
 }
 
 .banner {
-	background-color: #2F2216;
+	background-color: #2f2216;
 	z-index: 101;
 	height: 22px;
 	width: 100%;
@@ -597,7 +597,6 @@ th {
 	/* border-width: .3rem 0 0 0; */
 }
 
-
 /* Place Order */
 
 .placeorder {
@@ -691,8 +690,6 @@ th {
 	box-shadow: $bs_deep;
 }
 
-
-
 .dropdown:hover .dropdown-content {
 	display: flex;
 	flex-direction: column;
@@ -745,112 +742,77 @@ th {
 	display: flex;
 	flex-direction: column;
 }
+// Shipping Rates
 
-/* Select Dropdowns */
+.shipping_rates {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-size: 1.5rem;
+	padding: .75em 2em 0.55em 1em;
+	background: #756a57;
+	color: white;
+	border: 0;
+	// position: relative;
+	border-radius: 10px;
+	transition: all .5s ease;
+	font-family: "main_font";
+	border-radius: 10px 0 0 10px;
+}
 
-// .select_dropdown_container {
+.select-label {
+	margin-right: 5px;
+}
+
+// .custom-shipping_rates {
 // 	position: relative;
 // }
 
-// .select_dropdown {
-// 	-webkit-appearance: button;
-// 	box-shadow: $bs_shallow;
-// 	background-color: #6a6c80;
-// 	background-position: center right;
-// 	background-repeat: no-repeat;
-// 	border-radius: $br_small_containers;
-// 	border: 0;
-// 	color: $font_color;
-// 	padding-top: 9px;
-// 	padding-bottom: 5px;
-// 	padding-left: 10px;
-// 	padding-right: 8px;
-// 	font-size: $font_size;
-// 	margin: 0;
-// 	width: 123px;
-// 	overflow: hidden;
-// 	text-overflow: ellipsis;
-// 	white-space: nowrap;
-// 	margin: 10px;
-// 	font-family: $main_font;
-// 	transition: all .5s ease-out;
+// .shipping_rates:hover {
+// 	background-color: #393e55;
 // }
 
-// .qty_select_dropdown_container {
-// 	position: relative;
-// 	width: 65px;
+.custom-select-shipping_rates {
+	// position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	background: #544b43;
+	height: 100%;
+	width: 8rem;
+	color: white;
+	font-family: 'main_font';
+	// pointer-events: none;
+	padding: 1rem;
+	border-radius: 0 10px 10px 0;
+	border: 0;
+}
+.custom-select-shipping_rates:hover {
+	background-color: #665b51;
+}
+
+.custom-select-shipping_rates::before,
+.custom-select-shipping_rates::after {
+	--size: .4em;
+
+	content: '';
+	// position: absolute;
+	width: 0;
+	height: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// .custom-select-shipping_rates::before {
+// 	border-left: var(--size) solid transparent;
+// 	border-right: var(--size) solid transparent;
+// 	border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+// 	top: 35%;
 // }
 
-// .qty_select_dropdown {
-// 	-webkit-appearance: button;
-// 	box-shadow: $bs_shallow;
-// 	background-color: #6a6c80;
-// 	background-position: center right;
-// 	background-repeat: no-repeat;
-// 	border-radius: $br_small_containers;
-// 	border: 0;
-// 	color: $font_color;
-// 	padding-top: 9px;
-// 	padding-bottom: 5px;
-// 	padding-left: 10px;
-// 	padding-right: 8px;
-// 	font-size: $font_size;
-// 	margin: 0;
-// 	width: 50px;
-// 	overflow: hidden;
-// 	text-overflow: ellipsis;
-// 	white-space: nowrap;
-// 	margin: 10px;
-// 	font-family: $main_font;
-// 	transition: all .5s ease-out;
-// }
-
-// .icon_styles {
-// 	position: absolute;
-// 	right: 13px;
-// 	top: 1.6rem;
-// 	transform: rotate(-180deg);
-// }
-
-// .review_select_dropdown_container {
-// 	position: relative;
-// 	margin-left: 15px;
-// }
-
-// .review_select_dropdown {
-// 	-webkit-appearance: button;
-// 	box-shadow: $bs_shallow;
-// 	background-color: #6a6c80;
-// 	background-position: center right;
-// 	background-repeat: no-repeat;
-// 	border-radius: 9px;
-// 	border: 0;
-// 	color: $font_color;
-// 	padding-top: $br_small_containers;
-// 	padding-bottom: 5px;
-// 	padding-left: 10px;
-// 	padding-right: 8px;
-// 	font-size: $font_size;
-// 	margin: 0;
-// 	width: 160px;
-// 	overflow: hidden;
-// 	text-overflow: ellipsis;
-// 	white-space: nowrap;
-// 	font-family: $main_font;
-// 	transition: all .5s ease-out;
-// }
-
-// .review_icon_styles {
-// 	position: absolute;
-// 	right: 9px;
-// 	top: 6px;
-// 	transform: rotate(-180deg);
-// }
-
-// .select_dropdown:hover,
-// .qty_select_dropdown:hover,
-// .review_select_dropdown:hover {
-// 	background-color: #494c6b;
+// .custom-select-shipping_rates::after {
+// 	border-left: var(--size) solid transparent;
+// 	border-right: var(--size) solid transparent;
+// 	border-top: var(--size) solid rgba(255, 255, 255, 0.5);
+// 	top: 65%;
 // }
 
 // Categories
@@ -1457,63 +1419,58 @@ video {
 // 	flex-basis: calc(var(--multiplier) * 999);
 // }
 
-
 .csv-input {
-  // font-size: 20px;
-  // border-radius: 10px;
-  input {
-    font-size: 20px;
-    border-radius: 20px;
-  }
-  
+	// font-size: 20px;
+	// border-radius: 10px;
+	input {
+		font-size: 20px;
+		border-radius: 20px;
+	}
 }
 
 .csv-label {
 }
 
 .csv-reader-input {
-
 }
 
 #react-csv-reader-input {
-
 }
 
 .custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
 }
 
 input[type="file"] {
-  display: none;
+	display: none;
 }
 .FormGroup {
-  margin: 0 15px 20px;
-  padding: 0;
-  border-style: none;
-  background-color: #7795f8;
-  will-change: opacity, transform;
-  box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 #829fff;
-  border-radius: 4px;
+	margin: 0 15px 20px;
+	padding: 0;
+	border-style: none;
+	background-color: #7795f8;
+	will-change: opacity, transform;
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #829fff;
+	border-radius: 4px;
 }
 
 .FormRow {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-left: 15px;
-  border-top: 1px solid #819efc;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-left: 15px;
+	border-top: 1px solid #819efc;
 }
 
 .StripeElement--webkit-autofill {
-  background: transparent !important;
+	background: transparent !important;
 }
 
 .StripeElement {
-  width: 100%;
-  padding: 11px 15px 11px 0;
+	width: 100%;
+	padding: 11px 15px 11px 0;
 }

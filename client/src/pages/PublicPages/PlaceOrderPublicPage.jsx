@@ -8,12 +8,10 @@ import { addToCart, removeFromCart, saveShipping, savePayment } from '../../acti
 import { listPromos } from '../../actions/promoActions';
 import Cookie from 'js-cookie';
 import StripeCheckout from 'react-stripe-checkout';
-import { LoadingPayments } from '../../components/UtilityComponents';
+import { Loading, LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code, validate_passwords } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
-import { API_External } from '../../utils';
-import { loadStripe } from '@stripe/stripe-js';
-import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
+import { API_External, API_Orders } from '../../utils';
 
 const PlaceOrderPublicPage = (props) => {
 	const dispatch = useDispatch();
@@ -35,7 +33,17 @@ const PlaceOrderPublicPage = (props) => {
 			? cartItems.reduce((a, c) => a + c.price * c.qty, 0)
 			: cartItems.reduce((a, c) => a + c.sale_price * c.qty, 0);
 
+	const [ shipping_rates, set_shipping_rates ] = useState({});
+	const [ current_shipping_speed, set_current_shipping_speed ] = useState('');
+	const [ loading_shipping, set_loading_shipping ] = useState(false);
+	const [ handling_costs, set_handling_costs ] = useState(5 / 60 * 20);
+	const [ packaging_cost, set_packaging_cost ] = useState(0.5);
+	const [ shipment_id, set_shipment_id ] = useState('');
+	const [ shipping_rate, set_shipping_rate ] = useState({});
+	const [ hide_pay_button, set_hide_pay_button ] = useState(true);
+
 	const [ shippingPrice, setShippingPrice ] = useState(0);
+	const [ previousShippingPrice, setPreviousShippingPrice ] = useState(0);
 	const [ promo_code, set_promo_code ] = useState('');
 	const [ payment_loading, set_payment_loading ] = useState(false);
 	const [ itemsPrice, setItemsPrice ] = useState(items_price);
@@ -155,12 +163,14 @@ const PlaceOrderPublicPage = (props) => {
 	useEffect(
 		() => {
 			if (shipping) {
-				if (shipping.international) {
-					stable_calculate_international();
-				} else {
-					stable_calculate_shipping();
-					stable_calculate_shipping();
-				}
+				// if (shipping.international) {
+				// 	stable_calculate_international();
+				// } else {
+				// 	stable_calculate_shipping();
+				// 	stable_calculate_shipping();
+				// }
+				set_loading_shipping(true);
+				get_shipping_rates();
 				get_tax_rates();
 			}
 			return () => {};
@@ -168,6 +178,46 @@ const PlaceOrderPublicPage = (props) => {
 		[ shipping ]
 	);
 
+	const get_shipping_rates = async () => {
+		const { data } = await API_Orders.get_shipping_rates({
+			orderItems: cartItems,
+			shipping,
+			payment,
+			itemsPrice,
+			shippingPrice,
+			taxPrice,
+			totalPrice,
+			user_data,
+			order_note,
+			promo_code
+		});
+		if (data) {
+			set_shipping_rates(data);
+			set_shipment_id(data.id);
+			set_loading_shipping(false);
+			// set_loading_shipping(false);
+		}
+
+		// if (sorted_rates[0]) {
+		// 	// setShippingPrice(parseFloat(sorted_rates[0].rate) + packaging_cost + handling_costs);
+		// 	setShippingPrice(parseFloat(sorted_rates[0].retail_rate) + packaging_cost);
+		// 	// set_shipment_id(data.id);
+		// }
+	};
+	const choose_shipping_rate = (rate, speed) => {
+		setShippingPrice(parseFloat(rate.retail_rate) + packaging_cost);
+		setPreviousShippingPrice(parseFloat(rate.retail_rate) + packaging_cost);
+		set_hide_pay_button(false);
+		set_shipping_rate(rate);
+		set_current_shipping_speed({ rate, speed });
+	};
+
+	const re_choose_shipping_rate = () => {
+		setShippingPrice(0);
+		setPreviousShippingPrice(0);
+		set_hide_pay_button(true);
+		set_shipping_rate({});
+	};
 	const get_tax_rates = async () => {
 		setTaxPrice(0);
 		set_loading_tax_rate(true);
@@ -223,7 +273,13 @@ const PlaceOrderPublicPage = (props) => {
 			createPayOrderGuest(
 				{
 					orderItems: cartItems,
-					shipping,
+					shipping: shipment_id
+						? {
+								...shipping,
+								shipment_id,
+								shipping_rate
+							}
+						: shipping,
 					payment,
 					itemsPrice,
 					shippingPrice,
@@ -353,10 +409,12 @@ const PlaceOrderPublicPage = (props) => {
 					setTaxPrice(tax_rate * (items_price - promo.amount_off));
 				}
 				if (promo.free_shipping) {
+					setPreviousShippingPrice(shippingPrice);
 					setShippingPrice(0);
 					set_free_shipping_message('Free');
 				}
 				if (promo_code === 'freeshipping') {
+					setPreviousShippingPrice(shippingPrice);
 					setShippingPrice(0);
 					set_free_shipping_message('Free');
 				}
@@ -373,8 +431,21 @@ const PlaceOrderPublicPage = (props) => {
 
 	const remove_promo = () => {
 		setItemsPrice(items_price);
-		setTaxPrice(0.0875 * items_price);
+		setTaxPrice(tax_rate * items_price);
+		setShippingPrice(shippingPrice);
+		set_free_shipping_message('');
 		set_show_message('');
+		if (shipping) {
+			// if (shipping.international) {
+			// 	calculate_international();
+			// } else {
+			// 	calculate_shipping();
+			// 	calculate_shipping();
+			// }
+			// set_loading_shipping(true);
+			// get_shipping_rates();
+			setShippingPrice(previousShippingPrice);
+		}
 	};
 	const handleChangeFor = (type) => ({ error }) => {
 		/* handle error */
@@ -382,58 +453,21 @@ const PlaceOrderPublicPage = (props) => {
 		console.log({ error });
 	};
 
-	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
-	// console.log(process.env.REACT_APP_STRIPE_KEY);
-
-	const Form = () => {
-		const stripe = useStripe();
-		const elements = useElements();
-
-		const handleSubmit = async (event) => {
-			event.preventDefault();
-			const { error, paymentMethod } = await stripe.createPaymentMethod({
-				type: 'card',
-				card: elements.getElement(CardElement)
-			});
-
-			// console.log({ error });
-			if (error) {
-				console.log({ error });
-				return;
-			}
-			console.log({ paymentMethod });
-			placeOrderHandler(paymentMethod);
-		};
-
-		return (
-			<form onSubmit={handleSubmit}>
-				<CardElement
-					options={{
-						style: {
-							base: {
-								fontSize: '20px',
-								color: 'white',
-								'::placeholder': {
-									color: 'white'
-								}
-							},
-							invalid: {
-								color: '#9e2146'
-							}
-						}
-					}}
-				/>
-				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
-					Pay for Order
-				</button>
-			</form>
-		);
+	const determine_delivery_speed = (speed) => {
+		switch (speed) {
+			case 'Standard':
+				return '2-3 Days';
+			case 'Priority':
+				return '1-3 Days';
+			case 'Express':
+				return '1-2 Days';
+		}
 	};
 
 	return (
 		<div>
 			<Helmet>
-				<title>Place Order | Gibson Lake Copper Art</title>
+				<title>Place Order | Glow LEDs</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />
@@ -451,6 +485,7 @@ const PlaceOrderPublicPage = (props) => {
 				<div className="placeorder-info">
 					<div>
 						<h2>Shipping</h2>
+
 						<div className="wrap jc-b">
 							{shipping &&
 							shipping.hasOwnProperty('first_name') && (
@@ -458,7 +493,9 @@ const PlaceOrderPublicPage = (props) => {
 									<div>
 										{shipping.first_name} {shipping.last_name}
 									</div>
-									<div>{shipping.address}</div>
+									<div>
+										{shipping.address_1} {shipping.address_2}
+									</div>
 									<div>
 										{shipping.city}, {shipping.state} {shipping.postalCode} {shipping.country}
 									</div>
@@ -627,8 +664,9 @@ const PlaceOrderPublicPage = (props) => {
 								)}
 							</div>
 						</li>
-						<li>
+						<li className="pos-rel">
 							<div>Shipping</div>
+							<Loading loading={loading_shipping} />
 							<div>
 								{shipping && shipping.hasOwnProperty('first_name') && shippingPrice > 0 ? (
 									'$' + shippingPrice.toFixed(2)
@@ -649,14 +687,154 @@ const PlaceOrderPublicPage = (props) => {
 								)}
 							</div>
 						</li>
+						{hide_pay_button &&
+						shipping_rates.rates && (
+							<div>
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'First' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Standard</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div>
+														{' '}
+														{rate.est_delivery_days}{' '}
+														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+													</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Standard')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Priority' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Priority</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div>
+														{' '}
+														{rate.est_delivery_days}{' '}
+														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+													</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Priority')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{/* {shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Ground' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Ground</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div> 3-{rate.est_delivery_days} Days</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Ground')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})} */}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Express' && (
+											<div className=" mv-1rem jc-b ai-c">
+												<div className="shipping_rates jc-b w-100per wrap">
+													<div className="service">Express</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div> 1-2 Days</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Express')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+							</div>
+						)}
+
+						<li>
+							{!hide_pay_button && (
+								<div className=" mv-1rem jc-b ai-c w-100per">
+									<div className="shipping_rates jc-b w-100per ">
+										<div>
+											{current_shipping_speed.speed} ${(parseFloat(
+												current_shipping_speed.rate.retail_rate
+											) + packaging_cost).toFixed(2)}{' '}
+											{/* {determine_delivery_speed(current_shipping_speed.speed)}{' '} */}
+											{current_shipping_speed.rate.est_delivery_days}{' '}
+											{current_shipping_speed.rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+										</div>
+									</div>
+									<button
+										className="custom-select-shipping_rates w-10rem"
+										onClick={() => re_choose_shipping_rate()}
+									>
+										Change
+									</button>
+								</div>
+							)}
+						</li>
 						{!loading_tax_rate &&
+						!hide_pay_button &&
 						shipping &&
 						shipping.hasOwnProperty('first_name') &&
 						!account_create && (
 							<div>
-								<Elements stripe={stripePromise}>
-									<Form />
-								</Elements>
+								<StripeCheckout
+									name="Glow LEDs"
+									description={`Pay for Order`}
+									amount={totalPrice.toFixed(2) * 100}
+									token={(token) => placeOrderHandler(token, false)}
+									stripeKey={process.env.REACT_APP_STRIPE_KEY}
+									onChange={handleChangeFor('cardNumber')}
+								>
+									<button className="button secondary full-width mb-12px">Pay for Order</button>
+								</StripeCheckout>
 							</div>
 						)}
 						{loading_checkboxes ? (
@@ -716,9 +894,18 @@ const PlaceOrderPublicPage = (props) => {
 						shipping.hasOwnProperty('first_name') &&
 						passwords_check && (
 							<div>
-								<Elements stripe={stripePromise}>
-									<Form />
-								</Elements>
+								<StripeCheckout
+									name="Glow LEDs"
+									description={`Pay for Order`}
+									amount={totalPrice.toFixed(2) * 100}
+									token={(token) => placeOrderHandler(token, true)}
+									stripeKey={process.env.REACT_APP_STRIPE_KEY}
+									onChange={handleChangeFor('cardNumber')}
+								>
+									<button className="button primary full-width mb-12px">
+										Pay for Order/Create Account
+									</button>
+								</StripeCheckout>
 							</div>
 						)}
 						<div className="mv-10px">

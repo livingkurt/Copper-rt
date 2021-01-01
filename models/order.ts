@@ -3,10 +3,14 @@ export {};
 const mongoose = require('mongoose');
 
 const shippingSchema = {
+	shipment_id: { type: String },
+	shipping_rate: { type: Object },
 	first_name: { type: String, required: true },
 	last_name: { type: String, required: true },
 	email: { type: String, required: true },
-	address: { type: String, required: true },
+	address: { type: String },
+	address_1: { type: String, required: true },
+	address_2: { type: String },
 	city: { type: String, required: true },
 	state: { type: String, required: true },
 	postalCode: { type: String, required: true },
@@ -15,8 +19,7 @@ const shippingSchema = {
 };
 
 const paymentSchema = {
-  paymentMethod: { type: String, required: true },
-  payment:{ type: Object },
+	paymentMethod: { type: String, required: true },
 	charge: { type: Object },
 	refund: { type: Array },
 	refund_reason: { type: Array }

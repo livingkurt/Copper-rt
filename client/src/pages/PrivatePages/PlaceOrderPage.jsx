@@ -8,14 +8,11 @@ import { addToCart, removeFromCart, saveShipping, savePayment } from '../../acti
 import { listPromos } from '../../actions/promoActions';
 import Cookie from 'js-cookie';
 import StripeCheckout from 'react-stripe-checkout';
-import { loadStripe } from '@stripe/stripe-js';
-import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
-
-import { CheckoutForm, LoadingPayments } from '../../components/UtilityComponents';
+import { Loading, LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
 import { listUsers } from '../../actions/userActions';
-import { API_External, API_Products } from '../../utils';
+import { API_External, API_Orders, API_Products } from '../../utils';
 
 const PlaceOrderPage = (props) => {
 	const user_data = props.userInfo;
@@ -37,7 +34,17 @@ const PlaceOrderPage = (props) => {
 			? cartItems.reduce((a, c) => a + c.price * c.qty, 0)
 			: cartItems.reduce((a, c) => a + c.sale_price * c.qty, 0);
 
+	const [ shipping_rates, set_shipping_rates ] = useState({});
+	const [ current_shipping_speed, set_current_shipping_speed ] = useState('');
+	const [ loading_shipping, set_loading_shipping ] = useState(false);
+	const [ handling_costs, set_handling_costs ] = useState(5 / 60 * 20);
+	const [ packaging_cost, set_packaging_cost ] = useState(0.5);
+	const [ shipment_id, set_shipment_id ] = useState('');
+	const [ shipping_rate, set_shipping_rate ] = useState({});
+	const [ hide_pay_button, set_hide_pay_button ] = useState(true);
+
 	const [ shippingPrice, setShippingPrice ] = useState(0);
+	const [ previousShippingPrice, setPreviousShippingPrice ] = useState(0);
 	const [ promo_code, set_promo_code ] = useState('');
 	const [ payment_loading, set_payment_loading ] = useState(false);
 	const [ itemsPrice, setItemsPrice ] = useState(items_price);
@@ -48,7 +55,9 @@ const PlaceOrderPage = (props) => {
 	const [ user, set_user ] = useState(user_data);
 	const [ free_shipping_message, set_free_shipping_message ] = useState('------');
 	const [ loading_tax_rate, set_loading_tax_rate ] = useState(false);
+
 	const [ no_user, set_no_user ] = useState(false);
+
 	const [ loading_checkboxes, set_loading_checkboxes ] = useState(true);
 	const dispatch = useDispatch();
 
@@ -57,62 +66,62 @@ const PlaceOrderPage = (props) => {
 		set_loading_checkboxes(false);
 	}, 500);
 
-	const calculate_shipping = () => {
-		const volume = cartItems.reduce((a, c) => a + c.volume * c.qty, 0);
-		console.log(volume);
-		if (volume === 0) {
-			console.log(0);
-			setShippingPrice(0);
-		} else if (volume <= 10) {
-			console.log(5);
-			setShippingPrice(5);
-		} else if (volume > 10 && volume <= 165) {
-			console.log(8);
-			setShippingPrice(7);
-		} else if (volume > 165 && volume <= 250) {
-			console.log(8);
-			setShippingPrice(9);
-		} else if (volume > 250 && volume <= 405) {
-			console.log(10);
-			setShippingPrice(10);
-			console.log(12);
-		} else if (volume > 405 && volume < 500) {
-			setShippingPrice(12);
-			console.log(500);
-		} else if (volume > 500) {
-			setShippingPrice(15);
-		}
+	// const calculate_shipping = () => {
+	// 	const volume = cartItems.reduce((a, c) => a + c.volume * c.qty, 0);
+	// 	console.log(volume);
+	// 	if (volume === 0) {
+	// 		console.log(0);
+	// 		setShippingPrice(0);
+	// 	} else if (volume <= 10) {
+	// 		console.log(5);
+	// 		setShippingPrice(5);
+	// 	} else if (volume > 10 && volume <= 165) {
+	// 		console.log(8);
+	// 		setShippingPrice(7);
+	// 	} else if (volume > 165 && volume <= 250) {
+	// 		console.log(8);
+	// 		setShippingPrice(9);
+	// 	} else if (volume > 250 && volume <= 405) {
+	// 		console.log(10);
+	// 		setShippingPrice(10);
+	// 		console.log(12);
+	// 	} else if (volume > 405 && volume < 500) {
+	// 		setShippingPrice(12);
+	// 		console.log(500);
+	// 	} else if (volume > 500) {
+	// 		setShippingPrice(15);
+	// 	}
 
-		// if (itemsPrice >= 50) {
-		// 	setShippingPrice(0);
-		// }
-		// console.log({ shippingPrice });
-		setTotalPrice(itemsPrice + shippingPrice + taxPrice);
-	};
-	const calculate_international = () => {
-		const volume = cartItems.reduce((a, c) => a + c.volume * c.qty, 0);
-		if (volume === 0) {
-			setShippingPrice(0);
-		} else if (volume <= 10) {
-			setShippingPrice(17);
-		} else if (volume > 10 && volume < 250) {
-			setShippingPrice(17);
-		} else if (volume > 250 && volume < 405) {
-			setShippingPrice(20);
-		} else if (volume > 405 && volume < 500) {
-			setShippingPrice(40);
-		} else if (volume > 500) {
-			setShippingPrice(80);
-		}
-		setTotalPrice(itemsPrice + shippingPrice + taxPrice);
-		// console.log({ shippingPrice });
-	};
+	// 	// if (itemsPrice >= 50) {
+	// 	// 	setShippingPrice(0);
+	// 	// }
+	// 	// console.log({ shippingPrice });
+	// 	setTotalPrice(itemsPrice + shippingPrice + taxPrice);
+	// };
+	// const calculate_international = () => {
+	// 	const volume = cartItems.reduce((a, c) => a + c.volume * c.qty, 0);
+	// 	if (volume === 0) {
+	// 		setShippingPrice(0);
+	// 	} else if (volume <= 10) {
+	// 		setShippingPrice(17);
+	// 	} else if (volume > 10 && volume < 250) {
+	// 		setShippingPrice(17);
+	// 	} else if (volume > 250 && volume < 405) {
+	// 		setShippingPrice(20);
+	// 	} else if (volume > 405 && volume < 500) {
+	// 		setShippingPrice(40);
+	// 	} else if (volume > 500) {
+	// 		setShippingPrice(80);
+	// 	}
+	// 	setTotalPrice(itemsPrice + shippingPrice + taxPrice);
+	// 	// console.log({ shippingPrice });
+	// };
 
 	const stableDispatch = useCallback(dispatch, []);
 	const stable_setItemsPrice = useCallback(setItemsPrice, []);
 	const stable_set_payment_loading = useCallback(set_payment_loading, []);
-	const stable_calculate_international = useCallback(calculate_international, []);
-	const stable_calculate_shipping = useCallback(calculate_shipping, []);
+	// const stable_calculate_international = useCallback(calculate_international, []);
+	// const stable_calculate_shipping = useCallback(calculate_shipping, []);
 
 	useEffect(
 		() => {
@@ -154,18 +163,57 @@ const PlaceOrderPage = (props) => {
 	useEffect(
 		() => {
 			if (shipping) {
-				if (shipping.international) {
-					stable_calculate_international();
-				} else {
-					stable_calculate_shipping();
-					stable_calculate_shipping();
-				}
+				set_loading_shipping(true);
+				get_shipping_rates();
+				// get_shipping_rates();
 				get_tax_rates();
 			}
 			return () => {};
 		},
 		[ shipping ]
 	);
+
+	const get_shipping_rates = async () => {
+		const { data } = await API_Orders.get_shipping_rates({
+			orderItems: cartItems,
+			shipping,
+			payment,
+			itemsPrice,
+			shippingPrice,
+			taxPrice,
+			totalPrice,
+			user_data,
+			order_note,
+			promo_code
+		});
+		if (data) {
+			set_shipping_rates(data);
+			set_shipment_id(data.id);
+			set_loading_shipping(false);
+			// set_loading_shipping(false);
+		}
+
+		// if (sorted_rates[0]) {
+		// 	// setShippingPrice(parseFloat(sorted_rates[0].rate) + packaging_cost + handling_costs);
+		// 	setShippingPrice(parseFloat(sorted_rates[0].retail_rate) + packaging_cost);
+		// 	// set_shipment_id(data.id);
+		// }
+	};
+
+	const choose_shipping_rate = (rate, speed) => {
+		setShippingPrice(parseFloat(rate.retail_rate) + packaging_cost);
+		setPreviousShippingPrice(parseFloat(rate.retail_rate) + packaging_cost);
+		set_hide_pay_button(false);
+		set_shipping_rate(rate);
+		set_current_shipping_speed({ rate, speed });
+	};
+
+	const re_choose_shipping_rate = () => {
+		setShippingPrice(0);
+		setPreviousShippingPrice(0);
+		set_hide_pay_button(true);
+		set_shipping_rate({});
+	};
 
 	const get_tax_rates = async () => {
 		setTaxPrice(0);
@@ -195,7 +243,7 @@ const PlaceOrderPage = (props) => {
 		[ shippingPrice ]
 	);
 
-	const placeOrderHandler = async (paymentMethod) => {
+	const placeOrderHandler = async (token) => {
 		// create an order
 		console.log({ user_data });
 		console.log({ user });
@@ -203,7 +251,13 @@ const PlaceOrderPage = (props) => {
 			createPayOrder(
 				{
 					orderItems: cartItems,
-					shipping,
+					shipping: shipment_id
+						? {
+								...shipping,
+								shipment_id,
+								shipping_rate
+							}
+						: shipping,
 					payment,
 					itemsPrice,
 					shippingPrice,
@@ -213,7 +267,7 @@ const PlaceOrderPage = (props) => {
 					order_note,
 					promo_code
 				},
-				paymentMethod
+				token
 			)
 		);
 
@@ -222,6 +276,14 @@ const PlaceOrderPage = (props) => {
 			await API_Products.promo_code_used(promo_code);
 		}
 	};
+	// 	const save_shipment_id = (shipment_id) => {
+	// 	dispatch(
+	// 		saveShipping({
+	// 			...shipping,
+	// 			shipment_id
+	// 		})
+	// 	);
+	// };
 
 	const create_order_without_paying = async () => {
 		// create an order
@@ -229,7 +291,12 @@ const PlaceOrderPage = (props) => {
 		dispatch(
 			createOrder({
 				orderItems: cartItems,
-				shipping: { ...shipping, email: user.email },
+				shipping: {
+					...shipping,
+					email: user.email,
+					shipment_id: shipment_id && shipment_id,
+					shipping_rate: shipping_rate && shipping_rate
+				},
 				payment,
 				itemsPrice,
 				shippingPrice,
@@ -253,7 +320,13 @@ const PlaceOrderPage = (props) => {
 		dispatch(
 			createOrderGuest({
 				orderItems: cartItems,
-				shipping,
+				shipping: shipment_id
+					? {
+							...shipping,
+							shipment_id,
+							shipping_rate
+						}
+					: shipping,
 				payment,
 				itemsPrice,
 				shippingPrice,
@@ -362,10 +435,12 @@ const PlaceOrderPage = (props) => {
 					setTaxPrice(tax_rate * (items_price - promo.amount_off));
 				}
 				if (promo.free_shipping) {
+					setPreviousShippingPrice(shippingPrice);
 					setShippingPrice(0);
 					set_free_shipping_message('Free');
 				}
 				if (promo_code === 'freeshipping') {
+					setPreviousShippingPrice(shippingPrice);
 					setShippingPrice(0);
 					set_free_shipping_message('Free');
 				}
@@ -387,12 +462,15 @@ const PlaceOrderPage = (props) => {
 		set_free_shipping_message('');
 		set_show_message('');
 		if (shipping) {
-			if (shipping.international) {
-				calculate_international();
-			} else {
-				calculate_shipping();
-				calculate_shipping();
-			}
+			// if (shipping.international) {
+			// 	calculate_international();
+			// } else {
+			// 	calculate_shipping();
+			// 	calculate_shipping();
+			// }
+			// set_loading_shipping(true);
+			// get_shipping_rates();
+			setShippingPrice(previousShippingPrice);
 		}
 	};
 	const handleChangeFor = (type) => ({ error }) => {
@@ -400,62 +478,26 @@ const PlaceOrderPage = (props) => {
 		console.log({ type });
 		console.log({ error });
 	};
-	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
-	// console.log(process.env.REACT_APP_STRIPE_KEY);
 
-	const Form = () => {
-		const stripe = useStripe();
-		const elements = useElements();
-
-		const handleSubmit = async (event) => {
-			event.preventDefault();
-			const { error, paymentMethod } = await stripe.createPaymentMethod({
-				type: 'card',
-				card: elements.getElement(CardElement)
-			});
-
-			// console.log({ error });
-			if (error) {
-				console.log({ error });
-				return;
-			}
-			console.log({ paymentMethod });
-			placeOrderHandler(paymentMethod);
-		};
-
-		return (
-			<form onSubmit={handleSubmit}>
-				<CardElement
-					options={{
-						style: {
-							base: {
-								fontSize: '20px',
-								color: 'white',
-								'::placeholder': {
-									color: 'white'
-								}
-							},
-							invalid: {
-								color: '#9e2146'
-							}
-						}
-					}}
-				/>
-				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
-					Pay for Order
-				</button>
-			</form>
-		);
+	const determine_delivery_speed = (speed) => {
+		switch (speed) {
+			case 'Standard':
+				return '2-3 Days';
+			case 'Priority':
+				return '1-3 Days';
+			case 'Express':
+				return '1-2 Days';
+		}
 	};
 
 	return (
 		<div>
 			<Helmet>
-				<title>Place Order | Gibson Lake Copper Art</title>
+				<title>Place Order | Glow LEDs</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
-				<link rel="canonical" href="http://www.copper-rt.com/secure/checkout/placeorder" />
-				<meta property="og:url" content="http://www.copper-rt.com/secure/checkout/placeorder" />
+				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />
+				<meta property="og:url" content="https://www.glow-leds.com/secure/checkout/placeorder" />
 			</Helmet>
 			{successPay ? (
 				<CheckoutSteps step1 step2 step3 step4 />
@@ -465,6 +507,7 @@ const PlaceOrderPage = (props) => {
 				<CheckoutSteps step1 />
 			)}
 			<LoadingPayments loading={payment_loading} error={error} />
+
 			<div className="placeorder">
 				<div className="placeorder-info">
 					<div>
@@ -476,7 +519,9 @@ const PlaceOrderPage = (props) => {
 									<div>
 										{shipping.first_name} {shipping.last_name}
 									</div>
-									<div>{shipping.address}</div>
+									<div>
+										{shipping.address_1} {shipping.address_2}
+									</div>
 									<div>
 										{shipping.city}, {shipping.state} {shipping.postalCode} {shipping.country}
 									</div>
@@ -497,6 +542,7 @@ const PlaceOrderPage = (props) => {
 							</div>
 						</div>
 					</div>
+
 					<div>
 						<ul className="cart-list-container">
 							<li>
@@ -646,8 +692,9 @@ const PlaceOrderPage = (props) => {
 								)}
 							</div>
 						</li>
-						<li>
+						<li className="pos-rel">
 							<div>Shipping</div>
+							<Loading loading={loading_shipping} />
 							<div>
 								{shipping && shipping.hasOwnProperty('first_name') && shippingPrice > 0 ? (
 									'$' + shippingPrice.toFixed(2)
@@ -668,13 +715,182 @@ const PlaceOrderPage = (props) => {
 								)}
 							</div>
 						</li>
+						{console.log({ shipping_rates })}
+						{hide_pay_button &&
+						shipping_rates.rates && (
+							<div>
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'ParcelSelect' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">ParcelSelect</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div>
+														{' '}
+														{rate.est_delivery_days}{' '}
+														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+													</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'ParcelSelect')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'First' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Standard</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div>
+														{' '}
+														{rate.est_delivery_days}{' '}
+														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+													</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Standard')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Priority' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Priority</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div>
+														{' '}
+														{rate.est_delivery_days}{' '}
+														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+													</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Priority')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Ground' && (
+											<div className=" mv-1rem jc-b  ai-c">
+												<div className="shipping_rates jc-b w-100per wrap ">
+													<div className="service">Ground</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div> {rate.est_delivery_days} Days</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Ground')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+								{shipping_rates.rates.map((rate, index) => {
+									return (
+										rate.service === 'Express' && (
+											<div className=" mv-1rem jc-b ai-c">
+												<div className="shipping_rates jc-b w-100per wrap">
+													<div className="service">Express</div>
+													<div>
+														{' '}
+														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
+															2
+														)}{' '}
+													</div>
+													<div> 1-2 Days</div>
+												</div>
+												<button
+													className="custom-select-shipping_rates"
+													onClick={() => choose_shipping_rate(rate, 'Express')}
+												>
+													Select
+												</button>
+											</div>
+										)
+									);
+								})}
+							</div>
+						)}
+
+						<li>
+							{!hide_pay_button && (
+								<div className=" mv-1rem jc-b ai-c w-100per">
+									<div className="shipping_rates jc-b w-100per ">
+										<div>
+											{current_shipping_speed.speed} ${(parseFloat(
+												current_shipping_speed.rate.retail_rate
+											) + packaging_cost).toFixed(2)}{' '}
+											{/* {determine_delivery_speed(current_shipping_speed.speed)}{' '} */}
+											{current_shipping_speed.rate.est_delivery_days}{' '}
+											{current_shipping_speed.rate.est_delivery_days === 1 ? 'Day' : 'Days'}
+										</div>
+									</div>
+									<button
+										className="custom-select-shipping_rates w-10rem"
+										onClick={() => re_choose_shipping_rate()}
+									>
+										Change
+									</button>
+								</div>
+							)}
+						</li>
 						{!loading_tax_rate &&
+						!hide_pay_button &&
 						shipping &&
 						shipping.hasOwnProperty('first_name') && (
 							<div>
-								<Elements stripe={stripePromise}>
-									<Form />
-								</Elements>
+								<StripeCheckout
+									name="Glow LEDs"
+									description={`Pay for Order`}
+									amount={totalPrice.toFixed(2) * 100}
+									token={(token) => placeOrderHandler(token)}
+									stripeKey={process.env.REACT_APP_STRIPE_KEY}
+									onChange={handleChangeFor('cardNumber')}
+								>
+									<button className="button primary full-width mb-12px">Pay for Order</button>
+								</StripeCheckout>
 							</div>
 						)}
 						{user_data && user_data.isAdmin && users && loading_checkboxes ? (

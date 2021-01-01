@@ -11,6 +11,8 @@ const { isAuth, isAdmin } = require('../util');
 const salesTax = require('state-sales-tax');
 const scraper = require('table-scraper');
 
+const easy_post_api = require('@easypost/api');
+
 require('dotenv').config();
 const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
@@ -64,7 +66,7 @@ router.get('/tax_rates', async (req: any, res: any) => {
 		let percentage = state['State Rate'];
 		result[state['State']] = percentage.slice(0, percentage.indexOf('%') + 1);
 	});
-	console.log({ result });
+	// console.log({ result });
 	res.send(result);
 });
 
@@ -76,15 +78,13 @@ router.get('/', isAuth, async (req: any, res: any) => {
 		if (req.query.searchKeyword) {
 			const userSearchKeyword = req.query.searchKeyword
 				? {
-						first_name: {
+						'shipping.first_name': {
 							$regex: req.query.searchKeyword,
 							$options: 'i'
 						}
 					}
 				: {};
-			console.log({ userSearchKeyword });
 			user = await User.findOne({ ...userSearchKeyword });
-			console.log({ user });
 			searchKeyword = { user: user._id };
 		}
 		let sortOrder = {};
@@ -503,8 +503,8 @@ router.post('/', isAuth, async (req: any, res: any) => {
 			promo_code: req.body.promo_code,
 			deleted: false
 		});
-		console.log({ user: req.user });
-		console.log({ user: req.body.user });
+		console.log({ newOrder });
+		// console.log({ user: req.body.user });
 		const newOrderCreated = await newOrder.save();
 		console.log({ newOrderCreated });
 
@@ -544,18 +544,46 @@ router.post('/', isAuth, async (req: any, res: any) => {
 	}
 });
 
+// router.put('/charges', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
+// 	const order = await Order.findById('5f88c4c6d82e0e002acae9bf').populate('user');
+// 	// const charges = await stripe.charges.list({});
+// 	const charge = await stripe.charges.retrieve('ch_1HceYpJUIKBwBp0w69pyljh3');
+// 	order.payment = {
+// 		paymentMethod: 'stripe',
+// 		charge: charge
+// 	};
+// 	const updatedOrder = await order.save();
+// 	res.send(updatedOrder);
+// });
 
+// router.put('/update_charge_email', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
+// 	const charge = await stripe.charges.update('ch_1HhimVJUIKBwBp0wgil79u96', {
+// 		metadata: { receipt_email: 'ssdaly1590@gmail.com' }
+// 	});
 
+// 	res.send(charge);
+// });
+// router.get('/refunds', async (req: { user: { _id: any } }, res: { send: (arg0: any) => void }) => {
+// 	const refunds = await stripe.refunds.list({});
+// 	res.send(refunds);
+// });
 
 router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 	try {
 		const order = await Order.findById(req.params.id).populate('user');
 		console.log({ order });
-    const intent = await stripe.paymentIntents.create({
-      amount: (order.totalPrice * 100).toFixed(0),
-      currency: 'usd',
-      payment_method_types: ['card'],
-    },
+
+		// setTimeout(() => {
+		// 	console.log({ message: 'Error Paying for Order' });
+		// 	// return res.status(500).send({ message: 'Error Paying for Order' });
+		// }, 5000);
+		const charge = await stripe.charges.create(
+			{
+				amount: (order.totalPrice * 100).toFixed(0),
+				currency: 'usd',
+				description: `Order Paid`,
+				source: req.body.token.id
+			},
 			async (err: any, result: any) => {
 				if (err) {
 					console.log({ err });
@@ -586,11 +614,8 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 					order.paidAt = Date.now();
 					order.payment = {
 						paymentMethod: 'stripe',
-            charge: result,
-            payment: req.body.paymentMethod
-            // payment_intent: result
-          };
-          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.paymentMethod.card.brand })
+						charge: result
+					};
 					const updatedOrder = await order.save();
 					if (updatedOrder) {
 						log_request({
@@ -607,7 +632,8 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 					// }
 				}
 			}
-    );
+		);
+		// 4000000000000002
 	} catch (error) {
 		log_error({
 			method: 'PUT',
@@ -616,8 +642,7 @@ router.put('/:id/pay', isAuth, async (req: any, res: any) => {
 			error,
 			status: 500,
 			success: false
-    });
-    console.log({error})
+		});
 		res.status(500).send({ error, message: 'Error Paying for Order' });
 	}
 });
@@ -668,18 +693,13 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 		const order = await Order.findById(req.params.id);
 		console.log({ '/guestcheckout/:id/pay': req.body });
 		// console.log({ order });
-		// const charge = await stripe.charges.create(
-		// 	{
-		// 		amount: (order.totalPrice * 100).toFixed(0),
-		// 		currency: 'usd',
-		// 		description: `Order Paid`,
-		// 		source: req.body.token.id
-    //   },
-      const intent = await stripe.paymentIntents.create({
-        amount: (order.totalPrice * 100).toFixed(0),
-        currency: 'usd',
-        payment_method_types: ['card'],
-      },
+		const charge = await stripe.charges.create(
+			{
+				amount: (order.totalPrice * 100).toFixed(0),
+				currency: 'usd',
+				description: `Order Paid`,
+				source: req.body.token.id
+			},
 			async (err: any, result: any) => {
 				if (err) {
 					console.log({ err });
@@ -705,16 +725,12 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 						success: true,
 						ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
 					});
-          order.isPaid = true;
+					order.isPaid = true;
 					order.paidAt = Date.now();
 					order.payment = {
 						paymentMethod: 'stripe',
-            charge: result,
-            payment: req.body.paymentMethod
-            // payment_intent: result
-          };
-          console.log(req.body.paymentMethod.card.brand)
-          const charge = await stripe.paymentIntents.confirm(result.id, { payment_method: "pm_card_" + req.body.paymentMethod.card.brand })
+						charge: result
+					};
 					const updatedOrder = await order.save();
 					if (updatedOrder) {
 						log_request({
@@ -748,13 +764,11 @@ router.put('/guestcheckout/:id/pay', async (req: any, res: any) => {
 
 router.put('/:id/refund', async (req: any, res: any) => {
 	try {
-    const order = await Order.findById(req.params.id);
-    console.log({order})
+		const order = await Order.findById(req.params.id);
 		const refund = await stripe.refunds.create({
-			payment_intent: order.payment.charge.id,
+			charge: order.payment.charge.id,
 			amount: req.body.refund_amount * 100
-    });
-    console.log({refund})
+		});
 		if (refund) {
 			log_request({
 				method: 'PUT',
@@ -822,6 +836,146 @@ router.put('/addproduct', async (req: { body: any; params: { id: any } }, res: {
 		order.orderItems.product._id = product_id;
 		const updated = await Order.updateOne({ _id: order_id }, order);
 		res.send(updated);
+	} catch (err) {
+		console.log(err);
+	}
+});
+
+router.put('/create_label', async (req: { body: any; params: { id: any } }, res: { send: (arg0: any) => void }) => {
+	try {
+		const EasyPost = new easy_post_api(process.env.EASY_POST);
+		const order = req.body.order;
+
+		const toAddress = new EasyPost.Address({
+			name: order.shipping.first_name + ' ' + order.shipping.last_name,
+			street1: order.shipping.address_1,
+			street2: order.shipping.address_2,
+			city: order.shipping.city,
+			state: order.shipping.state,
+			zip: order.shipping.postalCode,
+			country: order.shipping.country
+		});
+		const fromAddress = new EasyPost.Address({
+			street1: '404 Kenniston Dr',
+			street2: 'Apt D',
+			city: 'Austin',
+			state: 'TX',
+			zip: '78752',
+			country: 'United States',
+			company: 'Glow LEDs',
+			phone: '906-284-2208',
+			email: 'info.glowleds@gmail.com'
+		});
+		const parcel = new EasyPost.Parcel({
+			length: order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0),
+			width: order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0),
+			height: order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0),
+			weight: order.orderItems.reduce(
+				(a: any, c: { weight_pounds: any; weight_ounces: number }) =>
+					c.weight_pounds * 16 + c.weight_ounces + a,
+				0
+			)
+		});
+		let customsInfo = {};
+		if (order.shipping.international) {
+			const customs_items = order.orderItems.map((item: any) => {
+				const customs_item = new EasyPost.CustomsItem({
+					description: '3D Printed Accessories',
+					quantity: item.qty,
+					value: item.price,
+					weight: item.weight,
+					origin_country: 'US'
+				});
+				return customs_item;
+			});
+
+			customsInfo = new EasyPost.CustomsInfo({
+				eel_pfc: 'NOEEI 30.37(a)',
+				customs_certify: true,
+				customs_signer: order.shipping.first_name + ' ' + order.shipping.last_name,
+				contents_type: 'merchandise',
+				restriction_type: 'none',
+				non_delivery_option: 'return',
+				customs_items
+			});
+		}
+
+		const shipment = new EasyPost.Shipment({
+			to_address: toAddress,
+			from_address: fromAddress,
+			parcel: parcel,
+			customsInfo: order.shipping.international ? customsInfo : {}
+		});
+		const saved_shipment = await shipment.save();
+		console.log({ saved_shipment });
+		const created_shipment = await EasyPost.Shipment.retrieve(saved_shipment.id);
+		const label = await created_shipment.buy(created_shipment.lowestRate(), 0);
+		console.log({ label });
+		res.send(label);
+	} catch (err) {
+		console.log(err);
+	}
+});
+
+router.put(
+	'/get_shipping_rates',
+	async (req: { body: any; params: { id: any } }, res: { send: (arg0: any) => void }) => {
+		try {
+			const EasyPost = new easy_post_api(process.env.EASY_POST);
+			const order = req.body.order;
+			// console.log(order);
+
+			const toAddress = new EasyPost.Address({
+				name: order.shipping.first_name + ' ' + order.shipping.last_name,
+				street1: order.shipping.address_1,
+				street2: order.shipping.address_2,
+				city: order.shipping.city,
+				state: order.shipping.state,
+				zip: order.shipping.postalCode,
+				country: order.shipping.country
+			});
+			const fromAddress = new EasyPost.Address({
+				street1: '404 Kenniston Dr',
+				street2: 'Apt D',
+				city: 'Austin',
+				state: 'TX',
+				zip: '78752',
+				country: 'United States',
+				company: 'Glow LEDs',
+				phone: '906-284-2208',
+				email: 'info.glowleds@gmail.com'
+			});
+			const parcel = new EasyPost.Parcel({
+				length: order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0),
+				width: order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0),
+				height: order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0),
+				weight: order.orderItems.reduce(
+					(a: any, c: { weight_pounds: any; weight_ounces: number }) =>
+						c.weight_pounds * 16 + c.weight_ounces + a,
+					0
+				)
+			});
+			const shipment = new EasyPost.Shipment({
+				to_address: toAddress,
+				from_address: fromAddress,
+				parcel: parcel
+			});
+			const saved_shipment = await shipment.save();
+			console.log({ saved_shipment });
+			res.send(saved_shipment);
+		} catch (err) {
+			console.log(err);
+		}
+	}
+);
+router.put('/buy_label', async (req: { body: any; params: { id: any } }, res: { send: (arg0: any) => void }) => {
+	try {
+		const EasyPost = new easy_post_api(process.env.EASY_POST);
+		const order = req.body.order;
+		const created_shipment = await EasyPost.Shipment.retrieve(order.shipping.shipment_id);
+		const label = await created_shipment.buy(order.shipping.shipping_rate, 0);
+		console.log({ label });
+		res.send(label);
 	} catch (err) {
 		console.log(err);
 	}
