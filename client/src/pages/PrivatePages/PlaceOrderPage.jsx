@@ -8,6 +8,8 @@ import { addToCart, removeFromCart, saveShipping, savePayment } from '../../acti
 import { listPromos } from '../../actions/promoActions';
 import Cookie from 'js-cookie';
 import StripeCheckout from 'react-stripe-checkout';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Loading, LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
@@ -243,7 +245,7 @@ const PlaceOrderPage = (props) => {
 		[ shippingPrice ]
 	);
 
-	const placeOrderHandler = async (token) => {
+	const placeOrderHandler = async (paymentMethod) => {
 		// create an order
 		console.log({ user_data });
 		console.log({ user });
@@ -267,7 +269,7 @@ const PlaceOrderPage = (props) => {
 					order_note,
 					promo_code
 				},
-				token
+				paymentMethod
 			)
 		);
 
@@ -488,6 +490,75 @@ const PlaceOrderPage = (props) => {
 			case 'Express':
 				return '1-2 Days';
 		}
+	};
+
+	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
+	// console.log(process.env.REACT_APP_STRIPE_KEY);
+
+	const Form = () => {
+		const stripe = useStripe();
+		const elements = useElements();
+
+		const handleSubmit = async (event) => {
+			event.preventDefault();
+			const { error, paymentMethod } = await stripe.createPaymentMethod({
+				type: 'card',
+				card: elements.getElement(CardElement)
+			});
+
+			// console.log({ error });
+			if (error) {
+				console.log({ error });
+				return;
+			}
+			console.log({ paymentMethod });
+			placeOrderHandler(paymentMethod);
+		};
+
+		return (
+			<form onSubmit={handleSubmit}>
+				<CardElement
+					// options={{
+					// 	style: {
+					// 		base: {
+					// 			fontSize: '20px',
+					// 			color: 'white',
+					// 			backgroundColor: '#4d5061',
+					// 			padding: '1rem',
+					// 			'::placeholder': {
+					// 				color: 'white'
+					// 			}
+					// 		},
+					// 		invalid: {
+					// 			color: '#9e2146'
+					// 		}
+					// 	}
+					// }}
+					options={{
+						iconStyle: 'solid',
+						style: {
+							base: {
+								iconColor: '#c4f0ff',
+								color: '#fff',
+								fontWeight: 500,
+								fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+								fontSize: '1.2rem',
+								fontSmoothing: 'antialiased',
+								':-webkit-autofill': { color: 'white' },
+								'::placeholder': { color: 'white' }
+							},
+							invalid: {
+								iconColor: '#ffc7ee',
+								color: '#ffc7ee'
+							}
+						}
+					}}
+				/>
+				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+					Pay for Order
+				</button>
+			</form>
+		);
 	};
 
 	return (
@@ -715,38 +786,9 @@ const PlaceOrderPage = (props) => {
 								)}
 							</div>
 						</li>
-						{console.log({ shipping_rates })}
 						{hide_pay_button &&
 						shipping_rates.rates && (
 							<div>
-								{shipping_rates.rates.map((rate, index) => {
-									return (
-										rate.service === 'ParcelSelect' && (
-											<div className=" mv-1rem jc-b  ai-c">
-												<div className="shipping_rates jc-b w-100per wrap ">
-													<div className="service">ParcelSelect</div>
-													<div>
-														{' '}
-														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
-															2
-														)}{' '}
-													</div>
-													<div>
-														{' '}
-														{rate.est_delivery_days}{' '}
-														{rate.est_delivery_days === 1 ? 'Day' : 'Days'}
-													</div>
-												</div>
-												<button
-													className="custom-select-shipping_rates"
-													onClick={() => choose_shipping_rate(rate, 'ParcelSelect')}
-												>
-													Select
-												</button>
-											</div>
-										)
-									);
-								})}
 								{shipping_rates.rates.map((rate, index) => {
 									return (
 										rate.service === 'First' && (
@@ -803,7 +845,7 @@ const PlaceOrderPage = (props) => {
 										)
 									);
 								})}
-								{shipping_rates.rates.map((rate, index) => {
+								{/* {shipping_rates.rates.map((rate, index) => {
 									return (
 										rate.service === 'Ground' && (
 											<div className=" mv-1rem jc-b  ai-c">
@@ -815,7 +857,7 @@ const PlaceOrderPage = (props) => {
 															2
 														)}{' '}
 													</div>
-													<div> {rate.est_delivery_days} Days</div>
+													<div> 3-{rate.est_delivery_days} Days</div>
 												</div>
 												<button
 													className="custom-select-shipping_rates"
@@ -826,7 +868,7 @@ const PlaceOrderPage = (props) => {
 											</div>
 										)
 									);
-								})}
+								})} */}
 								{shipping_rates.rates.map((rate, index) => {
 									return (
 										rate.service === 'Express' && (
@@ -876,7 +918,7 @@ const PlaceOrderPage = (props) => {
 								</div>
 							)}
 						</li>
-						{!loading_tax_rate &&
+						{/* {!loading_tax_rate &&
 						!hide_pay_button &&
 						shipping &&
 						shipping.hasOwnProperty('first_name') && (
@@ -891,6 +933,16 @@ const PlaceOrderPage = (props) => {
 								>
 									<button className="button primary full-width mb-12px">Pay for Order</button>
 								</StripeCheckout>
+							</div>
+						)} */}
+						{!loading_tax_rate &&
+						!hide_pay_button &&
+						shipping &&
+						shipping.hasOwnProperty('first_name') && (
+							<div>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 						{user_data && user_data.isAdmin && users && loading_checkboxes ? (

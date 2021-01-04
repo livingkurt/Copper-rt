@@ -12,6 +12,8 @@ import { Loading, LoadingPayments } from '../../components/UtilityComponents';
 import { validate_promo_code, validate_passwords } from '../../utils/validations';
 import { Carousel } from '../../components/SpecialtyComponents';
 import { API_External, API_Orders } from '../../utils';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const PlaceOrderPublicPage = (props) => {
 	const dispatch = useDispatch();
@@ -267,7 +269,7 @@ const PlaceOrderPublicPage = (props) => {
 		}
 	};
 
-	const placeOrderHandler = async (token, create_account) => {
+	const placeOrderHandler = async (paymentMethod, create_account) => {
 		set_create_account(create_account);
 		dispatch(
 			createPayOrderGuest(
@@ -291,7 +293,7 @@ const PlaceOrderPublicPage = (props) => {
 				},
 				create_account,
 				password,
-				token
+				paymentMethod
 			)
 		);
 
@@ -462,6 +464,59 @@ const PlaceOrderPublicPage = (props) => {
 			case 'Express':
 				return '1-2 Days';
 		}
+	};
+
+	const [ stripePromise, setStripePromise ] = useState(() => loadStripe(process.env.REACT_APP_STRIPE_KEY));
+	// console.log(process.env.REACT_APP_STRIPE_KEY);
+
+	const Form = () => {
+		const stripe = useStripe();
+		const elements = useElements();
+
+		const handleSubmit = async (event) => {
+			event.preventDefault();
+			const { error, paymentMethod } = await stripe.createPaymentMethod({
+				type: 'card',
+				card: elements.getElement(CardElement)
+			});
+
+			// console.log({ error });
+			if (error) {
+				console.log({ error });
+				return;
+			}
+			console.log({ paymentMethod });
+			placeOrderHandler(paymentMethod);
+		};
+
+		return (
+			<form onSubmit={handleSubmit}>
+				<CardElement
+					options={{
+						iconStyle: 'solid',
+						style: {
+							base: {
+								iconColor: '#c4f0ff',
+								color: '#fff',
+								fontWeight: 500,
+								fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+								fontSize: '1.2rem',
+								fontSmoothing: 'antialiased',
+								':-webkit-autofill': { color: 'white' },
+								'::placeholder': { color: 'white' }
+							},
+							invalid: {
+								iconColor: '#ffc7ee',
+								color: '#ffc7ee'
+							}
+						}
+					}}
+				/>
+				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+					Pay for Order
+				</button>
+			</form>
+		);
 	};
 
 	return (
@@ -825,6 +880,17 @@ const PlaceOrderPublicPage = (props) => {
 						shipping.hasOwnProperty('first_name') &&
 						!account_create && (
 							<div>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
+							</div>
+						)}
+						{/* {!loading_tax_rate &&
+						!hide_pay_button &&
+						shipping &&
+						shipping.hasOwnProperty('first_name') &&
+						!account_create && (
+							<div>
 								<StripeCheckout
 									name="Glow LEDs"
 									description={`Pay for Order`}
@@ -836,7 +902,7 @@ const PlaceOrderPublicPage = (props) => {
 									<button className="button secondary full-width mb-12px">Pay for Order</button>
 								</StripeCheckout>
 							</div>
-						)}
+						)} */}
 						{loading_checkboxes ? (
 							<div>Loading...</div>
 						) : (
@@ -906,6 +972,17 @@ const PlaceOrderPublicPage = (props) => {
 										Pay for Order/Create Account
 									</button>
 								</StripeCheckout>
+							</div>
+						)}
+
+						{!hide_pay_button &&
+						shipping &&
+						shipping.hasOwnProperty('first_name') &&
+						!account_create && (
+							<div>
+								<Elements stripe={stripePromise}>
+									<Form />
+								</Elements>
 							</div>
 						)}
 						<div className="mv-10px">

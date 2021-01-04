@@ -17,8 +17,7 @@ const ShippingPage = (props) => {
 	const [ email, set_email ] = useState('');
 	const [ first_name, set_first_name ] = useState('');
 	const [ last_name, set_last_name ] = useState('');
-	const [ address_1, set_address_1 ] = useState('');
-	const [ address_2, set_address_2 ] = useState('');
+	const [ address, setAddress ] = useState('');
 	const [ city, setCity ] = useState('');
 	const [ state, setState ] = useState('');
 	const [ postalCode, setPostalCode ] = useState('');
@@ -36,8 +35,7 @@ const ShippingPage = (props) => {
 				set_email(user_data.email);
 				set_first_name(user_data.shipping.first_name);
 				set_last_name(user_data.shipping.last_name);
-				set_address_1(user_data.shipping.address_1);
-				set_address_2(user_data.shipping.address_2);
+				setAddress(user_data.shipping.address);
 				setCity(user_data.shipping.city);
 				setState(user_data.shipping.state);
 				setPostalCode(user_data.shipping.postalCode);
@@ -54,8 +52,7 @@ const ShippingPage = (props) => {
 			if (userUpdate.userInfo) {
 				set_first_name(userUpdate.userInfo.shipping.first_name);
 				set_last_name(userUpdate.userInfo.shipping.last_name);
-				set_address_1(userUpdate.userInfo.shipping.address_1);
-				set_address_2(userUpdate.userInfo.shipping.address_2);
+				setAddress(userUpdate.userInfo.shipping.address);
 				setCity(userUpdate.userInfo.shipping.city);
 				setState(userUpdate.userInfo.shipping.state);
 				setPostalCode(userUpdate.userInfo.shipping.postalCode);
@@ -74,8 +71,7 @@ const ShippingPage = (props) => {
 				set_email(shipping.email);
 				set_first_name(shipping.first_name);
 				set_last_name(shipping.last_name);
-				set_address_1(shipping.address_1);
-				set_address_2(shipping.address_2);
+				setAddress(shipping.address);
 				setCity(shipping.city);
 				setState(shipping.state);
 				setPostalCode(shipping.postalCode);
@@ -118,23 +114,12 @@ const ShippingPage = (props) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		const data = {
-			email,
-			first_name,
-			last_name,
-			address_1,
-			address_2,
-			city,
-			state,
-			postalCode,
-			country,
-			international
-		};
+		const data = { email, first_name, last_name, address, city, state, postalCode, country, international };
 		const request = validate_shipping(data);
 		set_email_validations(request.errors.email);
 		set_first_name_validations(request.errors.first_name);
 		set_last_name_validations(request.errors.last_name);
-		set_address_validations(request.errors.address_1);
+		set_address_validations(request.errors.address);
 		set_city_validations(request.errors.city);
 		set_state_validations(request.errors.state);
 		set_postal_code_validations(request.errors.postalCode);
@@ -149,8 +134,7 @@ const ShippingPage = (props) => {
 					first_name,
 					last_name,
 					email,
-					address_1,
-					address_2,
+					address,
 					city,
 					state,
 					postalCode,
@@ -169,8 +153,7 @@ const ShippingPage = (props) => {
 							first_name,
 							last_name,
 							email,
-							address_1,
-							address_2,
+							address,
 							city,
 							state,
 							postalCode,
@@ -192,8 +175,7 @@ const ShippingPage = (props) => {
 		set_email(shipping.email);
 		set_first_name(shipping.first_name);
 		set_last_name(shipping.last_name);
-		set_address_1(shipping.address_1);
-		set_address_2(shipping.address_2);
+		setAddress(shipping.address);
 		setCity(shipping.city);
 		setState(shipping.state);
 		setPostalCode(shipping.postalCode);
@@ -204,11 +186,11 @@ const ShippingPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>Shipping | Glow LEDs</title>
+				<title>Shipping | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Shipping" />
 				<meta name="twitter:title" content="Shipping" />
-				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/shipping" />
-				<meta property="og:url" content="https://www.glow-leds.com/secure/checkout/shipping" />
+				<link rel="canonical" href="http://www.copper-rt.com/secure/checkout/shipping" />
+				<meta property="og:url" content="http://www.copper-rt.com/secure/checkout/shipping" />
 			</Helmet>
 			<CheckoutSteps step1 step2 />
 
@@ -280,28 +262,18 @@ const ShippingPage = (props) => {
 							{last_name_validations}
 						</label>
 						<li>
-							<label htmlFor="address_1">Address</label>
+							<label htmlFor="address">Address</label>
 							<input
 								type="text"
-								value={address_1}
-								name="address_1"
-								id="address_1"
-								onChange={(e) => set_address_1(e.target.value)}
+								value={address}
+								name="address"
+								id="address"
+								onChange={(e) => setAddress(e.target.value)}
 							/>
 						</li>
 						<label className="validation_text" style={{ justifyContent: 'center' }}>
 							{address_validations}
 						</label>
-						<li>
-							<label htmlFor="address_2">Apt/Suite</label>
-							<input
-								type="text"
-								value={address_2}
-								name="address_2"
-								id="address_2"
-								onChange={(e) => set_address_2(e.target.value)}
-							/>
-						</li>
 						<li>
 							<label htmlFor="city">City</label>
 							<input
