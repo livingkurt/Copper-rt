@@ -1,0 +1,14 @@
+@font-face {
+	font-family: "main_font";
+	src: url("/fonts/UniNeue-Light.otf");
+}
+
+@font-face {
+	font-family: "heading_font";
+	src: url("/fonts/a_love_of_thunder.ttf");
+}
+
+
+$main_font: main_font;
+$heading_font: heading_font;
+$font_size: 1.6rem;

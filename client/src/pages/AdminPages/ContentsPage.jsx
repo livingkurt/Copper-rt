@@ -46,7 +46,7 @@ const ContentsPage = (props) => {
 			</Helmet>
 			<div className="wrap jc-fe">
 				<Link to="/secure/glow/editcontent">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Content
 					</button>
 				</Link>

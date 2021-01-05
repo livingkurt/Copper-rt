@@ -421,7 +421,7 @@ const EditPromoPage = (props) => {
 														</div>
 													</div>
 												</li>
-												<button className="button primary" onClick={(e) => exclude_category(e)}>
+												<button className="btn primary" onClick={(e) => exclude_category(e)}>
 													Exclude Category
 												</button>
 												{excluded_categories &&
@@ -460,7 +460,7 @@ const EditPromoPage = (props) => {
 														</div>
 													</div>
 												</li>
-												<button className="button primary" onClick={(e) => exclude_product(e)}>
+												<button className="btn primary" onClick={(e) => exclude_product(e)}>
 													Exclude Product
 												</button>
 												{excluded_categories &&
@@ -535,12 +535,12 @@ const EditPromoPage = (props) => {
 										</div>
 									</div>
 									<li>
-										<button type="submit" className="button primary">
+										<button type="submit" className="btn primary">
 											{id ? 'Update' : 'Create'}
 										</button>
 									</li>
 									<li>
-										<button className="button secondary" onClick={() => history.goBack()}>
+										<button className="btn secondary" onClick={() => history.goBack()}>
 											Back to Promos
 										</button>
 									</li>

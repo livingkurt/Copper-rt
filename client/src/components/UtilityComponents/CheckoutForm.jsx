@@ -37,7 +37,7 @@ const Form = (props) => {
 					}
 				}}
 			/>
-			<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+			<button type="submit" className="btn primary full-width mb-12px" disabled={!stripe}>
 				Pay for Order
 			</button>
 		</form>

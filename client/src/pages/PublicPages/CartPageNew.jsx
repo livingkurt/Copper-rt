@@ -245,7 +245,7 @@ const CartPage = (props) => {
 						</h3>
 						<button
 							onClick={checkoutHandler}
-							className="button primary full-width"
+							className="btn primary full-width"
 							// disabled={cart.cartItems.length === 0}
 						>
 							Proceed to Checkout

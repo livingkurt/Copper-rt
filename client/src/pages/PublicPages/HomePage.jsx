@@ -122,7 +122,7 @@ const HomePage = (props) => {
 					</p>
 					<div className="jc-c">
 						<Link to={content.home_page.link}>
-							<button className="button primary" style={{ background: 'transparent' }}>
+							<button className="btn primary" style={{ background: 'transparent' }}>
 								<h2>{content.home_page.button}</h2>
 							</button>
 						</Link>
@@ -168,7 +168,7 @@ const HomePage = (props) => {
 				</p>
 				<div className="jc-c">
 					<Link to="/collections/all/products/category/glowskins">
-						<button className="button primary" style={{ background: 'transparent' }}>
+						<button className="btn primary" style={{ background: 'transparent' }}>
 							<h2>Shop Glowskins</h2>
 						</button>
 					</Link>
@@ -201,7 +201,7 @@ const HomePage = (props) => {
 				</p>
 				<div className="jc-c">
 					<Link to="/collections/all/products/category/diffuser_caps">
-						<button className="button primary" style={{ background: 'transparent' }}>
+						<button className="btn primary" style={{ background: 'transparent' }}>
 							<h2>Shop Diffuser Caps</h2>
 						</button>
 					</Link>
@@ -231,7 +231,7 @@ const HomePage = (props) => {
 				</p>
 				<div className="jc-c">
 					<Link to="/collections/all/products/category/mega_diffuser_caps">
-						<button className="button primary" style={{ background: 'transparent' }}>
+						<button className="btn primary" style={{ background: 'transparent' }}>
 							<h2>Shop Mega Diffuser Caps</h2>
 						</button>
 					</Link>
@@ -264,7 +264,7 @@ const HomePage = (props) => {
 				</p>
 				<div className="jc-c">
 					<Link to="/collections/all/products/category/frosted_diffusers">
-						<button className="button primary" style={{ background: 'transparent' }}>
+						<button className="btn primary" style={{ background: 'transparent' }}>
 							<h2>Shop Frosted Diffusers</h2>
 						</button>
 					</Link>
@@ -296,7 +296,7 @@ const HomePage = (props) => {
 				</p>
 				<div className="jc-c">
 					<Link to="/collections/all/products/category/glow_strings">
-						<button className="button primary" style={{ background: 'transparent' }}>
+						<button className="btn primary" style={{ background: 'transparent' }}>
 							<h2>Shop Glow Strings</h2>
 						</button>
 					</Link>

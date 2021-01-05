@@ -56,7 +56,7 @@ export const addToCart = (
 	getState: () => { cart: { cartItems: any }; userLogin: { userInfo: any } }
 ) => {
 	try {
-		console.log('Add To Cart Before');
+		// console.log('Add To Cart Before');
 		const { data } = await Axios.get('/api/products/' + pathname);
 
 		let cartItem: any = {
@@ -71,11 +71,12 @@ export const addToCart = (
 			weight_ounces: data.weight_ounces,
 			length: data.length,
 			width: data.width,
-			height: data.volume,
+			height: data.height,
 			pathname: data.pathname,
 			category: data.category,
 			qty
 		};
+		// console.log({ cartItem });x
 		if (diffuser_cap_color) {
 			cartItem = {
 				product: data._id,
@@ -91,7 +92,7 @@ export const addToCart = (
 				weight_ounces: data.weight_ounces,
 				length: data.length,
 				width: data.width,
-				height: data.volume,
+				height: data.height,
 				pathname: data.pathname,
 				category: data.category,
 				qty
@@ -128,6 +129,7 @@ export const addToCart = (
 		const { cart: { cartItems } } = getState();
 		Cookie.set('cartItems', JSON.stringify(cartItems));
 		dispatch({ type: CART_SAVE_REQUEST, payload: cart });
+		console.log({ cartItems });
 		const { userLogin: { userInfo } } = getState();
 		if (!cart._id) {
 			const { data } = await axios.post('/api/carts', cart, {

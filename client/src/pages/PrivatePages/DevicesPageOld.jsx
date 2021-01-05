@@ -199,7 +199,7 @@ const DevicesPage = (props) => {
 				<div className=" jc-fe w-500px">
 					<label className="p-10px ">Click Here to Get Started!</label>
 					<Link to="/secure/account/editdevice">
-						<button className="button primary">Add Device</button>
+						<button className="btn primary">Add Device</button>
 					</Link>
 				</div>
 			</div>

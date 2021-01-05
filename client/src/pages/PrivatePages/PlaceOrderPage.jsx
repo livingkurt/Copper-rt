@@ -188,7 +188,9 @@ const PlaceOrderPage = (props) => {
 			order_note,
 			promo_code
 		});
+		console.log({ data });
 		if (data) {
+			console.log({ data });
 			set_shipping_rates(data);
 			set_shipment_id(data.id);
 			set_loading_shipping(false);
@@ -554,7 +556,7 @@ const PlaceOrderPage = (props) => {
 						}
 					}}
 				/>
-				<button type="submit" className="button primary full-width mb-12px" disabled={!stripe}>
+				<button type="submit" className="btn primary w-100per mb-12px" disabled={!stripe}>
 					Pay for Order
 				</button>
 			</form>
@@ -602,7 +604,7 @@ const PlaceOrderPage = (props) => {
 							)}
 							<div style={{ marginTop: '5px' }}>
 								<Link to="/secure/checkout/shipping">
-									<button className="button primary">
+									<button className="btn primary">
 										{shipping && shipping.hasOwnProperty('first_name') ? (
 											'Edit Shipping'
 										) : (
@@ -621,7 +623,7 @@ const PlaceOrderPage = (props) => {
 								<div className="column">
 									<Link to="/collections/all/products">
 										<li style={{ marginBottom: '0', borderBottom: 0 }}>
-											<button className="button secondary full-width" style={{ marginBottom: 0 }}>
+											<button className="btn secondary w-100per" style={{ marginBottom: 0 }}>
 												Continue Shopping
 											</button>
 										</li>
@@ -629,6 +631,7 @@ const PlaceOrderPage = (props) => {
 									<label style={{ textAlign: 'right' }}>Price</label>
 								</div>
 							</li>
+							{/* {console.log({ cartItems })} */}
 							{cartItems.length === 0 ? (
 								<div>Cart is empty</div>
 							) : (
@@ -701,7 +704,7 @@ const PlaceOrderPage = (props) => {
 											</div>
 											<div style={{ textAlign: 'right', width: '100%' }}>
 												<button
-													className="button icon"
+													className="btn icon"
 													onClick={() => dispatch(removeFromCart(item.pathname))}
 												>
 													<i className="fas fa-trash-alt" />
@@ -786,15 +789,17 @@ const PlaceOrderPage = (props) => {
 								)}
 							</div>
 						</li>
+
 						{hide_pay_button &&
 						shipping_rates.rates && (
 							<div>
+								{console.log({ shipping_rates })}
 								{shipping_rates.rates.map((rate, index) => {
 									return (
-										rate.service === 'First' && (
+										rate.service === 'ParcelSelect' && (
 											<div className=" mv-1rem jc-b  ai-c">
 												<div className="shipping_rates jc-b w-100per wrap ">
-													<div className="service">Standard</div>
+													<div className="service">ParcelSelect</div>
 													<div>
 														{' '}
 														${(parseFloat(rate.retail_rate) + packaging_cost).toFixed(
@@ -809,7 +814,7 @@ const PlaceOrderPage = (props) => {
 												</div>
 												<button
 													className="custom-select-shipping_rates"
-													onClick={() => choose_shipping_rate(rate, 'Standard')}
+													onClick={() => choose_shipping_rate(rate, 'ParcelSelect')}
 												>
 													Select
 												</button>
@@ -845,7 +850,7 @@ const PlaceOrderPage = (props) => {
 										)
 									);
 								})}
-								{/* {shipping_rates.rates.map((rate, index) => {
+								{shipping_rates.rates.map((rate, index) => {
 									return (
 										rate.service === 'Ground' && (
 											<div className=" mv-1rem jc-b  ai-c">
@@ -868,7 +873,7 @@ const PlaceOrderPage = (props) => {
 											</div>
 										)
 									);
-								})} */}
+								})}
 								{shipping_rates.rates.map((rate, index) => {
 									return (
 										rate.service === 'Express' && (
@@ -931,7 +936,7 @@ const PlaceOrderPage = (props) => {
 									stripeKey={process.env.REACT_APP_STRIPE_KEY}
 									onChange={handleChangeFor('cardNumber')}
 								>
-									<button className="button primary full-width mb-12px">Pay for Order</button>
+									<button className="btn primary w-100per mb-12px">Pay for Order</button>
 								</StripeCheckout>
 							</div>
 						)} */}
@@ -968,7 +973,7 @@ const PlaceOrderPage = (props) => {
 							<div>
 								<button
 									onClick={create_order_without_paying}
-									className="button secondary full-width mb-12px"
+									className="btn secondary w-100per mb-12px"
 								>
 									Create Order Without Paying
 								</button>
@@ -999,10 +1004,7 @@ const PlaceOrderPage = (props) => {
 						users &&
 						no_user && (
 							<div>
-								<button
-									onClick={create_order_without_user}
-									className="button secondary full-width mb-12px"
-								>
+								<button onClick={create_order_without_user} className="btn secondary w-100per mb-12px">
 									Create Order Without User
 								</button>
 							</div>
@@ -1021,7 +1023,7 @@ const PlaceOrderPage = (props) => {
 									onChange={(e) => set_promo_code(e.target.value)}
 								/>
 								<button
-									className="button primary"
+									className="btn primary"
 									// onTouchStart={() => (e)()}
 									// onClick={() => check_code()}
 									style={{ curser: 'pointer' }}
@@ -1035,7 +1037,7 @@ const PlaceOrderPage = (props) => {
 						</label>
 						{show_message && (
 							<div className="promo_code mv-1rem">
-								<button className="button icon" onClick={() => remove_promo()}>
+								<button className="btn icon" onClick={() => remove_promo()}>
 									<i className="fas fa-times mr-5px" />
 								</button>
 								{show_message}
@@ -1056,7 +1058,7 @@ const PlaceOrderPage = (props) => {
 				</div>
 			</div>
 			{/* <SuggestedProducts /> */}
-			{/* <Carousel /> */}
+			<Carousel />
 		</div>
 	);
 };

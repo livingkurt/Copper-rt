@@ -102,7 +102,7 @@ const FAQPage = () => {
 						</ul>
 						<Link to="/pages/contact/custom_orders">
 							<div className="jc-c">
-								<button className="button primary " style={{ margin: 'auto' }}>
+								<button className="btn primary " style={{ margin: 'auto' }}>
 									Contact
 								</button>
 							</div>
@@ -150,7 +150,7 @@ const FAQPage = () => {
 						</ul>
 						<Link to="/pages/contact/order_issues">
 							<div className="jc-c">
-								<button className="button primary " style={{ margin: 'auto', marginBottom: '10px' }}>
+								<button className="btn primary " style={{ margin: 'auto', marginBottom: '10px' }}>
 									Contact
 								</button>
 							</div>
@@ -179,7 +179,7 @@ const FAQPage = () => {
 						</ul>
 						<Link to="/pages/contact/order_issues">
 							<div className="jc-c">
-								<button className="button primary " style={{ margin: 'auto', marginBottom: '10px' }}>
+								<button className="btn primary " style={{ margin: 'auto', marginBottom: '10px' }}>
 									Contact
 								</button>
 							</div>
@@ -227,7 +227,7 @@ const FAQPage = () => {
 							</li>
 							<Link to="/pages/contact/returns">
 								<div className="jc-c">
-									<button className="button primary " style={{ margin: 'auto' }}>
+									<button className="btn primary " style={{ margin: 'auto' }}>
 										Contact
 									</button>
 								</div>

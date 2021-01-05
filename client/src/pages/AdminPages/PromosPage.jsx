@@ -114,7 +114,7 @@ const PromosPage = (props) => {
 					})}
 				</div>
 				<Link to="/secure/glow/editpromo">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Promo
 					</button>
 				</Link>

@@ -15,6 +15,9 @@ export const humanize = (str: string) => {
 	}
 	return frags.join(' ');
 };
+export const snake_case = (str: string) => {
+	return str.toLowerCase().split(' ').join('_');
+};
 export const toCapitlize = (string: string) => {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 };
@@ -24,7 +27,7 @@ export const format_date = (unformatted_date: string) => {
 	const month = unformatted_date.slice(5, 7);
 	const day = unformatted_date.slice(8, 10);
 	const year = unformatted_date.slice(0, 4);
-	const formatted_date = `${month}/${day}/20`;
+	const formatted_date = `${month}/${day}/${year}`;
 	return formatted_date;
 };
 export const format_time = (unformatted_time: any) => {
@@ -43,7 +46,7 @@ export const unformat_date = (formatted_date: string) => {
 	const day = date[1];
 	const month = date[0];
 	const year = date[2];
-	const unformat_date = `2020-${month}-${day}`;
+	const unformat_date = `${year}-${month}-${day}`;
 	return unformat_date;
 };
 
@@ -273,16 +276,16 @@ export const print_invoice = (order: any) => {
             <table style="width: 100%; line-height: inherit; text-align: left;" width="100%" align="left">
               <tr>
                 <td style="vertical-align: top;" valign="top">
-                  Gibson Lake Copper Art<br>
+                  Glow LEDs<br>
                   404 Kenniston Dr<br>
                   Austin, TX 78752<br>
-                  info.copper.rt@gmail.com
+                  info.glowleds@gmail.com
                 </td>
   
                 <td style=" vertical-align: top; text-align: right;" valign="top"
                   align="right">
                   ${order.shipping.first_name} ${order.shipping.last_name}<br>
-                  ${order.shipping.address}<br>
+                  ${order.shipping.address_1} ${order.shipping.address_2}<br>
                   ${order.shipping.city}, ${order.shipping.state} ${order.shipping.postalCode}<br>
                   ${order.shipping.email}
                 </td>
@@ -378,7 +381,7 @@ export const print_invoice = (order: any) => {
       </div>
     </div>
     <div>
-      <h3 style="text-align: center;">Welcome to the Gibson Lake Copper Art family!</h3>
+      <h3 style="text-align: center;">Welcome to the Glow LEDs family!</h3>
       <div style="text-align: center; ">We are so happy to share our art with you.</div>
       <div style="text-align: center; ">The code below will take you to our <strong>FAQ page</strong> for all kinds of helpful information.</div>
       <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -398,7 +401,7 @@ export const print_invoice = (order: any) => {
       <div style="text-align: center; ">We want to feature you!</div>
       <div style="text-align: center; ">We are figuring this out as we go so any feedback is welcome.</div>
       <div style="text-align: center; ">We appreciate you more than you know.</div>
-      <div style="text-align: center; "><strong>Questions or concerns?:</strong> info.copper.rt@gmail.com</div>
+      <div style="text-align: center; "><strong>Questions or concerns?:</strong> info.glowleds@gmail.com</div>
     </div>
     </div>
     

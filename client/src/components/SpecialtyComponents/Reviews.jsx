@@ -82,7 +82,7 @@ const Review = (props) => {
 				</li>
 			))}
 
-			<button className="button primary" onClick={show_write_review}>
+			<button className="btn primary" onClick={show_write_review}>
 				Write a customer review
 			</button>
 
@@ -143,12 +143,12 @@ const Review = (props) => {
 								<button
 									style={{ marginBottom: '10px' }}
 									onClick={submitHandler}
-									className="button primary"
+									className="btn primary"
 								>
 									Submit
 								</button>
 
-								<button onClick={hide_write_review} className="button secondary">
+								<button onClick={hide_write_review} className="btn secondary">
 									Cancel
 								</button>
 							</li>
@@ -158,7 +158,7 @@ const Review = (props) => {
 					<div>
 						Please{' '}
 						<Link to={`/account/login?redirect=/collections/all/products/${props.pathname}`}>
-							<button className="button primary">Login</button>
+							<button className="btn primary">Login</button>
 						</Link>{' '}
 						to Write a Review
 					</div>

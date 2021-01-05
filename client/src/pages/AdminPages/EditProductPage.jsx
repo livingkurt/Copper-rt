@@ -4,7 +4,7 @@ import { saveProduct, detailsProduct, listProducts } from '../../actions/product
 import { useHistory } from 'react-router-dom';
 import { Loading } from '../../components/UtilityComponents';
 import { Helmet } from 'react-helmet';
-import { format_date, unformat_date } from '../../utils/helper_functions';
+import { format_date, snake_case, unformat_date } from '../../utils/helper_functions';
 
 const EditProductPage = (props) => {
 	// const [modalVisible, setModalVisible] = useState(false);
@@ -143,7 +143,7 @@ const EditProductPage = (props) => {
 	const unset_state = () => {
 		setId('');
 		setName('');
-		setPrice('');
+		setPrice(0);
 		setDescription('');
 		setFacts('');
 		setIncludedItems('');
@@ -155,22 +155,22 @@ const EditProductPage = (props) => {
 		setCategory('');
 		// set_subcategories('');
 		set_subcategory('');
-		setCountInStock('');
-		setHidden();
+		setCountInStock(0);
+		setHidden(false);
 		setSalePrice('');
-		// sale_start_date('');
-		// sale_end_date('');
-		setVolume('');
+		set_sale_start_date(format_date('2021-01-01'));
+		set_sale_end_date(format_date('2021-01-01'));
+		setVolume(1);
 		set_meta_title('');
 		set_meta_description('');
 		set_meta_keywords('');
-		set_length('');
-		set_width('');
-		set_height('');
-		set_weight_pounds('');
-		set_weight_ounces('');
+		set_length(1);
+		set_width(1);
+		set_height(1);
+		set_weight_pounds(0);
+		set_weight_ounces(0);
 		setPathname('');
-		setOrder('');
+		setOrder(0);
 	};
 	// window.onbeforeunload = function() {
 	// 	return 'Are you sure you want to leave?';
@@ -197,9 +197,9 @@ const EditProductPage = (props) => {
 				sale_price,
 				sale_start_date: unformat_date(sale_start_date),
 				sale_end_date: unformat_date(sale_end_date),
-				volume,
+				volume: length * width * height,
 				subcategory,
-				meta_title,
+				meta_title: `${name} | Glow LEDs`,
 				meta_description,
 				meta_keywords,
 				length,
@@ -207,7 +207,7 @@ const EditProductPage = (props) => {
 				height,
 				weight_pounds,
 				weight_ounces,
-				pathname,
+				pathname: pathname ? pathname : snake_case(name),
 				order
 			})
 		);
@@ -365,26 +365,20 @@ const EditProductPage = (props) => {
 								return (
 									<div className="promo_code mv-1rem row jc-b max-w-55rem w-100per">
 										<div>
-											<button className="button icon" onClick={(e) => remove_image(index, e)}>
+											<button className="btn icon" onClick={(e) => remove_image(index, e)}>
 												<i className="fas fa-times mr-5px" />
 											</button>
 											{picture}
 										</div>
 										<div>
 											{index > 0 && (
-												<button
-													className="button icon"
-													onClick={(e) => move_image_up(index, e)}
-												>
+												<button className="btn icon" onClick={(e) => move_image_up(index, e)}>
 													<i className=" fas fa-sort-up" />
 												</button>
 											)}
 
 											{index < images.length - 1 && (
-												<button
-													className="button icon"
-													onClick={(e) => move_image_down(index, e)}
-												>
+												<button className="btn icon" onClick={(e) => move_image_down(index, e)}>
 													<i
 														style={{ '-webkitTransform': 'rotate(-180deg)' }}
 														className=" fas fa-sort-up"
@@ -418,7 +412,7 @@ const EditProductPage = (props) => {
 	// 					return (
 	// 						<div className="promo_code mv-1rem w-100per row jc-b max-w-55rem w-100per">
 	// 							<div className=" w-100per">
-	// 								<button className="button icon" onClick={(e) => remove_subcategory(index, e)}>
+	// 								<button className="btn icon" onClick={(e) => remove_subcategory(index, e)}>
 	// 									<i className="fas fa-times mr-5px" />
 	// 								</button>
 	// 								{subcategory}
@@ -434,7 +428,7 @@ const EditProductPage = (props) => {
 	const move_right = () => {};
 
 	return (
-		<div className="main_container">
+		<div className="main_container p-20px">
 			<h1 style={{ textAlign: 'center' }}>{props.match.params.pathname ? 'Edit Product' : 'Create Product'}</h1>
 
 			<div className="form">
@@ -443,7 +437,7 @@ const EditProductPage = (props) => {
 						{product && (
 							<div>
 								<Helmet>
-									<title>Edit Product | Gibson Lake Copper Art</title>
+									<title>Edit Product | Glow LEDs</title>
 								</Helmet>
 								{/* <Prompt
 									when={shouldBlockNavigation}
@@ -457,7 +451,7 @@ const EditProductPage = (props) => {
 										<div className="ai-c">
 											<button
 												style={{ borderRadius: '50%' }}
-												className="button icon h-59px"
+												className="btn icon h-59px"
 												onClick={() => move_left()}
 											>
 												<i className="fas fa-arrow-circle-left fs-40px" />
@@ -476,7 +470,7 @@ const EditProductPage = (props) => {
 										<div className="ai-c">
 											<button
 												style={{ borderRadius: '50%' }}
-												className="button icon h-59px"
+												className="btn icon h-59px"
 												onClick={() => move_right()}
 											>
 												<i className="fas fa-arrow-circle-right fs-40px" />
@@ -591,7 +585,7 @@ const EditProductPage = (props) => {
 													id="subcategory"
 													onChange={(e) => set_subcategory(e.target.value)}
 												/>
-												{/* <button className="button primary" onClick={(e) => add_subcategory(e)}>
+												{/* <button className="btn primary" onClick={(e) => add_subcategory(e)}>
 													Add Subcategory
 												</button>
 												{subcategory_display(subcategories)} */}
@@ -664,7 +658,7 @@ const EditProductPage = (props) => {
 													id="image"
 													onChange={(e) => set_image(e.target.value)}
 												/>
-												<button className="button primary" onClick={(e) => add_image(e)}>
+												<button className="btn primary" onClick={(e) => add_image(e)}>
 													Add Image
 												</button>
 											</li>
@@ -718,7 +712,7 @@ const EditProductPage = (props) => {
 												<input
 													type="text"
 													name="pathname"
-													defaultValue={pathname}
+													defaultValue={pathname ? pathname : name && snake_case(name)}
 													id="pathname"
 													onChange={(e) => setPathname(e.target.value)}
 												/>
@@ -738,7 +732,7 @@ const EditProductPage = (props) => {
 												<input
 													type="text"
 													name="meta_title"
-													value={meta_title}
+													value={name && `${name} | Glow LEDs`}
 													id="meta_title"
 													onChange={(e) => set_meta_title(e.target.value)}
 												/>
@@ -796,10 +790,20 @@ const EditProductPage = (props) => {
 												/>
 											</li>
 											<li>
-												<label htmlFor="height">
-													Calculated Volume {length * width * height}
-												</label>
+												<label htmlFor="volume">Product Volume</label>
+												<input
+													type="text"
+													name="volume"
+													value={length && width && height && length * width * height}
+													id="volume"
+													onChange={(e) => setVolume(e.target.value)}
+												/>
 											</li>
+											{/* <li>
+												<label htmlFor="height">
+													Calculated Volume {length && length * width * height}
+												</label>
+											</li> */}
 											<li>
 												<label htmlFor="weight_pounds">Product lbs</label>
 												<input
@@ -820,26 +824,16 @@ const EditProductPage = (props) => {
 													onChange={(e) => set_weight_ounces(e.target.value)}
 												/>
 											</li>
-											<li>
-												<label htmlFor="volume">Product Volume</label>
-												<input
-													type="text"
-													name="volume"
-													value={volume}
-													id="volume"
-													onChange={(e) => setVolume(e.target.value)}
-												/>
-											</li>
 										</div>
 									</div>
 									{image_display(images)}
 									<li>
-										<button type="submit" className="button primary">
+										<button type="submit" className="btn primary">
 											{id ? 'Update' : 'Create'}
 										</button>
 									</li>
 									<li>
-										<button className="button secondary" onClick={() => history.goBack()}>
+										<button className="btn secondary" onClick={() => history.goBack()}>
 											Back to Products
 										</button>
 									</li>

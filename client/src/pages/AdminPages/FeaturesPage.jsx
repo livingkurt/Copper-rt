@@ -69,7 +69,7 @@ const FeaturesPage = (props) => {
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/glow/editfeature">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Feature
 					</button>
 				</Link>

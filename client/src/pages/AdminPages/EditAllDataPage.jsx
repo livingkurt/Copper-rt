@@ -213,12 +213,12 @@ const EditAllDataPage = (props) => {
 								</div>
 							</div>
 							<li>
-								<button onClick={(e) => batch_request(e)} className="button primary">
+								<button onClick={(e) => batch_request(e)} className="btn primary">
 									Complete
 								</button>
 							</li>
 							<li>
-								<button className="button secondary" onClick={() => history.goBack()}>
+								<button className="btn secondary" onClick={() => history.goBack()}>
 									Back
 								</button>
 							</li>

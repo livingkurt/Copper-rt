@@ -95,7 +95,7 @@ const UsersPage = (props) => {
 					);
 				})}
 				<Link to="/secure/glow/edituser">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create User
 					</button>
 				</Link>

@@ -161,7 +161,7 @@ const ExpensesPage = (props) => {
 					})}
 				</div>
 				<Link to="/secure/glow/editexpense">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Expense
 					</button>
 				</Link>
@@ -186,7 +186,7 @@ const ExpensesPage = (props) => {
 						<span className="custom-arrow" />
 					</div>
 				</div>
-				<label className="button primary">
+				<label className="btn primary">
 					Upload CSV
 					<CSVReader onFileLoaded={(data, fileInfo) => determine_card_type(data, fileInfo)} />
 				</label>

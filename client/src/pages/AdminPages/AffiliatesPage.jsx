@@ -90,7 +90,7 @@ const AffiliatesPage = (props) => {
 					})}
 				</div>
 				<Link to="/secure/glow/editaffiliate">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Affiliate
 					</button>
 				</Link>

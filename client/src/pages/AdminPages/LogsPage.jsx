@@ -100,7 +100,7 @@ const LogsPage = (props) => {
 					);
 				})}
 				<Link to="/secure/glow/editlog">
-					<button className="button primary" style={{ width: '160px' }}>
+					<button className="btn primary" style={{ width: '160px' }}>
 						Create Log
 					</button>
 				</Link>
