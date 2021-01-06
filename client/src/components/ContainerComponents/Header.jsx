@@ -71,7 +71,7 @@ const Header = (props) => {
 						</div>
 					</Link>
 					<button
-						className="button mobile nav none fs-30px h-50px w-50px p-10px"
+						className="btn mobile nav none fs-30px h-50px w-50px p-10px"
 						onClick={openMenu}
 						aria-label="sidebar"
 					>
@@ -422,6 +422,12 @@ const Header = (props) => {
 						</div>
 					</div>
 				</div>
+				<Link to="/checkout/cart">
+					<button className=" btn mobile nav cart_icon none">
+						<i className="fas fa-shopping-cart" />{' '}
+						{cartItems.reduce((a, c) => parseInt(a) + parseInt(c.qty), 0)}{' '}
+					</button>
+				</Link>
 				<div className="nav_bar right_side w-233px jc-fe">
 					<Link to="/checkout/cart">
 						<button className=" btn nav cart_text w-85px">
@@ -430,7 +436,7 @@ const Header = (props) => {
 						</button>
 					</Link>
 					<Link to="/checkout/cart">
-						<button className=" button mobile nav cart_icon none">
+						<button className=" btn mobile nav cart_icon none">
 							<i className="fas fa-shopping-cart" />{' '}
 							{cartItems.reduce((a, c) => parseInt(a) + parseInt(c.qty), 0)}{' '}
 						</button>

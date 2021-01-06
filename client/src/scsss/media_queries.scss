@@ -121,24 +121,24 @@
 	.home_links {
 		justify-content: center !important;
 	}
-	.button.nav {
+	.btn.nav {
 		font-size: 14px;
-		display: none;
+		display: none !important;
 	}
-	.button.mobile.nav {
+	.btn.mobile.nav {
 		display: block !important;
 	}
 	.menu_button {
 		width: unset !important;
 	}
 	.logo {
-		display: none;
+		display: none !important;
 	}
 	.logo_2 {
 		display: block !important;
 	}
 	.nav_bar {
-		display: none;
+		display: none !important;
 	}
 	.gibson_lake_copper_art_text {
 		font-size: 50px !important;
@@ -350,7 +350,7 @@
 		font-size: 1.4rem !important;
 		// width: 100px;
 	}
-	.button.primary {
+	.btn.primary {
 		font-size: 1.4rem !important;
 	}
 	.sort_select {
@@ -412,7 +412,7 @@
 	.search_container {
 		justify-content: center !important;
 	}
-	.button.primary.search {
+	.btn.primary.search {
 		// width: 79% !important;
 		margin-bottom: 10px !important;
 		margin-right: 5px !important;

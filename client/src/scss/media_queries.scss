@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1550px) {
 	.content {
 		margin: 0 20px !important;
-		margin-top: 205px !important;
+		margin-top: 230px !important;
 	}
 }
 @media only screen and (max-width: 1468px) {
@@ -28,10 +28,27 @@
 	}
 }
 
+@media only screen and (max-width: 1360px) {
+
+  .gibson_lake_copper_art_text {
+		font-size: 60px !important;
+	}
+}
 @media only screen and (max-width: 1330px) {
 	.ship_deliver {
 		width: 100% !important;
-	}
+  }
+
+}
+
+@media only screen and (max-width: 1260px) {
+
+  .gibson_lake_copper_art_text {
+		font-size: 50px !important;
+  }
+  .right_side, .left_side {
+    width: 150px !important;
+  }
 }
 
 @media only screen and (max-width: 1468px) and (min-width: 1032px) {
@@ -46,7 +63,7 @@
 @media only screen and (max-width: 1177px) {
 	.content {
 		margin: 0 20px !important;
-		margin-top: 205px !important;
+		margin-top: 230px !important;
 	}
 	.embla {
 		width: 900px;
@@ -106,14 +123,11 @@
 	}
 	.btn.nav {
 		font-size: 14px;
-		display: none
+		display: none;
 	}
 	.btn.mobile.nav {
 		display: block !important;
-  }
-  .mobile_nav_bar {
-    display: block !important;
-  }
+	}
 	.menu_button {
 		width: unset !important;
 	}
@@ -124,13 +138,13 @@
 		display: block !important;
 	}
 	.nav_bar {
-		display: none !important;
+		display: none  !important;
 	}
-	.glow_leds_text {
+	.gibson_lake_copper_art_text {
 		font-size: 50px !important;
 	}
 	.content {
-		margin-top: 152px !important;
+		margin-top: 177px !important;
 		min-height: 76vh !important;
 	}
 	.details-info {
@@ -181,14 +195,18 @@
 
 // }
 
-// @media only screen and (max-width: 950px) {
-// 	.embla {
-// 		width: 700px;
-// 	}
-// 	.embla__slide {
-// 		min-width: 35%;
-// 	}
-// }
+@media only screen and (max-width: 865px) {
+	.gibson_lake_copper_art_text {
+		font-size: 40px !important;
+	}
+}
+
+@media only screen and (max-width: 726px) {
+	.gibson_lake_copper_art_text {
+		font-size: 30px !important;
+	}
+}
+
 
 @media only screen and (max-width: 704px) {
 	.product_big_screen {
@@ -214,13 +232,10 @@
 	}
 	.content {
 		margin: 0px !important;
-		margin-top: 124px !important;
+		margin-top: 149px !important;
 		border-radius: 0px !important;
 		width: 100% !important;
 		min-height: 81vh !important;
-	}
-	.glow_leds_text {
-		font-size: 40px !important;
 	}
 	.welcome_text {
 		font-size: 40px !important;
@@ -229,7 +244,7 @@
 		height: 70px !important;
 		width: 80px !important;
 	}
-	.main_container p-20px,
+	.main_container,
 	.profile_container,
 	.table_container {
 		padding: 0px !important;
@@ -248,6 +263,18 @@
 	}
 	.big_screen {
 		display: none !important;
+  }
+  .gibson_lake_copper_art_text {
+		display: none !important;
+	}
+  .gibson_lake_copper_art_text.small {
+		display: flex !important;
+  }
+  .tm.big {
+		display: none !important;
+  }
+  .tm.small {
+		display: flex !important;
 	}
 }
 
@@ -255,21 +282,22 @@
 	.search_and_sort {
 		justify-content: flex-start !important;
 	}
-	.footer_buttons {
-		display: none !important;
-	}
-	.footer_small {
-		display: flex !important;
-	}
+  // .footer_buttons {
+  //   display: none !important;
+  // }
+  .footer_small {
+    display: flex !important;
+  }
+ 
+  
+  // .footer-image {
 
-	// .footer-image {
+  //   img {
 
-	//   img {
+  //     transform: translate(-35%, 22%);
 
-	//     transform: translate(-35%, 22%);
-
-	//   }
-	// }
+  //   }
+  // }
 	.products li {
 		margin: 0;
 	}
@@ -298,14 +326,14 @@
 		max-height: 250px !important;
 		margin: 0px;
 	}
-	.glow_leds_text {
-		font-size: 35px !important;
-	}
+	// .gibson_lake_copper_art_text {
+	// 	font-size: 35px !important;
+	// }
 	.welcome_text {
 		font-size: 35px !important;
 	}
 	.content {
-		margin-top: 116px !important;
+		margin-top: 141px !important;
 		min-height: 83vh !important;
 	}
 	.logo_2 {
@@ -315,7 +343,7 @@
 	.sidebar {
 		top: 110px !important;
 	}
-	.main_container p-20px {
+	.main_container {
 		padding: 0px !important;
 	}
 	.form_input.search {
@@ -339,8 +367,8 @@
 	}
 	.checkout-steps > div {
 		font-size: 14px;
-	}
-	.order-status-steps > div {
+  }
+  .order-status-steps > div {
 		font-size: 14px;
 	}
 	.label {
@@ -358,9 +386,9 @@
 	.brand {
 		margin-right: 0px !important;
 	}
-	.nav_bar {
-		margin-left: 23px !important;
-	}
+	// .nav_bar {
+	// 	margin-left: 23px !important;
+	// }
 	.about_pictures {
 		margin: 0px !important;
 		margin-bottom: 10px !important;
@@ -395,10 +423,14 @@
 	}
 	.small_screen {
 		display: none !important;
-	}
-	.service {
+  }
+  .gibson_lake_copper_art_text.small {
+		display: none !important;
+  }
+  .tm.small {
 		display: none !important;
 	}
+  
 	// .search_input {
 	// 	width: 100% !important;
 	// }
@@ -408,18 +440,17 @@
 	.product-image {
 		height: 125px !important;
 		width: 125px !important;
-	}
-	.social_media_banner {
-		display: none !important;
-	}
+  }
+  .social_media_banner {
+    display: none !important;
+  }
 	.product_title_top {
 		font-size: 3rem !important;
 	}
 	.content {
-		margin-top: 114px !important;
+		margin-top: 139px !important;
 		min-height: 83vh !important;
 	}
-
 	.back-to-result {
 		padding: 0 !important;
 	}
@@ -447,7 +478,7 @@
 		margin: auto;
 		margin-bottom: 20px;
 	}
-	.glow_leds_text {
+	.gibson_lake_copper_art_text {
 		font-size: 28px !important;
 	}
 	.welcome_text {
@@ -456,16 +487,10 @@
 }
 
 @media only screen and (max-width: 355px) {
-	.glow_leds_text {
-		display: none !important;
-	}
+	
 	.content {
 		padding: 10px;
 	}
-	.shipping_rates {
-		font-size: 14px;
-	}
-
 	.sidebar {
 		top: 100px !important;
 	}
