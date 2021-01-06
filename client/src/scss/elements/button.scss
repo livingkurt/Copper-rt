@@ -65,7 +65,7 @@ button {
 }
 
 .btn.icon:hover {
-	background-color: gray;
+	background-color: $theme_color_nav_hover;
 	box-shadow: $bs_deep;
 }
 
@@ -77,7 +77,7 @@ button {
 .btn.nav:hover,
 .btn.mobile.nav:hover {
 	box-shadow: $bs_deep;
-	background-color: gray;
+	background-color: $theme_color_nav_hover;
 }
 
 .sidebar_close_button {
@@ -96,8 +96,8 @@ button {
 .sidebar-btn {
 	box-shadow: $bs_shallow;
 	background-color: transparent;
-	color: $theme_color_main_font;
-	border: 0px;
+  border: 0px;
+  color: $theme_color_main_font;
 	font-family: $main_font;
 	border-radius: $br_small_containers;
 	transition: all .5s ease;
@@ -111,6 +111,10 @@ button {
 	text-align: start;
 }
 
+.sidebar-btn.primary:hover {
+  background-color: $theme_color_sidebar_primary_hover;
+}
+
 .sidebar-btn.secondary {
 	border-bottom: 1px white solid;
 	width: 100%;
@@ -118,12 +122,19 @@ button {
 	text-align: start;
 	padding-left: 20px;
 }
+.sidebar-btn.secondary:hover {
+	background-color: $theme_color_sidebar_secondary_hover;
+}
 .sidebar-btn.nested {
 	border-bottom: 1px white solid;
-	width: 100%;
+  width: 100%;
+  background-color: $theme_color_sidebar_nested;
 	border-radius: 0px;
 	text-align: start;
 	padding-left: 40px;
+}
+.sidebar-btn.nested:hover {
+  background-color: $theme_color_sidebar_nested_hover;
 }
 
 .sidebar-btn:hover {

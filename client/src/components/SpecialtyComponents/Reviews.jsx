@@ -74,7 +74,7 @@ const Review = (props) => {
 							<div>{review.comment}</div>
 						</div>
 						<div className="ta-r">
-							<button className="button icon" onClick={() => remove_review(review._id)}>
+							<button className="btn icon" onClick={() => remove_review(review._id)}>
 								<i className="fas fa-trash-alt" />
 							</button>
 						</div>

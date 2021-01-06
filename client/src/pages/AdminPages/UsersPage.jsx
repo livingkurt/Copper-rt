@@ -176,16 +176,16 @@ const UsersPage = (props) => {
 										<td className="p-10px">
 											<div className="jc-b">
 												<Link to={'/secure/glow/edituser/' + user._id}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i className="fas fa-info-circle" />
 													</button>
 												</Link>
 												<Link to={'/secure/glow/userprofile/' + user._id}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i class="fas fa-mountain" />
 													</button>
 												</Link>
-												<button className="button icon" onClick={() => deleteHandler(user)}>
+												<button className="btn icon" onClick={() => deleteHandler(user)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>

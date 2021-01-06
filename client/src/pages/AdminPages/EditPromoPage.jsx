@@ -213,7 +213,7 @@ const EditPromoPage = (props) => {
 						return (
 							<div className="promo_code mv-1rem row jc-b max-w-55rem w-100per">
 								<div>
-									<button className="button icon" onClick={(e) => remove_item(index, e, type)}>
+									<button className="btn icon" onClick={(e) => remove_item(index, e, type)}>
 										<i className="fas fa-times mr-5px" />
 									</button>
 									{item}

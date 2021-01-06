@@ -104,7 +104,7 @@ const DevicesPage = (props) => {
 										<td>{device.location}</td>
 										<td>
 											<Link to={'/secure/account/glowcontrol/' + device._id}>
-												<button className="button icon">
+												<button className="btn icon">
 													<i class="fas fa-eye" />
 												</button>
 											</Link>
@@ -112,11 +112,11 @@ const DevicesPage = (props) => {
 										<td>
 											<div className="jc-b">
 												<Link to={'/secure/account/editdevice/' + device._id}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i className="fas fa-edit" />
 													</button>
 												</Link>
-												<button className="button icon" onClick={() => deleteHandler(device)}>
+												<button className="btn icon" onClick={() => deleteHandler(device)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>

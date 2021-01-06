@@ -55,10 +55,12 @@ const ProductsPage = (props) => {
 	const sort_options = [ 'Category', 'Newest', 'Lowest', 'Highest', 'Hidden' ];
 
 	const colors = [
-		{ name: 'Not Category', color: '#5a4d41' },
-		{ name: 'Buildings', color: '#557b68' },
-		{ name: 'Flowers', color: '#4b7188' },
-		{ name: 'Trees', color: '#736084' }
+		{ name: 'Not Category', color: '#2f2216' },
+		{ name: 'Buildings', color: '#5a4d41' },
+		{ name: 'Flowers', color: '#847363' },
+		{ name: 'Trees', color: '#827a62' },
+		{ name: 'Leaves', color: '#9c947a' },
+		{ name: 'Modern', color: '#af9e81' }
 	];
 
 	const determine_color = (product) => {
@@ -67,13 +69,19 @@ const ProductsPage = (props) => {
 			result = colors[0].color;
 		}
 		if (product.category === 'buildings') {
-			result = colors[2].color;
+			result = colors[1].color;
 		}
 		if (product.category === 'flowers') {
-			result = colors[3].color;
+			result = colors[2].color;
 		}
 		if (product.category === 'trees') {
+			result = colors[3].color;
+		}
+		if (product.category === 'leaves') {
 			result = colors[4].color;
+		}
+		if (product.category === 'modern') {
+			result = colors[5].color;
 		}
 		return result;
 	};
@@ -166,11 +174,11 @@ const ProductsPage = (props) => {
 										<td className="p-10px">
 											<div className="jc-b">
 												<Link to={'/secure/glow/editproduct/' + product.pathname}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i className="fas fa-edit" />
 													</button>
 												</Link>
-												<button className="button icon" onClick={() => deleteHandler(product)}>
+												<button className="btn icon" onClick={() => deleteHandler(product)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>

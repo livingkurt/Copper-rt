@@ -233,7 +233,7 @@ const OrderListItem = (props) => {
 				</Link>
 				{props.admin && (
 					<div className="jc-fe column ml-auto ">
-						<button className="button icon h-3rem " onClick={() => show_hide(props.order._id)}>
+						<button className="btn icon h-3rem " onClick={() => show_hide(props.order._id)}>
 							<i style={{ '-webkitTransform': 'rotate(-180deg)' }} className="top-8px fas fa-sort-up" />
 						</button>
 					</div>

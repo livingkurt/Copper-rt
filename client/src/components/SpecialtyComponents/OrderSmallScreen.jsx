@@ -31,7 +31,7 @@ const OrderSmallScreen = (props) => {
 
 					<div className="jc-fe">
 						<Link to={'/secure/account/order/' + props.order._id} className="m-auto">
-							<button className="button icon fs-25px">
+							<button className="btn icon fs-25px">
 								<i className="fas fa-info-circle" />
 							</button>
 						</Link>

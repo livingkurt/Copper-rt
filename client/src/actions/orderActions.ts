@@ -48,8 +48,8 @@ export const createPayOrder = (
 		order_note: string;
 		promo_code: string;
 		// product: string;
-  },
-  paymentMethod: any,
+	},
+	paymentMethod: any
 	// token: any
 ) => async (
 	dispatch: (arg0: { type: string; payload: any }) => void,
@@ -303,11 +303,12 @@ export const listUserOrders = (user_id: string) => async (
 	}
 };
 
-export const listOrders = (category = '', searchKeyword = '', sortOrder = '') => async (
+export const listOrders = (category = '', searchKeyword = '', sortOrder = '', lastID = '', direction = '') => async (
 	dispatch: (arg0: { type: string; payload?: any }) => void,
 	getState: () => { userLogin: { userInfo: any } }
 ) => {
 	try {
+		console.log({ direction });
 		dispatch({ type: ORDER_LIST_REQUEST });
 		const { userLogin: { userInfo } } = getState();
 		// const { data } = await axios.get('/api/orders', {
@@ -319,7 +320,11 @@ export const listOrders = (category = '', searchKeyword = '', sortOrder = '') =>
 				'&searchKeyword=' +
 				searchKeyword +
 				'&sortOrder=' +
-				sortOrder.toLowerCase(),
+				sortOrder.toLowerCase() +
+				'&lastID=' +
+				lastID +
+				'&direction=' +
+				direction,
 			{
 				headers: { Authorization: 'Bearer ' + userInfo.token }
 			}

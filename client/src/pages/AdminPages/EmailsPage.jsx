@@ -187,11 +187,11 @@ const EmailsPage = (props) => {
 										<td className="p-10px">
 											<div className="jc-b">
 												<Link to={'/secure/glow/editemail/' + email._id}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i className="fas fa-edit" />
 													</button>
 												</Link>
-												<button className="button icon" onClick={() => deleteHandler(email)}>
+												<button className="btn icon" onClick={() => deleteHandler(email)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>

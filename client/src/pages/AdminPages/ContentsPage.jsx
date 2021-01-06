@@ -92,11 +92,11 @@ const ContentsPage = (props) => {
 										<td className="p-10px">
 											<div className="jc-c">
 												<Link to={'/secure/glow/editcontent/' + content._id}>
-													<button className="button icon">
+													<button className="btn icon">
 														<i className="fas fa-edit" />
 													</button>
 												</Link>
-												<button className="button icon" onClick={() => deleteHandler(content)}>
+												<button className="btn icon" onClick={() => deleteHandler(content)}>
 													<i className="fas fa-trash-alt" />
 												</button>
 											</div>

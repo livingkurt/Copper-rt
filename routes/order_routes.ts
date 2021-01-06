@@ -75,6 +75,11 @@ router.get('/', isAuth, async (req: any, res: any) => {
 		const category = req.query.category ? { category: req.query.category } : {};
 		let user: any;
 		let searchKeyword: any;
+		let last_id = req.query.lastID;
+		let direction = req.query.direction;
+		console.log('hello');
+		console.log(req.query);
+		let orders: any;
 		if (req.query.searchKeyword) {
 			const userSearchKeyword = req.query.searchKeyword
 				? {
@@ -105,11 +110,59 @@ router.get('/', isAuth, async (req: any, res: any) => {
 		} else if (req.query.sortOrder === 'delivered') {
 			sortOrder = { isDelivered: -1, createdAt: -1 };
 		}
-		const orders = await Order.find({ deleted: false, ...category, ...searchKeyword })
-			.populate('user')
-			.populate('orderItems.product')
-			.populate('orderItems.secondary_product')
-			.sort(sortOrder);
+
+		// if (category === 'none' || category === 'None' || category === 'all' || category === 'All') {
+		if (last_id === 'none') {
+			// products = await Product.find({ deleted_at: null }).sort({_id:-1}).limit(10)
+			orders = await Order.find({ deleted: false, ...category, ...searchKeyword })
+				.limit(10)
+				.populate('user')
+				.populate('orderItems.product')
+				.populate('orderItems.secondary_product')
+				.sort(sortOrder);
+		} else {
+			if (direction === 'next') {
+				// products = await Product.find({_id: {$lt: last_id}, deleted_at: null}).sort({_id:-1}).limit(10)
+				orders = await Order.find({
+					deleted: false,
+					...category,
+					...searchKeyword,
+					_id: { $lt: last_id }
+				})
+					.limit(10)
+					.populate('user')
+					.populate('orderItems.product')
+					.populate('orderItems.secondary_product')
+					.sort(sortOrder);
+			} else if (direction === 'previous') {
+				// products = await Product.find({_id: {$lte: last_id}, deleted_at: null}).sort({_id:-1}).limit(10)
+				orders = await Order.find({
+					deleted: false,
+					...category,
+					...searchKeyword,
+					_id: { $gt: last_id }
+				})
+					.limit(10)
+					.populate('user')
+					.populate('orderItems.product')
+					.populate('orderItems.secondary_product')
+					.sort(sortOrder);
+			} else {
+				// products = await Product.find({_id: {$gt: last_id}, deleted_at: null}).limit(10)
+				orders = await Order.find({
+					deleted: false,
+					...category,
+					...searchKeyword,
+					_id: { $gt: last_id }
+				})
+					.limit(10)
+					.populate('user')
+					.populate('orderItems.product')
+					.populate('orderItems.secondary_product')
+					.sort(sortOrder);
+				orders = orders.reverse();
+			}
+		}
 		log_request({
 			method: 'GET',
 			path: req.originalUrl,
@@ -119,6 +172,7 @@ router.get('/', isAuth, async (req: any, res: any) => {
 			success: true,
 			ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
 		});
+		console.log({ orders });
 		res.send(orders);
 	} catch (error) {
 		log_error({
@@ -132,6 +186,67 @@ router.get('/', isAuth, async (req: any, res: any) => {
 		res.status(500).send({ error, message: 'Error Getting Orders' });
 	}
 });
+
+// app.get('/api/products/all/:last_product_id/:direction/:category', requireLogin, adminRequired, async (req, res) => {
+// 	try {
+// 		let last_product_id = req.params.last_product_id;
+// 		let direction = req.params.direction;
+// 		let category = req.params.category;
+// 		let products;
+// 		if (category === 'none' || category === 'None' || category === 'all' || category === 'All') {
+// 			if (last_product_id === 'none') {
+// 				products = await Product.find({ deleted_at: null }).sort({ _id: -1 }).limit(10);
+// 			} else {
+// 				if (direction === 'next') {
+// 					products = await Product.find({ _id: { $lt: last_product_id }, deleted_at: null })
+// 						.sort({ _id: -1 })
+// 						.limit(10);
+// 				} else if (direction === 'previous') {
+// 					products = await Product.find({ _id: { $lte: last_product_id }, deleted_at: null })
+// 						.sort({ _id: -1 })
+// 						.limit(10);
+// 				} else {
+// 					products = await Product.find({ _id: { $gt: last_product_id }, deleted_at: null }).limit(10);
+// 					products = products.reverse();
+// 				}
+// 			}
+// 		} else {
+// 			if (last_product_id === 'none') {
+// 				products = await Product.find({ deleted_at: null, categories: category }).sort({ _id: -1 }).limit(10);
+// 			} else {
+// 				if (direction === 'next') {
+// 					products = await Product.find({
+// 						_id: { $lt: last_product_id },
+// 						deleted_at: null,
+// 						categories: category
+// 					})
+// 						.sort({ _id: -1 })
+// 						.limit(10);
+// 				} else if (direction === 'previous') {
+// 					products = await Product.find({
+// 						_id: { $lte: last_product_id },
+// 						deleted_at: null,
+// 						categories: category
+// 					})
+// 						.sort({ _id: -1 })
+// 						.limit(10);
+// 				} else {
+// 					products = await Product.find({
+// 						_id: { $gt: last_product_id },
+// 						deleted_at: null,
+// 						categories: category
+// 					}).limit(10);
+// 					products = products.reverse();
+// 				}
+// 			}
+// 		}
+// 		res.send(products);
+// 	} catch (err) {
+// 		req.bugsnag.notify(err);
+// 		res.status(422).send(err);
+// 	}
+// });
+
 router.get('/each_day_income/:date', async (req: any, res: any) => {
 	try {
 		const date = req.params.date;
@@ -1280,10 +1395,15 @@ router.put('/create_label', async (req: any, res: any) => {
 			phone: '906-284-2208',
 			email: 'info.glowleds@gmail.com'
 		});
+		const cube_root_volume = Math.cbrt(
+			order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0) *
+				order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0) *
+				order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0)
+		);
 		const parcel = new EasyPost.Parcel({
-			length: order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0),
-			width: order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0),
-			height: order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0),
+			length: cube_root_volume,
+			width: cube_root_volume,
+			height: cube_root_volume,
 			weight: order.orderItems.reduce(
 				(a: any, c: { weight_pounds: any; weight_ounces: number }) =>
 					c.weight_pounds * 16 + c.weight_ounces + a,
@@ -1321,10 +1441,10 @@ router.put('/create_label', async (req: any, res: any) => {
 			customsInfo: order.shipping.international ? customsInfo : {}
 		});
 		const saved_shipment = await shipment.save();
-		console.log({ saved_shipment });
+		// console.log({ saved_shipment });
 		const created_shipment = await EasyPost.Shipment.retrieve(saved_shipment.id);
 		const label = await created_shipment.buy(created_shipment.lowestRate(), 0);
-		console.log({ label });
+		// console.log({ label });
 		res.send(label);
 	} catch (err) {
 		console.log(err);
@@ -1335,7 +1455,8 @@ router.put('/get_shipping_rates', async (req: any, res: any) => {
 	try {
 		const EasyPost = new easy_post_api(process.env.EASY_POST);
 		const order = req.body.order;
-		console.log({ orderItems: order.orderItems });
+		// console.log(order);
+
 		const toAddress = new EasyPost.Address({
 			name: order.shipping.first_name + ' ' + order.shipping.last_name,
 			street1: order.shipping.address_1,
@@ -1356,10 +1477,22 @@ router.put('/get_shipping_rates', async (req: any, res: any) => {
 			phone: '906-284-2208',
 			email: 'info.glowleds@gmail.com'
 		});
+		const cube_root_volume = Math.cbrt(
+			order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0) *
+				order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0) *
+				order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0)
+		);
+		// console.log(
+		// 	Math.cbrt(
+		// 		order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0) *
+		// 			order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0) *
+		// 			order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0)
+		// 	)
+		// );
 		const parcel = new EasyPost.Parcel({
-			length: order.orderItems.reduce((a: any, c: string | any[]) => a + c.length, 0),
-			width: order.orderItems.reduce((a: any, c: { width: any }) => a + c.width, 0),
-			height: order.orderItems.reduce((a: any, c: { height: any }) => a + c.height, 0),
+			length: cube_root_volume,
+			width: cube_root_volume,
+			height: cube_root_volume,
 			weight: order.orderItems.reduce(
 				(a: any, c: { weight_pounds: any; weight_ounces: number }) =>
 					c.weight_pounds * 16 + c.weight_ounces + a,
@@ -1371,8 +1504,6 @@ router.put('/get_shipping_rates', async (req: any, res: any) => {
 			from_address: fromAddress,
 			parcel: parcel
 		});
-		console.log({ shipment });
-		console.log({ parcel });
 		const saved_shipment = await shipment.save();
 		// console.log({ saved_shipment });
 		res.send(saved_shipment);
