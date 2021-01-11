@@ -6,11 +6,11 @@ import { detailsOrderPublic, payOrder, payOrderGuest } from '../../actions/order
 import { format_date } from '../../utils/helper_functions';
 import { CheckoutSteps } from '../../components/SpecialtyComponents';
 import StripeCheckout from 'react-stripe-checkout';
-import { loadStripe } from '@stripe/stripe-js';
-import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Helmet } from 'react-helmet';
 import { LoadingPayments } from '../../components/UtilityComponents';
 import { API_Products } from '../../utils';
+import { loadStripe } from '@stripe/stripe-js';
+import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
 
 require('dotenv').config();
 
@@ -130,7 +130,7 @@ const OrderPublicPage = (props) => {
 		{ name: 'Manufactured', color: '#4b7188' },
 		{ name: 'Packaged', color: '#6f5f7d' },
 		{ name: 'Shipped', color: '#636363' },
-		{ name: 'Delivered', color: '#5a4d41' },
+		{ name: 'Delivered', color: '#333333' },
 		{ name: 'Refunded', color: '#a9a9a9' }
 	];
 
@@ -235,16 +235,21 @@ const OrderPublicPage = (props) => {
 			<form onSubmit={handleSubmit}>
 				<CardElement
 					options={{
+						iconStyle: 'solid',
 						style: {
 							base: {
-								fontSize: '20px',
-								color: 'white',
-								'::placeholder': {
-									color: 'white'
-								}
+								iconColor: '#c4f0ff',
+								color: '#fff',
+								fontWeight: 500,
+								fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
+								fontSize: '1.2rem',
+								fontSmoothing: 'antialiased',
+								':-webkit-autofill': { color: 'white' },
+								'::placeholder': { color: 'white' }
 							},
 							invalid: {
-								color: '#9e2146'
+								iconColor: '#ffc7ee',
+								color: '#ffc7ee'
 							}
 						}
 					}}
@@ -266,13 +271,16 @@ const OrderPublicPage = (props) => {
 	) : (
 		<div>
 			<Helmet>
-				<title>Your Order | Gibson Lake Copper Art</title>
+				<title>Your Order | Glow LEDs</title>
 				<meta property="og:title" content="Your Order" />
 				<meta name="twitter:title" content="Your Order" />
-				<link rel="canonical" href={'http://www.copper-rt.com/secure/account/order/' + props.match.params.id} />
+				<link
+					rel="canonical"
+					href={'https://www.glow-leds.com/secure/account/order/' + props.match.params.id}
+				/>
 				<meta
 					property="og:url"
-					content={'http://www.copper-rt.com/secure/account/order/' + props.match.params.id}
+					content={'https://www.glow-leds.com/secure/account/order/' + props.match.params.id}
 				/>
 			</Helmet>
 			{/* {order.isPaid ? <CheckoutSteps step1 step2 step3 step4 /> : <CheckoutSteps step1 step2 step3 />} */}
@@ -343,7 +351,9 @@ const OrderPublicPage = (props) => {
 									<div>
 										{order.shipping.first_name} {order.shipping.last_name}
 									</div>
-									<div>{order.shipping.address}</div>
+									<div>
+										{order.shipping.address_1} {order.shipping.address_2}
+									</div>
 									<div>
 										{order.shipping.city}, {order.shipping.state} {order.shipping.postalCode}{' '}
 										{order.shipping.country}
