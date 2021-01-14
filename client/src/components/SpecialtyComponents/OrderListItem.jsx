@@ -5,7 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { format_date } from '../../utils/helper_functions';
 import useClipboard from 'react-hook-clipboard';
-import { deleteOrder, refundOrder } from '../../actions/orderActions';
+import { deleteOrder, listOrders, refundOrder } from '../../actions/orderActions';
+import { API_Orders } from '../../utils';
+import { Loading } from '../UtilityComponents';
 
 const OrderListItem = (props) => {
 	const dispatch = useDispatch();
@@ -14,6 +16,7 @@ const OrderListItem = (props) => {
 	const [ refund_state, set_refund_state ] = useState({});
 	const [ refund_amount, set_refund_amount ] = useState(0);
 	const [ refund_reason, set_refund_reason ] = useState('');
+	const [ loading_label, set_loading_label ] = useState(false);
 
 	const orderRefund = useSelector((state) => state.orderRefund);
 	const { order: refund } = orderRefund;
@@ -31,6 +34,7 @@ const OrderListItem = (props) => {
 		},
 		[ refund ]
 	);
+
 	const show_hide = (id) => {
 		const row = document.getElementById(id);
 		console.log(row);
@@ -66,8 +70,39 @@ const OrderListItem = (props) => {
 
 	const today = new Date();
 
+	const create_label = async () => {
+		set_loading_label(true);
+		const { data } = await API_Orders.create_label(props.order, props.order.shipping.shipping_rate);
+		window.open(data.postage_label.label_url, '_blank', 'width=600,height=400');
+		console.log({ data });
+		if (data) {
+			set_loading_label(false);
+		}
+		console.log({ tracking_code: data.tracking_code });
+		const request = await API_Orders.add_tracking_number(props.order, data.tracking_code, data);
+		console.log(request);
+		dispatch(listOrders('', '', '', 'none'));
+	};
+
+	const buy_label = async () => {
+		set_loading_label(true);
+		const { data } = await API_Orders.buy_label(props.order, props.order.shipping.shipping_rate);
+		window.open(data.postage_label.label_url, '_blank', 'width=600,height=400');
+		if (data) {
+			set_loading_label(false);
+		}
+		console.log({ tracking_code: data.tracking_code });
+		const request = await API_Orders.add_tracking_number(props.order, data.tracking_code, data);
+		console.log(request);
+		dispatch(listOrders('', '', '', 'none'));
+	};
+	const view_label = async () => {
+		window.open(props.order.shipping.shipping_label.postage_label.label_url, '_blank', 'width=600,height=400');
+	};
+
 	return (
 		<div className="home_page_divs" style={{ backgroundColor: props.determine_color(props.order) }}>
+			<Loading loading={loading_label} />
 			<div className="pb-15px mb-10px row" style={{ borderBottom: '1px solid white' }}>
 				<div className="w-50per jc-b ">
 					<div className="fs-16px">
@@ -301,7 +336,9 @@ const OrderListItem = (props) => {
 									<div>
 										{props.order.shipping.first_name} {props.order.shipping.last_name}
 									</div>
-									<div>{props.order.shipping.address}</div>
+									<div>
+										{props.order.shipping.address_1} {props.order.shipping.address_2}
+									</div>
 									<div>
 										{props.order.shipping.city}, {props.order.shipping.state}{' '}
 										{props.order.shipping.postalCode} {props.order.shipping.country}
@@ -315,7 +352,7 @@ const OrderListItem = (props) => {
 									onClick={() =>
 										copyToClipboard(`
 ${props.order.shipping.first_name} ${props.order.shipping.last_name}
-${props.order.shipping.address}
+${props.order.shipping.address_1} ${props.order.shipping.address_2}
 ${props.order.shipping.city}, ${props.order.shipping.state}
 ${props.order.shipping.postalCode} ${props.order.shipping.country}
 ${props.order.shipping.email}`)}
@@ -499,6 +536,22 @@ ${props.order.shipping.email}`)}
 										</button>
 									</Link>
 								</div>
+
+								{!props.order.shipping.shipping_label && (
+									<button className="btn secondary mv-5px" onClick={() => create_label()}>
+										Create Label
+									</button>
+								)}
+								{!props.order.shipping.shipping_label && (
+									<button className="btn secondary mv-5px" onClick={() => buy_label()}>
+										Buy Label
+									</button>
+								)}
+								{props.order.shipping.shipping_label && (
+									<button className="btn secondary mv-5px" onClick={() => view_label()}>
+										View Label
+									</button>
+								)}
 								<button className="btn secondary mv-5px">
 									<Link to={'/secure/glow/editorder/' + props.order._id}>Edit Order</Link>
 								</button>
