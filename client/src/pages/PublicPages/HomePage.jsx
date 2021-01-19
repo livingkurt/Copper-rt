@@ -30,6 +30,39 @@ const HomePage = (props) => {
 		[ contents ]
 	);
 
+	const homepage_pictures = [
+		{
+			name: 'Buildings',
+			category: 'diffuser_caps',
+			image: 'https://thumbs2.imgbox.com/33/11/KimJPKNB_t.jpg',
+			description: ''
+		},
+		{
+			name: 'Trees',
+			category: 'mega_diffuser_caps',
+			image: '',
+			description: ''
+		},
+		{
+			name: 'Flowers',
+			category: 'frosted_diffusers',
+			image: 'https://thumbs2.imgbox.com/fa/f1/WQnVKv4D_t.jpg',
+			description: ''
+		},
+		{
+			name: 'Leaves',
+			category: 'glow_strings',
+			image: 'https://thumbs2.imgbox.com/6c/ed/YH2HXvu8_t.jpg',
+			description: ''
+		},
+		{
+			name: 'Modern',
+			category: 'glow_strings',
+			image: 'https://thumbs2.imgbox.com/f4/6d/jJoyrjXc_t.jpg',
+			description: ''
+		}
+	];
+
 	return (
 		<div className="main_container">
 			<Helmet>
@@ -75,7 +108,7 @@ const HomePage = (props) => {
 			</Helmet>
 
 			<div className="jc-c">
-				<h1 className="welcome_text mb-3rem" style={{ fontSize: '6rem' }}>
+				<h1 className="welcome_text mb-3rem ta-c" style={{ fontSize: '6rem' }}>
 					Welcome to Gibson Lake Copper Art
 				</h1>
 			</div>
@@ -129,17 +162,85 @@ const HomePage = (props) => {
 					</div>
 				</div>
 			)}
-			<div className="jc-c">
+			{/* <div className="jc-c">
 				<h2 style={{ textAlign: 'center' }}>
 					Rustic Copper Buildings, Modern Abstract Decor, and Nature Scenes including Trees, Flowers, and
 					Leaves.
 				</h2>
-			</div>
+			</div> */}
 			<p className="p_descriptions" style={{ textAlign: 'center' }}>
 				I specialize in making unique copper art sculptures. I enjoy making old buildings from pictures,
 				flowers, and other wildlife scenes. Modern art too!
 			</p>
-
+			{/* <div className="big_home_page_cards">
+				{homepage_pictures.map((card) => {
+          if (card.image) {
+            return (
+              <Link to={`/collections/all/products/category/${card.category}`}>
+                <div className="home_page_divs">
+                  <div className="jc-c">
+                    <h2 className="ta-c">{card.name}</h2>
+                  </div>
+                  <div className="jc-b">
+                    <img
+                      style={{ borderRadius: '20px' }}
+                      src={card.image}
+                      className="max-w-500px max-h-500px w-100per h-auto"
+                      alt="Promo Image"
+                      title="Promo Image"
+                    />
+                    <div className="ml-2rem w-100per">
+                      <p className="p_descriptions paragraph_font">{card.description}</p>
+                      <div className="jc-c">
+                        <Link
+                          className="w-100per"
+                          to={`/collections/all/products/category/${card.category}`}
+                        >
+                          <button className="btn primary w-100per">Shop {card.name}</button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          }
+					
+				})}
+			</div> */}
+			<div className="small_home_page_cards">
+				{homepage_pictures.map((card) => {
+					if (card.image) {
+						return (
+							<Link to={`/collections/all/products/category/${card.category}`}>
+								<div className="home_page_divs jc-c column" style={{ backgroundColor: card.color }}>
+									<div className="jc-c ">
+										<h2 className="ta-c">{card.name}</h2>
+									</div>
+									<img
+										style={{ borderRadius: '20px' }}
+										src={card.image}
+										className="max-w-500px max-h-500px w-100per h-auto  m-auto"
+										alt="Promo Image"
+										title="Promo Image"
+									/>
+									<p className="p_descriptions paragraph_font home_page_description">
+										{card.description}
+									</p>
+									<div className="jc-c">
+										<Link
+											className="w-100per jc-c"
+											to={`/collections/all/products/category/${card.category}`}
+										>
+											<button className="btn primary m-auto">Shop {card.name}</button>
+										</Link>
+									</div>
+								</div>
+							</Link>
+						);
+					}
+				})}
+			</div>
 			{/* <div className="home_page_divs">
 				<div className="jc-c">
 					<h2 style={{ textAlign: 'center' }}>Glowskins</h2>

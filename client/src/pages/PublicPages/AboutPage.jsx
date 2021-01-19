@@ -79,11 +79,11 @@ const AboutPage = () => {
 								height: 'auto',
 								maxWidth: '400px'
 							}}
-							src="/images/optimized_images/personal_images/IMG_8989_optimized.jpeg"
+							src="/images/optimized_images/personal_images/IMG_0508.JPG"
 						/>
 					</div>
-					{/* {content && content.banner && <p style={{ lineHeight: '25px' }}>{content.about_page.kurt_p}</p>} */}
-					<p style={{ lineHeight: '25px' }}>
+					{/* {content && content.banner && <p >{content.about_page.kurt_p}</p>} */}
+					<p className="paragraph_font">
 						My interest in art began back in 7th grade at my Junior high school in St. Clair Shores, Mi. I
 						had wonderful art teachers, Miss Kafory and Mr. Compo that sparked my interest. I could not draw
 						at all, but loved working with clay and making jewelry. They were my art teachers until I moved
@@ -102,45 +102,47 @@ const AboutPage = () => {
 						at work and started to get pretty good. Back at school I asked my art teacher, Miss Minda, if I
 						could use the torch that she used for working on jewelry. It was an acetylene torch without an
 						oxygen tank so it didn’t braze as well because it didn’t get as hot. She said yes and helped me
-						set up a corner in the room for me to braze. That night my dad took me to the junk yard to buy
-						some cooper and brass sheets. These were scraps from the local metal shops. The next day and for
-						the next three years I lived in that art room. I had other classes, mostly science, but was in
-						the art room every chance I had. There were many good artists in my school who I loved watching
-						create. At home, my dad and I built an 8’ x 8’ welding shop behind our house. Then he helped me
-						purchased oxygen and acetylene tanks, torches and brazing rods. That shop became my home away
-						from home. When my friends were looking for me, they knew where to go. I still have many of the
-						sculptures I made during those years. My senior year, a female student and I were selected
-						“Artists of the Year” in school. My senior sculpture was a smashed car bumper with about 20
-						signs I made using nails. After high school, I attend Macomb community college for two years. I
-						was busy and didn’t find much time to braze. My shop became a storage shed. I moved to
-						Marquette, Mi. in 1978 to finish my education. Believe it or not, I chose to teach science. What
-						an opposite interest. For the next 29 years I taught most of the junior high and high school
-						science classes in Watersmeet High School in Watersmeet, Michigan. After I retired, I had
-						several health issues that made my life slow down. This is when I decided to start brazing
-						again. It was one of the best decisions I have ever made. I set up a shop in my basement and
-						create several sculptures each week. My wife, Tina, who I met in college and married in 1981,
-						helps me promote my art online and through numerous art shows that we attend each summer in the
-						U.P. and Northern Wisconsin.
+						set up a corner in the room for me to braze.
 					</p>
-					{/* <div
+					{/* <img
+						alt="Picture of Kurt"
+						title="Founder Picture"
+						style={{
+							borderRadius: '15px',
+							width: '100%',
+							height: 'auto',
+							maxWidth: '400px'
+						}}
+						src="/images/optimized_images/personal_images/IMG_0509.JPG"
+					/> */}
+					{/* <p >
+						That night my dad took me to the junk yard to buy some cooper and brass sheets. These were
+						scraps from the local metal shops. The next day and for the next three years I lived in that art
+						room. I had other classes, mostly science, but was in the art room every chance I had. There
+						were many good artists in my school who I loved watching create. At home, my dad and I built an
+						8’ x 8’ welding shop behind our house. Then he helped me purchased oxygen and acetylene tanks,
+						torches and brazing rods. That shop became my home away from home. When my friends were looking
+						for me, they knew where to go. I still have many of the sculptures I made during those years. My
+						senior year, a female student and I were selected “Artists of the Year” in school. My senior
+						sculpture was a smashed car bumper with about 20 signs I made using nails. After high school, I
+						attend Macomb community college for two years. I was busy and didn’t find much time to braze. My
+						shop became a storage shed. I moved to Marquette, Mi. in 1978 to finish my education. Believe it
+						or not, I chose to teach science. What an opposite interest. For the next 29 years I taught most
+						of the junior high and high school science classes in Watersmeet High School in Watersmeet,
+						Michigan. After I retired, I had several health issues that made my life slow down. This is when
+						I decided to start brazing again. It was one of the best decisions I have ever made. I set up a
+						shop in my basement and create several sculptures each week. My wife, Tina, who I met in college
+						and married in 1981, helps me promote my art online and through numerous art shows that we
+						attend each summer in the U.P. and Northern Wisconsin.
+					</p> */}
+
+					<div
 						className="about_pictures"
 						style={{
 							float: 'right',
 							margin: '0px 0px 25px 25px'
 						}}
 					>
-						<h2
-							className="about_names"
-							style={{
-								fontFamily: 'heading_font',
-								display: 'flex',
-								marginTop: 0,
-								justifyContent: 'flex-end',
-								marginBottom: '25px'
-							}}
-						>
-							Hi, My Name is Destanye!
-						</h2>
 						<img
 							alt="Picture of Destanye"
 							title="Partner Picture"
@@ -150,15 +152,29 @@ const AboutPage = () => {
 								height: 'auto',
 								maxWidth: '400px'
 							}}
-							src="/images/optimized_images/personal_images/img_0345_optimized.jpg"
+							src="/images/optimized_images/personal_images/IMG_0509.JPG"
 						/>
-					</div> */}
-					{/* <p style={{ lineHeight: '25px' }}>
-						I (Destanye) help with orders, designs, marketing, customer service and anything that doesn’t
-						involve coding or engineering. This business is truly a labor of love and we hope that something
-						here brings happiness into your life.
-					</p> */}
-					{/* {content && content.banner && <p style={{ lineHeight: '25px' }}>{content.about_page.destanye_p}</p>} */}
+					</div>
+					<p className="paragraph_font">
+						That night my dad took me to the junk yard to buy some cooper and brass sheets. These were
+						scraps from the local metal shops. The next day and for the next three years I lived in that art
+						room. I had other classes, mostly science, but was in the art room every chance I had. There
+						were many good artists in my school who I loved watching create. At home, my dad and I built an
+						8’ x 8’ welding shop behind our house. Then he helped me purchased oxygen and acetylene tanks,
+						torches and brazing rods. That shop became my home away from home. When my friends were looking
+						for me, they knew where to go. I still have many of the sculptures I made during those years. My
+						senior year, a female student and I were selected “Artists of the Year” in school. My senior
+						sculpture was a smashed car bumper with about 20 signs I made using nails. After high school, I
+						attend Macomb community college for two years. I was busy and didn’t find much time to braze. My
+						shop became a storage shed. I moved to Marquette, Mi. in 1978 to finish my education. Believe it
+						or not, I chose to teach science. What an opposite interest. For the next 29 years I taught most
+						of the junior high and high school science classes in Watersmeet High School in Watersmeet,
+						Michigan. After I retired, I had several health issues that made my life slow down. This is when
+						I decided to start brazing again. It was one of the best decisions I have ever made. I set up a
+						shop in my basement and create several sculptures each week. My wife, Tina, who I met in college
+						and married in 1981, helps me promote my art online and through numerous art shows that we
+						attend each summer in the U.P. and Northern Wisconsin.
+					</p>
 				</div>
 			</div>
 		</div>

@@ -12,3 +12,11 @@
 $main_font: main_font;
 $heading_font: heading_font;
 $font_size: 1.6rem;
+
+.paragraph_font {
+  font-size: 1.7rem;
+  line-height: 3.4rem;
+  li {
+    line-height: 3.4rem;
+  }
+}
