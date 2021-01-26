@@ -522,7 +522,7 @@ const PlaceOrderPublicPage = (props) => {
 	return (
 		<div>
 			<Helmet>
-				<title>Place Order | Glow LEDs</title>
+				<title>Place Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Place Order" />
 				<meta name="twitter:title" content="Place Order" />
 				<link rel="canonical" href="https://www.glow-leds.com/secure/checkout/placeorder" />

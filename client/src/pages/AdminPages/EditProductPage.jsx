@@ -199,7 +199,7 @@ const EditProductPage = (props) => {
 				sale_end_date: unformat_date(sale_end_date),
 				volume: length * width * height,
 				subcategory,
-				meta_title: `${name} | Glow LEDs`,
+				meta_title: `${name} | Gibson Lake Copper Art`,
 				meta_description,
 				meta_keywords,
 				length,
@@ -437,7 +437,7 @@ const EditProductPage = (props) => {
 						{product && (
 							<div>
 								<Helmet>
-									<title>Edit Product | Glow LEDs</title>
+									<title>Edit Product | Gibson Lake Copper Art</title>
 								</Helmet>
 								{/* <Prompt
 									when={shouldBlockNavigation}
@@ -732,7 +732,7 @@ const EditProductPage = (props) => {
 												<input
 													type="text"
 													name="meta_title"
-													value={name && `${name} | Glow LEDs`}
+													value={name && `${name} | Gibson Lake Copper Art`}
 													id="meta_title"
 													onChange={(e) => set_meta_title(e.target.value)}
 												/>

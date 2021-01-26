@@ -134,7 +134,7 @@ const OrdersPage = (props) => {
 	return (
 		<div className="profile_container wrap column p-20px">
 			<Helmet>
-				<title>Admin Orders | Glow LEDs</title>
+				<title>Admin Orders | Gibson Lake Copper Art</title>
 			</Helmet>
 			<div className="wrap jc-b">
 				<Link to="/secure/glow/controlpanel">

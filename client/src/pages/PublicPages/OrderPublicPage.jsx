@@ -271,7 +271,7 @@ const OrderPublicPage = (props) => {
 	) : (
 		<div>
 			<Helmet>
-				<title>Your Order | Glow LEDs</title>
+				<title>Your Order | Gibson Lake Copper Art</title>
 				<meta property="og:title" content="Your Order" />
 				<meta name="twitter:title" content="Your Order" />
 				<link
