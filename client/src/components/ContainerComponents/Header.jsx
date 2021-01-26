@@ -119,7 +119,7 @@ const Header = (props) => {
 							{/* </Link> */}
 							<div className="dropdown-nav-content hover_fade_in w-200px">
 								<div className="dropdown-nav-subcategory">
-									<Link to="/collections/all/products/category/flowers">
+									<Link to="/collections/all/products/category/trees">
 										<button className="btn nav w-100per ta-l">Trees</button>
 										<i
 											style={{ '-webkitTransform': 'rotate(-180deg)' }}
@@ -127,7 +127,7 @@ const Header = (props) => {
 										/>
 									</Link>
 									<div className="dropdown-nav-subcategory-content hover_fade_in left-118px top-39px w-200px">
-										<Link to="/collections/all/products/category/flowers/subcategory/on_slate">
+										<Link to="/collections/all/products/category/trees/subcategory/on_slate">
 											<div className="row">
 												<i
 													style={{ '-webkitTransform': 'rotate(90deg)' }}
@@ -136,7 +136,7 @@ const Header = (props) => {
 												<button className="btn nav w-100per ta-l">On Slate</button>
 											</div>
 										</Link>
-										<Link to="/collections/all/products/category/flowers/subcategory/on_driftwood">
+										<Link to="/collections/all/products/category/trees/subcategory/on_driftwood">
 											<div className="row">
 												<i
 													style={{ '-webkitTransform': 'rotate(90deg)' }}
@@ -145,7 +145,7 @@ const Header = (props) => {
 												<button className="btn nav w-100per ta-l">On Driftwood</button>
 											</div>
 										</Link>
-										<Link to="/collections/all/products/category/flowers/subcategory/wall_mounted">
+										<Link to="/collections/all/products/category/trees/subcategory/wall_mounted">
 											<div className="row">
 												<i
 													style={{ '-webkitTransform': 'rotate(90deg)' }}
