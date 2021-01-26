@@ -108,7 +108,7 @@ const HomePage = (props) => {
 			</Helmet>
 
 			<div className="jc-c">
-				<h1 className="welcome_text mb-3rem ta-c" style={{ fontSize: '4rem' }}>
+				<h1 className="welcome_text mb-1rem ta-c" style={{ fontSize: '4rem' }}>
 					Welcome to Gibson Lake Copper Art
 				</h1>
 			</div>
@@ -168,7 +168,7 @@ const HomePage = (props) => {
 					Leaves.
 				</h2>
 			</div> */}
-			<p className="p_descriptions" style={{ textAlign: 'center' }}>
+			<p className="p_descriptions mb-3rem" style={{ textAlign: 'center' }}>
 				I specialize in making unique copper art sculptures. I enjoy making old buildings from pictures,
 				flowers, and other wildlife scenes. Modern art too!
 			</p>
