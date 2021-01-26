@@ -128,28 +128,28 @@ const AllProductsPage = (props) => {
 		// 	'Decorate your home and festival with these stunning Glowskins at Gibson Lake Copper Art. Shop Addressable LED Mirrors, LED Mirrors, and Custom Glowskins. Click to Shop.'
 	};
 
-	const description_determination = () => {
-		if (category === 'frosted_diffusers') {
-			return descriptions.frosted_diffusers;
-		}
-		if (category === 'diffuser_adapters') {
-			return descriptions.diffuser_adapters;
-		}
-		if (category.toLowerCase() === 'diffuser_caps') {
-			return descriptions.diffuser_caps;
-		}
-		// if (category === 'infinity_mirrors') {
-		// 	return descriptions.infinity_mirrors;
-		// }
-		if (category === 'glowskins') {
-			return descriptions.glowskins;
-		}
-		if (category === 'glow_strings') {
-			return descriptions.glow_strings;
-		} else {
-			return descriptions.all_products;
-		}
-	};
+	// const description_determination = () => {
+	// 	if (category === 'frosted_diffusers') {
+	// 		return descriptions.frosted_diffusers;
+	// 	}
+	// 	if (category === 'diffuser_adapters') {
+	// 		return descriptions.diffuser_adapters;
+	// 	}
+	// 	if (category.toLowerCase() === 'diffuser_caps') {
+	// 		return descriptions.diffuser_caps;
+	// 	}
+	// 	// if (category === 'infinity_mirrors') {
+	// 	// 	return descriptions.infinity_mirrors;
+	// 	// }
+	// 	if (category === 'glowskins') {
+	// 		return descriptions.glowskins;
+	// 	}
+	// 	if (category === 'glow_strings') {
+	// 		return descriptions.glow_strings;
+	// 	} else {
+	// 		return descriptions.all_products;
+	// 	}
+	// };
 	// console.log({ category });
 
 	const sort_options = [ 'Category', 'Newest', 'Lowest', 'Highest' ];
@@ -162,16 +162,16 @@ const AllProductsPage = (props) => {
 				<meta name="twitter:title" content={category ? humanize(category) : 'Products'} />
 				<link rel="canonical" href="http://www.copper-rt.com/collections/all/products" />
 				<meta property="og:url" content="http://www.copper-rt.com/collections/all/products" />
-				<meta name="description" content={description_determination()} />
+				{/* <meta name="description" content={description_determination()} />
 				<meta property="og:description" content={description_determination()} />
-				<meta name="twitter:description" content={description_determination()} />
+				<meta name="twitter:description" content={description_determination()} /> */}
 			</Helmet>
 			<div className="jc-c">
 				<div className="row">
 					<h1>
 						{category === 'diffuser_caps' ? humanize('diffuser_caps') : humanize(category) || 'Products'}
 					</h1>
-					<label style={{ color: '#d2cfcf', marginTop: '10px' }}>
+					{/* <label style={{ color: '#d2cfcf', marginTop: '10px' }}>
 						{category === 'diffuser_caps' ||
 						category === 'diffuser_adapters' ||
 						category === 'mega_diffuser_caps' ||
@@ -182,7 +182,7 @@ const AllProductsPage = (props) => {
 						) : (
 							''
 						)}{' '}
-					</label>
+					</label> */}
 				</div>
 			</div>
 			<div className="search_and_sort row jc-c ai-c" style={{ overflowX: 'scroll' }}>

@@ -33,31 +33,31 @@ const HomePage = (props) => {
 	const homepage_pictures = [
 		{
 			name: 'Buildings',
-			category: 'diffuser_caps',
+			category: 'buildings',
 			image: 'https://thumbs2.imgbox.com/33/11/KimJPKNB_t.jpg',
 			description: ''
 		},
 		{
 			name: 'Trees',
-			category: 'mega_diffuser_caps',
+			category: 'trees',
 			image: '',
 			description: ''
 		},
 		{
 			name: 'Flowers',
-			category: 'frosted_diffusers',
+			category: 'flowers',
 			image: 'https://thumbs2.imgbox.com/fa/f1/WQnVKv4D_t.jpg',
 			description: ''
 		},
 		{
 			name: 'Leaves',
-			category: 'glow_strings',
+			category: 'leaves',
 			image: 'https://thumbs2.imgbox.com/6c/ed/YH2HXvu8_t.jpg',
 			description: ''
 		},
 		{
 			name: 'Modern',
-			category: 'glow_strings',
+			category: 'modern',
 			image: 'https://thumbs2.imgbox.com/f4/6d/jJoyrjXc_t.jpg',
 			description: ''
 		}
@@ -108,7 +108,7 @@ const HomePage = (props) => {
 			</Helmet>
 
 			<div className="jc-c">
-				<h1 className="welcome_text mb-3rem ta-c" style={{ fontSize: '6rem' }}>
+				<h1 className="welcome_text mb-3rem ta-c" style={{ fontSize: '4rem' }}>
 					Welcome to Gibson Lake Copper Art
 				</h1>
 			</div>
