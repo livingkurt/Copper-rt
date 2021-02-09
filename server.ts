@@ -42,7 +42,7 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
 	}
 };
 
-console.log(config.MONGODB_URI)
+console.log(config.MONGODB_URI);
 
 mongoose
 	.connect(config.MONGODB_URI, {
@@ -76,7 +76,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(compression());
-// app.use(sslRedirect());
+app.use(sslRedirect());
 
 // // throttle request when given IP hit 50 times over 300 seconds
 // function throttleByIp(req: any) {
